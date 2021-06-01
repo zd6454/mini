@@ -1,0 +1,55 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/school/index",
+    "pages/exc/index",
+    "pages/alumn/index",
+    "pages/my/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "三一圣大卫",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#5b5b5b",
+    "selectedColor": "#a88b61",
+    "borderStyle": "black",
+    "list": [
+      {
+        "selectedIconPath": "icons/first12.png",
+        "iconPath": "icons/first1.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "icons/school12.png",
+        "iconPath": "icons/school1.png",
+        "pagePath": "pages/index/index",
+        "text": "学校概况"
+      },
+      {
+        "selectedIconPath": "icons/exc12.png",
+        "iconPath": "icons/exc1.png",
+        "pagePath": "pages/index/index",
+        "text": "经验论坛"
+      },
+      {
+        "selectedIconPath": "icons/alumn12.png",
+        "iconPath": "icons/alumn1.png",
+        "pagePath": "pages/index/index",
+        "text": "校友会"
+      },
+      {
+        "selectedIconPath": "icons/my12.png",
+        "iconPath": "icons/my1.png",
+        "pagePath": "pages/my/index",
+        "text": "我的"
+      }
+    ]
+  }
+}
