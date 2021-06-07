@@ -5,6 +5,7 @@
     "pages/exc/index",
     "pages/alumn/index",
     "pages/my/index",
+    "pages/my/info/index",
     "pages/logs/logs"
   ],
   "window":{

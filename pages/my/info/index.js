@@ -1,32 +1,20 @@
-// pages/my/index.js
+// pages/my/info/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    tabs:[
-      {name:'发布论坛',icon:'../../icons/public.png',url:''},
-      {name:'我的留学',icon:'../../icons/abroad.png',url:''},
-      {name:'我的发布',icon:'../../icons/list.png',url:''},
-      {name:'系统消息',icon:'../../icons/message.png',url:''},
-    ],
-     setting:[
-       {name:'个人信息',url:'./info/index'},
-       {name:'论坛消息',url:''},
-       {name:'论坛草稿',url:''},
-       {name:'常见问题',url:''},
-       {name:'联系我们',url:''}
+     items:[
+       {myinfo:'头像',content:'123'},
+       {myinfo:'昵称',content:'123'},
+       {myinfo:'性别',content:'123'},
+       {myinfo:'学院',content:'123'},
+       {myinfo:'班级',content:'123'},
+       {myinfo:'姓名',content:'123'},
+       {myinfo:'手机号',content:'123'},
+       {myinfo:'地址',content:'123'},
      ]
-  },
-
-  todetail(e){
-  console.log(e)
-  const {url} = e.currentTarget.dataset.set;
-  wx.navigateTo({
-    url: url,
-  })
-
   },
 
   /**
