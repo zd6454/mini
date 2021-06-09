@@ -2,20 +2,23 @@
 <view class="page">
   <view class="head">
     <view class="avatar">
-      <image src="../../icons/alumn1.png"  class="imageset" />
+      <image src="{{userInfo.avatarUrl}}"  class="imageset" />
     </view>
-    <view class="info">
-      <view class="name"> 1234</view>
+    <view class="info" wx:if="{{login}}">
+      <view class="name"> {{userInfo.nickName}}</view>
       <view class="base">
-        <view class="gender">男</view>
+        <view class="gender">{{userInfo.gender?'男':'女'}}</view>
         <view class="level">大三</view>
       </view>
       <view class="school">武汉理工大学</view>
     </view>
+    <view wx:else class="login">
+      <button size="mini"  bindtap="getuser">点击登录</button>
+    </view>
   </view>
   <view class="body">
     <view class="tabs" wx:for="{{tabs}}" wx:key="item" data-set="{{item}}" wx:for-item="item" wx:for-index="index" >
-      <view class="tab">
+      <view class="tab" bindtap="switchto" data-item="{{item}}">
         <image src="{{item.icon}}"  class="tabIcon"   />
         <view>{{item.name}}</view>
       </view>
@@ -27,7 +30,7 @@
       <view class="link">></view>
     </view> 
   </view>
-  <view class="loginOut">
+  <view class="loginOut" bindtap="loginout">
     <view>退出登录</view>
     <view>></view>
   </view>

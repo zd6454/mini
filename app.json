@@ -6,6 +6,10 @@
     "pages/alumn/index",
     "pages/my/index",
     "pages/my/info/index",
+    "pages/my/forum/index",
+    "pages/my/publishforum/index", 
+    "pages/my/edit/index",
+    "pages/my/question/index",
     "pages/logs/logs"
   ],
   "window":{

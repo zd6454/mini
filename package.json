@@ -1,0 +1,24 @@
+{
+  "name": "minicode",
+  "version": "1.0.0",
+  "description": "外包小程序",
+  "main": "app.js",
+  "dependencies": {
+    "weui-miniprogram": "^1.0.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zd6454/minicode.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zd6454/minicode/issues"
+  },
+  "homepage": "https://github.com/zd6454/minicode#readme"
+}

@@ -8,15 +8,27 @@ Page({
      items:[
        {myinfo:'头像',content:'123'},
        {myinfo:'昵称',content:'123'},
-       {myinfo:'性别',content:'123'},
-       {myinfo:'学院',content:'123'},
-       {myinfo:'班级',content:'123'},
-       {myinfo:'姓名',content:'123'},
-       {myinfo:'手机号',content:'123'},
-       {myinfo:'地址',content:'123'},
+       {myinfo:'性别',content:'男'},
+       {myinfo:'学院',content:'计算机学院'},
+       {myinfo:'班级',content:'软件1805班'},
+       {myinfo:'姓名',content:'zd'},
+       {myinfo:'手机号',content:'123456789'},
+       {myinfo:'地址',content:'武汉理工大学'},
      ]
   },
 
+  fixone(e){
+    const{items}=this.data;
+    const {index}=e.currentTarget.dataset;
+     if(index===0||index===2){
+
+     }else{
+       wx.navigateTo({
+         url: `../edit/index?name=${items[index].myinfo}&content=${items[index].content}`,
+       })
+     }
+    console.log(e)
+  },
   /**
    * 生命周期函数--监听页面加载
    */

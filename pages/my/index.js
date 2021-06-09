@@ -6,18 +6,20 @@ Page({
    */
   data: {
     tabs:[
-      {name:'发布论坛',icon:'../../icons/public.png',url:''},
+      {name:'发布论坛',icon:'../../icons/public.png',url:'./publishforum/index'},
       {name:'我的留学',icon:'../../icons/abroad.png',url:''},
       {name:'我的发布',icon:'../../icons/list.png',url:''},
-      {name:'系统消息',icon:'../../icons/message.png',url:''},
+      {name:'系统消息',icon:'../../icons/message.png',url:'./forum/index'},
     ],
      setting:[
        {name:'个人信息',url:'./info/index'},
-       {name:'论坛消息',url:''},
-       {name:'论坛草稿',url:''},
-       {name:'常见问题',url:''},
+       {name:'论坛消息',url:'./forum/index'},
+       {name:'论坛草稿',url:'./publishforum/index'},
+       {name:'常见问题',url:'./question/index'},
        {name:'联系我们',url:''}
-     ]
+     ],
+     login:false,
+     userInfo:{}
   },
 
   todetail(e){
@@ -26,14 +28,36 @@ Page({
   wx.navigateTo({
     url: url,
   })
-
+  },
+  switchto(e){
+   const{url}=e.currentTarget.dataset.item;
+   wx.navigateTo({
+     url: url,
+   })
+  },
+  getuser(e){
+    const that =this;
+    wx.getUserProfile({
+      desc: '用于完善用户资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+      success: (res) => {
+        this.setData({
+          userInfo: res.userInfo,
+          login:true
+        })
+      }
+    })
   },
 
+  loginout(){
+   this.setData({
+     login:false
+   })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+   
   },
 
   /**
