@@ -1,0 +1,49 @@
+
+.notice{
+  margin-top: 20rpx;
+  width: 95%;
+  margin: auto;
+}
+.notice .noticeWrap{
+  height: 220rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: #f0f8fa;
+  box-shadow: 0 5rpx 10rpx 7rpx #e7e7e7;
+  margin-top: 20rpx;
+  position: relative;
+}
+.notice .noticeWrap .dot{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #d12941;
+  border-radius: 20rpx;
+}
+.notice .noticeWrap .notImg{
+  position: relative;
+  top: 0;
+  height: 180rpx;
+  width: 210rpx;
+  margin: 20rpx;
+}
+
+.notice .noticeWrap .titleWrap{
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  width: 100%;
+  position: relative;
+}
+.notice .noticeWrap .titleWrap .title{
+  font-size: 33rpx;
+}
+.notice .noticeWrap .titleWrap .time{
+  font-size: 28rpx;
+  font-weight: 400;
+  position: absolute;
+  bottom: 20rpx;
+  right: 20rpx;
+}
+

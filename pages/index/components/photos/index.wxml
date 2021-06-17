@@ -1,0 +1,18 @@
+<view class="photo">
+  <view class="rowWrap" wx:for="{{photoList}}">
+  <view class="leftWrap">
+    <image class="topWrap" src="{{item[0]}}"></image>
+    <view class="bottomWrap" >
+      <image class="bottomL" src="{{item[1]}}" style="margin-right:10rpx"></image>
+      <image class="bottomL" src="{{item[2]}}"></image>
+    </view>
+  </view>
+  <view class="leftWrap" style="flex-direction: column-reverse;margin-top: 10rpx">
+    <image class="topWrap" src="{{item[3]}}" style="margin-bottom:0"></image>
+    <view class="bottomWrap" >
+      <image class="bottomL" src="{{item[4]}}" style="margin-right:10rpx"></image>
+      <image class="bottomL" src="{{item[5]}}"></image>
+    </view>
+  </view>
+</view>
+</view>

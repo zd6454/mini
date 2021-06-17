@@ -13,19 +13,23 @@ Page({
     schoolList:[
       {
         text:'置顶通知',
-        icon:'../../icons/first1.png'
+        icon:'../../icons/first1.png',
+        path:'./components/notice/index'
       },
       {
         text:'关于UWTSD',
-        icon:'../../icons/first1.png'
+        icon:'../../icons/first1.png',
+        path:'./components/banner/index'
       },
       {
         text:'东亚办公室',
-        icon:'../../icons/first1.png'
+        icon:'../../icons/first1.png',
+        path:'./components/office/index'
       },
       {
         text:'校园相册',
-        icon:'../../icons/first1.png'
+        icon:'../../icons/first1.png',
+        path:'./components/photos/index'
       }
     ],
     activityList:[
@@ -62,7 +66,13 @@ Page({
         image:'',
         name:'fdsffv',
       },
-
+    ],
+    corporationList:[
+      {
+        title:'武汉理工大学合作政策',
+        time:'2020-3-5',
+        image:''
+      }
     ]
   },
   // 事件处理函数
@@ -98,5 +108,13 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  handleSchool(e){
+    const  path = e.currentTarget.dataset.path
+    if(path){
+      wx.navigateTo({
+        url: path,
+      })
+    }
   }
 })

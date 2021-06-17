@@ -12,7 +12,7 @@
   <view class="text">三一圣大卫</view>
   <view class="line"></view>
   <view class="boxWrap" >
-    <view class="box" wx:for="{{schoolList}}">
+    <view class="box" wx:for="{{schoolList}}" bindtap="handleSchool" data-path="{{item.path}}">
       <view class="boxTxt">{{item.text}}</view>
       <image class="boxImg" src="{{item.icon}}"></image>
     </view>
@@ -27,7 +27,7 @@
     <view class="leaImgWrap">
       <image src="" class="leaImg"></image>
     </view>
-    <view class="txtWrap">
+    <view class="txtWrap" bindtap="handleSchool" data-path="./components/undergradute/index">
       <view class="edu">本科生教育</view>
       <view class="look">点击查看</view>
     </view>
@@ -36,8 +36,8 @@
     <view class="leaImgWrap">
       <image src="" class="leaImg"></image>
     </view>
-    <view class="txtWrap">
-      <view class="edu">本科生教育</view>
+    <view class="txtWrap" bindtap="handleSchool" data-path="./components/postgradute/index">
+      <view class="edu">研究生教育</view>
       <view class="look">点击查看</view>
     </view>
   </div>
@@ -45,8 +45,8 @@
     <view class="leaImgWrap">
       <image src="" class="leaImg"></image>
     </view>
-    <view class="txtWrap">
-      <view class="edu">本科生教育</view>
+    <view class="txtWrap" bindtap="handleSchool" data-path="./components/doctor/index">
+      <view class="edu">博士生教育</view>
       <view class="look">点击查看</view>
     </view>
   </div>
@@ -57,6 +57,21 @@
   <view class="line"></view>
   <view class="more">查看更多></view>
   <div class="activity" wx:for="{{activityList}}">
+    <view class="actImgWrap">
+      <image src="{{item.image}}" class="actImg"></image>
+    </view>
+    <view class="txtWrap">
+      <view class="title">{{item.title}}</view>
+      <view class="time">{{item.time}}</view>
+    </view>
+  </div>
+</view>
+
+<view class="school">
+  <view class="text">国际合作</view>
+  <view class="line"></view>
+  <view class="more" bindtap="handleSchool" data-path="./components/corporation/index">查看更多></view>
+  <div class="activity" wx:for="{{corporationList}}">
     <view class="actImgWrap">
       <image src="{{item.image}}" class="actImg"></image>
     </view>

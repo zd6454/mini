@@ -1,0 +1,10 @@
+<view class="school">
+  <div class="activity" wx:for="{{corporationList}}">
+    <view class="actImgWrap">
+      <image src="{{item.image}}" class="actImg"></image>
+    </view>
+    <view class="txtWrap">
+      <view class="title">{{item.title}}</view>
+    </view>
+  </div>
+</view>

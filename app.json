@@ -1,17 +1,25 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/school/index",
     "pages/exc/index",
     "pages/alumn/index",
     "pages/my/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/index/components/notice/index",
+    "pages/index/components/corporation/index",
+    "pages/index/components/photos/index",
+    "pages/index/components/banner/index",
+    "pages/index/components/office/index",
+    "pages/index/components/undergraduate/index",
+    "pages/index/components/postgradute/index",
+    "pages/index/components/doctor/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "三一圣大卫",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
