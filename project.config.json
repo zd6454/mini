@@ -46,23 +46,35 @@
   },
   "isGameTourist": false,
   "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
+    "plugin": {
       "list": []
     },
     "game": {
-      "list": []
-    },
-    "plugin": {
       "list": []
     },
     "gamePlugin": {
       "list": []
     },
     "miniprogram": {
-      "list": []
+      "list": [
+        {
+          "name": "置顶通知",
+          "pathName": "pages/index/components/notice/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "国际合作",
+          "pathName": "pages/index/components/corporation/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "校园相册",
+          "pathName": "pages/index/components/photos/index",
+          "scene": null
+        }
+      ]
     }
   }
 }
