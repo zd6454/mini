@@ -1,2 +1,16 @@
 <!--pages/alumn/index.wxml-->
-<text>pages/alumn/index.wxml</text>
+<view class="container">
+  <view class="box">
+  <view class="event">校友会活动</view>
+  <image class="img" src="../../icons/alumn1.png"></image>
+  
+  </view>
+  <view class="box">
+    <view class="event">校友会架构</view>
+    <image class="img" src="../../icons/alumn1.png"></image>
+  </view>
+  <view class="mate">
+   <view class="mateTitle">荣誉校友</view>
+   <matelist list="{{mateList}}" />
+  </view>
+</view>

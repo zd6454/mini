@@ -4,6 +4,7 @@
     "pages/school/index",
     "pages/exc/index",
     "pages/alumn/index",
+    "pages/alumn/alumnDetail/index",
     "pages/my/index",
     "pages/my/info/index",
     "pages/my/forum/index",
@@ -34,19 +35,19 @@
       {
         "selectedIconPath": "icons/school12.png",
         "iconPath": "icons/school1.png",
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/school/index",
         "text": "学校概况"
       },
       {
         "selectedIconPath": "icons/exc12.png",
         "iconPath": "icons/exc1.png",
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/exc/index",
         "text": "经验论坛"
       },
       {
         "selectedIconPath": "icons/alumn12.png",
         "iconPath": "icons/alumn1.png",
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/alumn/index",
         "text": "校友会"
       },
       {
