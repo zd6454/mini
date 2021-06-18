@@ -1,0 +1,20 @@
+<view class="page">
+  <view class="card">
+         <view wx:for="{{items}}"  wx:for-index='index' wx:key='index'  class="list">
+            <view data-index="{{index}}" class="inline"  bindtap="fixone">
+               <view class="myinfo">
+                  {{item.myinfo}}
+               </view>
+               <view class="detail">
+                 <view class="detailInfo">
+                   <view wx:if="{{item.myinfo==='党员头像'}}" bindtap="changeAvatar">
+                     <image class="avatar" src="{{item.content}}" />
+                   </view>
+                   <view  wx:else>{{item.content}}</view>
+                  </view>
+                 <view data-item="item" class="switch2">></view>
+               </view>
+            </view>
+         </view>
+     </view>
+</view>

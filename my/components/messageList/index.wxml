@@ -1,0 +1,13 @@
+<!--pages/my/components/messageList/lsit.wxml-->
+<view class="page">
+        <scroll-view scroll-y="true"  bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" style="height: 100%">
+           <view wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key='index' >
+              <view class="box">
+                <view class="head"><view class="type">{{item.type}}</view></view>
+                <view class="body">{{item.content}}</view>
+                <view class="foot">{{item.date}}</view>
+              </view>
+           </view>
+        </scroll-view>
+</view>
+
