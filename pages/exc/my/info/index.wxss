@@ -1,0 +1,57 @@
+/* pages/my/info/index.wxss */
+.page{
+  background-color: rgb(240, 242, 245);
+  height: 100vh;
+  width: 100vw;
+}
+.card{
+  position: absolute;
+  top:20rpx;
+  width: 93%;
+  margin: 20rpx 30rpx  ;
+  box-shadow:  0rpx -3rpx -1rpx 12rpx #ffffff;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+}
+.list{
+ height:100%;
+}
+.inline{
+  display: flex;
+  justify-content: space-between;
+  margin:0rpx 20rpx;
+  align-items: center;
+  height:80rpx;
+  text-align: center;
+  align-content: center;
+  border-bottom: 2rpx solid #e7e3e3;
+  color:rgb(2, 68, 99);
+  font-weight: bold;
+}
+
+
+.myinfo{
+ display: flex;
+ font-size:medium;
+ font-size: 30rpx;
+ align-items: center;
+}
+.detail{
+  display: inline-flex;
+  align-items:center;
+}
+.detailInfo{
+  font-size: 28rpx;
+  padding-right: 10rpx;
+}
+.avatar{
+  width:84rpx;
+  height:84rpx;
+  border-radius: 50%;
+}
+
+
+.iconset{
+  width:46rpx;
+  height:46rpx;
+}
