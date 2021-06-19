@@ -5,9 +5,59 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    activityList:[
+      {
+        image:'./images/秋天落叶.png',
+        title:'秋日伯明翰，一起走在森林与城市之间',
+        time:'2020-10-23',
+        url:'./first/index'
+      },
+      {
+        image:'./images/英国伯明翰.jpeg',
+        title:'英国伯明翰珠宝学院中英文介绍',
+        time:'2020-10-23',
+        url:'./second/index'
+      },
+      {
+        image:'./images/英式学习.jpeg',
+        title:'BCU艺术、设计与媒体学部最热门的5大专业，快戳开看！',
+        time:'2020-10-23',
+        url:'./third/index'
+      },
+      {
+        image:'./images/艺术.jpeg',
+        title:'CLASSROOM|预计开学一个月，英式艺术课堂初体验',
+        time:'2020-10-23',
+        url:'./fouth/index'
+      },
+      {
+        image:'./images/英国伯明翰.jpeg',
+        title:'英国伯明翰珠宝学院中英文介绍',
+        time:'2020-10-23',
+        url:'./fifth/index'
+      },
+      {
+        image:'./images/英式学习.jpeg',
+        title:'BCU艺术、设计与媒体学部最热门的5大专业，快戳开看！',
+        time:'2020-10-23',
+        url:'./sixth/index'
+      },
+      {
+        image:'./images/艺术.jpeg',
+        title:'CLASSROOM|预计开学一个月，英式艺术课堂初体验',
+        time:'2020-10-23',
+        url:'./seventh/index'
+      },
+    ],
   },
 
+  todetail(e){
+    console.log(e)
+    const {url} = e.currentTarget.dataset.set;
+    wx.navigateTo({
+      url: url,
+    })
+    },
   /**
    * 生命周期函数--监听页面加载
    */

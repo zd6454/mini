@@ -1,2 +1,14 @@
 <!--pages/exc/index.wxml-->
-<text>pages/exc/index.wxml</text>
+<view class="page">
+<view class="exc">
+  <div class="activity" wx:for="{{activityList}}" wx:key="item" data-set="{{item}}" wx:for-item="item" wx:for-index="index" bindtap="todetail">
+    <view class="actImgWrap">
+      <image src="{{item.image}}" class="actImg"></image>
+    </view>
+    <view class="txtWrap">
+      <view class="title">{{item.title}}</view>
+      <view class="time">{{item.time}}</view>
+    </view>
+  </div>
+</view>
+</view>

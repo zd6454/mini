@@ -24,7 +24,7 @@ Component({
   todetail(e){
     console.log(e)
    wx.navigateTo({
-     url: './alumnDetail/index',
+     url: '../../alumnDetail/index',
    })
   }
   }
