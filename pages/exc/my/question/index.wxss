@@ -1,0 +1,35 @@
+/* pages/my/question/index.wxss */
+.page{
+  background: #ecf1f1;
+  width: 100vw;
+  height:100vh;
+  
+}
+.box{
+  width:92.5%;
+  position: absolute;
+  margin:30rpx;
+  background: #ffffff;
+  border-radius: 10rpx;
+  color:rgb(2, 68, 99);
+  font-weight: bold;
+}
+.list{
+ width:93%;
+ padding: 20rpx;
+ border-bottom: 2rpx solid #d0e0de;
+}
+.name{
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.conset{
+  display: inline;
+  align-items: center;
+}
+.icon{
+  width: 32rpx;
+  height:32rpx;
+}
