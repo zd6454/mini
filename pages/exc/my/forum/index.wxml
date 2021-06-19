@@ -1,4 +1,0 @@
-<!--pages/my/forum/index.wxml-->
-<view>
-  <list  list='{{list}}'></list>
-</view>

@@ -1,9 +1,0 @@
-<!--pages/my/edit/index.wxml-->
-<view class="page">
-   <view class="fix" >
-     <input class="detail" auto-focus placeholder="请输入新的{{name}}" bindinput='getValue' />
-   </view>
-   <view class="save">
-     <button class="comfirm" type="primary" hover-class="comfirm2" bindtap="comfirm" >保存</button>
-   </view>
-</view>
