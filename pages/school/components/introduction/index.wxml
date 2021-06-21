@@ -1,0 +1,8 @@
+<!--pages/school/components/introduction/index.wxml-->
+<!-- <text>pages/school/components/introduction/index.wxml</text> -->
+<view class="boxWrap" wx:for="{{data_list}}">
+  <image class="img" src="{{item.image}}"></image>
+  <view class="txtWrap">
+    <view class="text"> {{item.text}}</view>
+  </view>
+</view>

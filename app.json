@@ -12,14 +12,20 @@
     "pages/index/components/photos/index",
     "pages/index/components/banner/index",
     "pages/index/components/office/index",
-    "pages/index/components/undergraduate/index",
+    "pages/index/components/undergradute/index",
     "pages/index/components/postgradute/index",
     "pages/index/components/doctor/index",
     "pages/my/info/index",
     "pages/my/forum/index",
-    "pages/my/publishforum/index", 
+    "pages/my/publishforum/index",
     "pages/my/edit/index",
-    "pages/my/question/index"
+    "pages/my/question/index",
+    "pages/school/components/teach/index",
+    "pages/school/components/introduction/index",
+    "pages/school/components/detail/index",
+    "pages/school/components/experience/index",
+    "pages/school/components/lesson/index",
+    "pages/index/components/noticeDetail/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

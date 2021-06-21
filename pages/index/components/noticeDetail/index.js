@@ -1,34 +1,38 @@
-// pages/index/components/office/index.js
+// pages/index/components/noticeDetail/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    htmlData:''
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getOffice()
+    const that = this
+    const noticeId = options.noticeId
+    this.getNotice(noticeId)
   },
 
-  getOffice(){
+  getNotice(noticeId){
     const that = this
     wx.request({
-      url: 'http://duing.site:2333/information/getInforContent/EastAsiaOffice',
+      url: 'http://duing.site:2333/notice/overheadNotice',
       method: 'GET',
       header: {},
+      data:{
+        noticeId,
+      },
       credentials: 'omit',
       success(res) {
         console.log(res.data)
-        that.setData({htmlData:res.data})
+        // that.setData({noticeList:res.data})
       }
     })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

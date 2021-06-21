@@ -1,0 +1,27 @@
+page{
+  width: 95%;
+  margin: auto;
+}
+.boxWrap{
+  height: 250rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+.boxWrap .img{
+  height: 300rpx;
+  width: 100%;
+}
+.boxWrap .txtWrap{
+  position: absolute;
+  bottom: 10rpx;
+  left: 0;
+  /* height: 50rpx; */
+  background-color: #a88b61;
+}
+.boxWrap .txtWrap .text{
+  color: white;
+  padding: 5rpx 20rpx;
+  font-size: 30rpx;
+  letter-spacing: 8rpx;
+
+}

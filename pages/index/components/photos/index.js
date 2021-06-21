@@ -32,6 +32,20 @@ Page({
 
   },
 
+  handlePreview(e){
+    const  src = e.currentTarget.dataset.src
+    const {photoList} = this.data
+    let urls = []
+    photoList.map(item=>{
+      urls=[...urls,...item]
+    })
+    // console.log([...photoList],urls)
+    wx.previewImage({
+      urls: urls,
+      current:src
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

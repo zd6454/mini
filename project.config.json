@@ -4,7 +4,7 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "enhance": false,
     "postcss": true,
@@ -30,6 +30,7 @@
       "outputPath": ""
     },
     "enableEngineNative": false,
+    "bundle": false,
     "useIsolateContext": true,
     "useCompilerModule": true,
     "userConfirmedUseCompilerModuleSwitch": false,
@@ -78,6 +79,18 @@
         {
           "name": "校园相册",
           "pathName": "pages/index/components/photos/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "学校概况",
+          "pathName": "pages/school/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "学校简介",
+          "pathName": "pages/school/components/introduction/index",
           "scene": null
         }
       ]

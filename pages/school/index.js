@@ -5,7 +5,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    schoolList:[
+      {
+        text:'教学实力',
+        image:'../../icons/first1.png',
+        path:'./components/notice/index'
+      },
+      {
+        text:'学部简介',
+        image:'../../icons/first1.png',
+        path:'./components/banner/index'
+      },
+      {
+        text:'学习体验',
+        image:'../../icons/first1.png',
+        path:'./components/office/index'
+      },
+      {
+        text:'课程介绍',
+        image:'../../icons/first1.png',
+        path:'./components/photos/index'
+      }
+    ],
   },
 
   /**

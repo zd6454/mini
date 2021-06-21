@@ -1,10 +1,12 @@
-<view class="school">
-  <div class="activity" wx:for="{{corporationList}}">
-    <view class="actImgWrap">
-      <image src="{{item.image}}" class="actImg"></image>
-    </view>
-    <view class="txtWrap">
-      <view class="title">{{item.title}}</view>
-    </view>
-  </div>
+<!--pages/index/components/notice/index.wxml-->
+<!-- <text>pages/index/components/notice/index.wxml</text> -->
+<view wx:for="{{corporationList}}" class="notice">
+ <view class="noticeWrap">
+   <view class="dot" wx:if="{{item.isRead}}"></view>
+   <image src="{{item.image}}" class="notImg"></image>
+   <view class="titleWrap">
+     <view class="title">{{item.title}}</view>
+     <view class="time">{{item.time}}</view>
+   </view>
+ </view>
 </view>

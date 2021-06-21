@@ -18,7 +18,7 @@ Page({
   getOffice(){
     const that = this
     wx.request({
-      url: 'http://duing.site:2333/information/getInforContent/EastAsiaOffice',
+      url: 'http://duing.site:2333/information/getInforContent/UndergraduateEdu',
       method: 'GET',
       header: {},
       credentials: 'omit',

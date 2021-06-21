@@ -1,1 +1,5 @@
 /* pages/index/components/office/index.wxss */
+page{
+  width: 95%;
+  margin: auto;
+}

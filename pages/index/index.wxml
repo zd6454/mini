@@ -1,11 +1,6 @@
-<swiper class="swiperWrap" autoplay circular>
-  <swiper-item>
-    <!-- <image src=""></image> -->
-    <view>12345555556</view>
-  </swiper-item>
-  <swiper-item>
-    <!-- <image src=""></image> -->
-    <view>123456</view>
+<swiper class="swiperWrap" autoplay circular indicator-dots>
+  <swiper-item wx:for="{{swiperList}}" >
+    <image src="{{item.imgUrl}}" class="swiperImg" bindtap="handlePreview" data-src="{{item}}" ></image>
   </swiper-item>
 </swiper>
 <view class="school">
@@ -29,7 +24,7 @@
     </view>
     <view class="txtWrap" bindtap="handleSchool" data-path="./components/undergradute/index">
       <view class="edu">本科生教育</view>
-      <view class="look">点击查看</view>
+      <view class="look">Undergraduate education</view>
     </view>
   </div>
   <div class="leason0">
@@ -38,7 +33,7 @@
     </view>
     <view class="txtWrap" bindtap="handleSchool" data-path="./components/postgradute/index">
       <view class="edu">研究生教育</view>
-      <view class="look">点击查看</view>
+      <view class="look">Graduate education</view>
     </view>
   </div>
   <div class="leason">
@@ -47,7 +42,7 @@
     </view>
     <view class="txtWrap" bindtap="handleSchool" data-path="./components/doctor/index">
       <view class="edu">博士生教育</view>
-      <view class="look">点击查看</view>
+      <view class="look">Doctoral education</view>
     </view>
   </div>
 </view>
@@ -85,13 +80,13 @@
 <view class="school">
   <view class="text">校友会</view>
   <view class="line"></view>
-  <view class="friendTitle">荣誉校友</view>
-  <view class="more0">查看更多></view>
+  <!-- <view class="friendTitle">荣誉校友</view> -->
+  <view class="more">查看更多></view>
   <view class="friend">
     <view class="friendWrap" wx:for="{{friendList}}">
-    <view class="imageWrap">
+    <!-- <view class="imageWrap"> -->
       <image src="{{item.image}}" class="friImg"></image>
-    </view>
+    <!-- </view> -->
     <view class="friTitle">{{item.name}}</view>
     </view>
   </view>

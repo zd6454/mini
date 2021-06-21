@@ -1,2 +1,3 @@
-<!--pages/index/components/office/index.wxml-->
-<text>pages/index/components/office/index.wxml</text>
+<block>
+  <rich-text nodes="{{htmlData}}"></rich-text>
+</block>

@@ -1,32 +1,31 @@
-// pages/index/components/office/index.js
+// pages/school/components/introduction/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    htmlData:''
+    data_list:[
+      {
+        image:'../../icons/first1.png',
+        text:'管理与健康学院',
+      },
+      {
+        image:'../../icons/first1.png',
+        text:'斯旺西艺术学院',
+      },
+      {
+        image:'../../icons/first1.png',
+        text:'管理与健康学院',
+      },
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getOffice()
-  },
 
-  getOffice(){
-    const that = this
-    wx.request({
-      url: 'http://duing.site:2333/information/getInforContent/EastAsiaOffice',
-      method: 'GET',
-      header: {},
-      credentials: 'omit',
-      success(res) {
-        console.log(res.data)
-        that.setData({htmlData:res.data})
-      }
-    })
   },
 
   /**

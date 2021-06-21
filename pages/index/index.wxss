@@ -26,29 +26,36 @@ page{
   margin: auto;
   height: 350rpx;
 }
+.swiperWrap .swiperImg{
+  width: 100%;
+  height: 350rpx;
+  margin: auto;
+}
 
 .school{
   margin-top: 100rpx;
   margin: auto;
-  width: 90%;
+  width: 95%;
   margin-top: 20rpx;
 }
 .school .text{
-  font-size: 45rpx;
-  font-weight: 600;
+  font-size: 40rpx;
+  font-weight: 700;
   text-align: center;
-  margin-bottom: 15rpx;
+  margin-bottom: 5rpx;
 }
 .school .line{
   width: 25%;
   height: 7rpx;
-  background-color: #f59a23;
+  background-color: #a68c63;
   margin: auto;
 }
 .school .block{
   height: 20rpx;
 }
 .school .boxWrap{
+  /* width: 95%; */
+  margin-top: 15rpx;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -57,60 +64,71 @@ page{
 }
 
 .school .boxWrap .box{
-  width: 45%;
+  width: 47%;
   height: 170rpx;
-  background-color: #b8b7b7;
-  margin: 15rpx;
-  border: 2rpx white solid;
-  box-shadow:#b8b7b7 10rpx 10rpx 8rpx -5rpx;
+  background-color: #005478;
+  margin: 8rpx;
+  border: 1rpx black solid;
+  /* box-shadow:#005478 10rpx 10rpx 8rpx -5rpx; */
   display: flex;
   flex-direction: row;
+  border-radius: 10rpx;
 }
 .school .boxWrap .box .boxTxt{
   color: white;
-  width: 60%;
+  width: 63%;
   height: 100%;
-  font-size: 30rpx;
-  line-height: 160rpx;
+  font-size: 32rpx;
+  line-height: 170rpx;
   text-align: center;
 }
 .school .boxWrap .box .boxImg{
-  width: 100rpx;
-  height: 100rpx;
-  margin: 32rpx 20rpx;
+  width: 120rpx;
+  height: 120rpx;
+  margin: 25rpx 5rpx;
 }
 .school .leason{
   height: 180rpx;
   display: flex;
   flex-direction: row;
   background-color: #ffffff;
-  border:4rpx #f4f4f4 solid;
+  /* border:4rpx #f4f4f4 solid; */
+  border-radius: 10rpx;
+  margin-bottom: 15rpx;
 }
 
 .school .leason .leaImgWrap{
   height: 180rpx;
-  width: 200rpx;
-  box-shadow: #b8b7b7 10rpx 0rpx 8rpx -5rpx;
-  background-color: #fbce29;
+  width: 180rpx;
+  box-shadow: #005478 10rpx 0rpx 8rpx -5rpx;
+  background-color: #a88b61;
+  border-radius: 10rpx 0 0 10rpx;
+
 }
 .school .leason .leaImgWrap .leaImg{
   position: relative;
   top: 0;
   height: 120rpx;
   width: 120rpx;
-  margin: 30rpx 40rpx;
+  margin: 30rpx;
 }
 .school .leason .txtWrap{
-  margin-left: 30rpx;
-  margin-top: 20rpx;
   width: 100%;
+  background-color: #005478;
+  border-radius: 0 10rpx 10rpx 0;
+  color: white;
+
 }
 .school .leason .txtWrap .edu{
-  font-weight: 600;
-  font-size: 35rpx;
-  margin-bottom: 15rpx;
+  margin-left: 30rpx;
+  margin-top: 45rpx;
+  /* font-weight: 600; */
+  font-size: 32rpx;
+
+  /* margin-bottom: 10rpx; */
 }
 .school .leason .txtWrap .look{
+  margin-left: 30rpx;
   font-size: 28rpx;
   font-weight: 400;
 }
@@ -118,31 +136,38 @@ page{
   height: 180rpx;
   display: flex;
   flex-direction: row-reverse;
-  background-color: #f2f2f2;
-  border:4rpx white solid;
+  background-color: #005478;
+  /* border:4rpx white solid; */
+  border-radius: 10rpx;
+  margin-bottom: 15rpx;
 }
 .school .leason0 .leaImgWrap{
   height: 180rpx;
-  width: 200rpx;
-  box-shadow: #b8b7b7 -10rpx 0rpx 8rpx -5rpx;
-  background-color: #fbce29;
+  width: 180rpx;
+  box-shadow: #005478 -10rpx 0rpx 8rpx -5rpx;
+  background-color: #a88b61;
+  border-radius: 0 10rpx 10rpx 0;
 }
 .school .leason0 .leaImgWrap .leaImg{
   position: relative;
   top: 0;
   height: 120rpx;
   width: 120rpx;
-  margin: 30rpx 40rpx;
+  margin: 30rpx;
 }
 .school .leason0 .txtWrap{
-  margin-left: 30rpx;
-  margin-top: 20rpx;
+  text-align: right;
+  float: right;
+  margin-right: 30rpx;
+  margin-top: 38rpx;
   width: 100%;
+  color: white;
 }
 .school .leason0 .txtWrap .edu{
-  font-weight: 600;
-  font-size: 35rpx;
-  margin-bottom: 15rpx;
+  /* font-weight: 600; */
+  /* line-height: 130rpx; */
+  font-size: 32rpx;
+  /* margin-bottom: 15rpx; */
 }
 .school .leason0 .txtWrap .look{
   font-size: 28rpx;
@@ -151,47 +176,50 @@ page{
 
 .school .more{
   margin-top: -50rpx;
-  font-size: 35rpx;
+  font-size: 30rpx;
   float: right;
 }
 .school .activity{
-  height: 220rpx;
+  height: 200rpx;
   display: flex;
   flex-direction: row;
-  background-color: #ffffff;
+  background-color: #005478;
   box-shadow: 0 5rpx 10rpx 10rpx #e7e7e7;
   margin-top: 20rpx;
+  border-radius: 10rpx;
 }
 
 .school .activity .actImgWrap{
-  height: 180rpx;
-  width: 180rpx;
-  /* box-shadow: #b8b7b7 10rpx 0rpx 8rpx -5rpx; */
-  background-color: #cccccc;
-  margin: 20rpx;
+  height: 200rpx;
+  width: 200rpx;
+  /* box-shadow: #005478 10rpx 0rpx 8rpx -5rpx; */
+  /* background-color: #cccccc; */
+  /* margin: 20rpx; */
 }
 .school .activity .actImgWrap .actImg{
   position: relative;
   top: 0;
-  height: 150rpx;
-  width: 150rpx;
-  margin: 15rpx;
-  border: 2rpx white solid;
+  height: 200rpx;
+  width: 200rpx;
+  border-radius: 10rpx 0 0 10rpx;
+  /* margin: 15rpx; */
+  /* border: 2rpx white solid; */
 }
 .school .activity .txtWrap{
   margin-left: 20rpx;
   margin-top: 20rpx;
   width: 100%;
   position: relative;
+  color: white;
 }
 .school .activity .txtWrap .title{
-  font-weight: 600;
+  /* font-weight: 600; */
   font-size: 33rpx;
   /* margin-bottom: 15rpx; */
 }
 .school .activity .txtWrap .time{
-  font-size: 28rpx;
-  font-weight: 400;
+  font-size: 25rpx;
+  /* font-weight: 400; */
   position: absolute;
   bottom: 20rpx;
 }
@@ -204,7 +232,7 @@ page{
 }
 .school .more0{
   display: inline;
-  font-size: 35rpx;
+  font-size: 30rpx;
   float: right;
 }
 .school .friend{
@@ -213,25 +241,28 @@ page{
   justify-content: space-between;
 }
 .school .friend .friendWrap{
-  height: 450rpx;
-  width: 47%;
-  /* box-shadow: #b8b7b7 10rpx 0rpx 8rpx -5rpx; */
-  background-color: white;
+  height: 470rpx;
+  width: 48%;
+  /* box-shadow: #005478 10rpx 0rpx 8rpx -5rpx; */
+  /* background-color: white; */
   margin-top: 20rpx;
-  border: 2rpx #cccccc solid;
+  /* border: 2rpx #cccccc solid; */
+  border-radius: 10rpx;
 }
-.school .friend .friendWrap .imageWrap{
+/* .school .friend .friendWrap .imageWrap{
   height: 390rpx;
   width: 100%;
   background-color: #cccccc;
-}
-.school .friend .friendWrap .imageWrap .friImg{
+} */
+.school .friend .friendWrap  .friImg{
   position: relative;
   top: 0;
-  height: 340rpx;
-  width: calc(100% - 50rpx);
-  margin: 20rpx;
-  border: 5rpx white solid;
+  height: 400rpx;
+  width: 100%;
+  /* width: calc(100% - 50rpx); */
+  /* margin: 20rpx; */
+  /* border: 5rpx white solid; */
+  border-radius: 10rpx;
 }
 .school .friend .friTitle{
   text-align: center;

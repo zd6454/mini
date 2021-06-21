@@ -5,33 +5,36 @@ Page({
    * 页面的初始数据
    */
   data: {
-    noticeList:[
-      {
-        title:'12345555555555555',
-        image:'',
-        isRead:false,
-        time:2020-30-12
-      },
-      {
-        title:'12345555555555555',
-        image:'',
-        isRead:true,
-        time:2020-30-12
-      },
-      {
-        title:'12345555555555555',
-        image:'',
-        isRead:false,
-        time:2020-30-12
-      },
-    ]
+    noticeList:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.getNotice()
+  },
 
+  getNotice(){
+    const that = this
+    wx.request({
+      url: 'http://duing.site:2333/notice/getAllUseNotices',
+      method: 'GET',
+      header: {},
+      credentials: 'omit',
+      success(res) {
+        console.log(res.data)
+        that.setData({noticeList:res.data})
+      }
+    })
+  },
+
+  handleNavTo(e){
+    const that = this
+    const  noticeId = e.currentTarget.dataset.noticeid
+    wx.navigateTo({
+      url: '../noticeDetail/index?noticeId='+noticeId,
+    })
   },
 
   /**
@@ -40,6 +43,8 @@ Page({
   onReady: function () {
 
   },
+
+
 
   /**
    * 生命周期函数--监听页面显示

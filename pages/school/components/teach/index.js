@@ -1,4 +1,4 @@
-// pages/index/components/undergraduate/index.js
+// pages/school/components/teach/index.js
 Page({
 
   /**

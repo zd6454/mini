@@ -1,1 +1,37 @@
-/* pages/school/index.wxss */
+page{
+  width: 95%;
+  margin: auto;
+}
+.video{
+  width: 100%;
+  height: 400rpx;
+  margin-bottom: 20rpx;
+}
+.boxWrap{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: flex-start;
+  width: 100%;
+}
+.boxWrap .wrap{
+  width: 48%;
+  height: 250rpx;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+}
+.boxWrap .wrap .boxImg{
+  width: 100%;
+  height: 200rpx;
+}
+.boxWrap .wrap .boxTxt{
+  margin-top: -140rpx;
+  color: white;
+  font-size: 38rpx;
+  font-weight: 600;
+  /* position: absolute; */
+  /* top: 100rpx; */
+  /* left: 50rpx; */
+}

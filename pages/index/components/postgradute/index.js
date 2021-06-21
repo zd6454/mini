@@ -1,18 +1,32 @@
-// pages/index/components/postgradute/index.js
+// pages/index/components/office/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    htmlData:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.getOffice()
+  },
 
+  getOffice(){
+    const that = this
+    wx.request({
+      url: 'http://duing.site:2333/information/getInforContent/GraduateEdu',
+      method: 'GET',
+      header: {},
+      credentials: 'omit',
+      success(res) {
+        console.log(res.data)
+        that.setData({htmlData:res.data})
+      }
+    })
   },
 
   /**
