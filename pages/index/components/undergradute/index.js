@@ -1,4 +1,6 @@
 // pages/index/components/office/index.js
+const app = getApp();
+const domainName = app.globalData.domainName;
 Page({
 
   /**
@@ -18,7 +20,7 @@ Page({
   getOffice(){
     const that = this
     wx.request({
-      url: 'http://duing.site:2333/information/getInforContent/UndergraduateEdu',
+      url: domainName+'/information/getInforContent/UndergraduateEdu',
       method: 'GET',
       header: {},
       credentials: 'omit',
