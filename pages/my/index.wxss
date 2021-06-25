@@ -11,6 +11,8 @@
   margin: 0rpx 20rpx;
   background-color: rgb(2, 68, 99);
   padding: 40rpx;
+  border-bottom-right-radius:150rpx;
+  border-bottom-left-radius:150rpx;
 }
 .avatar{
   align-items: center;

@@ -6,16 +6,16 @@ Page({
    */
   data: {
     tabs:[
-      {name:'发布论坛',icon:'../../icons/public.png',url:'./publishforum/index'},
+      {name:'留学流程',icon:'../../icons/public.png',url:'./abroadFlow/index'},
       {name:'我的留学',icon:'../../icons/abroad.png',url:''},
-      {name:'我的发布',icon:'../../icons/list.png',url:''},
+      {name:'论坛发布',icon:'../../icons/list.png',url:'./publishforum/index'},
       {name:'系统消息',icon:'../../icons/message.png',url:'./forum/index'},
     ],
      setting:[
        {name:'个人信息',url:'./info/index'},
        {name:'论坛消息',url:'./forum/index'},
+       {name:'我的发布',url:''},
        {name:'论坛草稿',url:'./publishforum/index'},
-       {name:'常见问题',url:'./question/index'},
        {name:'联系我们',url:''}
      ],
      login:false,
