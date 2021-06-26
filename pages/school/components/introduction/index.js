@@ -1,4 +1,6 @@
 // pages/school/components/introduction/index.js
+const app = getApp();
+const domainName = app.globalData.domainName;
 Page({
 
   /**
@@ -18,14 +20,15 @@ Page({
         image:'../../icons/first1.png',
         text:'管理与健康学院',
       },
-    ]
+    ],
+    htmlData:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      this.getCourseIntroduction();
   },
 
   /**
@@ -75,5 +78,18 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  getCourseIntroduction(){
+    const that = this
+      wx.request({
+        url: domainName+'/information/getInforContent/CourseIntroduction',
+        method: 'GET',
+        header: {},
+        credentials: 'omit',
+        success(res) {
+          console.log(res.data)
+          that.setData({htmlData:res.data})
+        }
+      })
   }
 })

@@ -1,4 +1,7 @@
 // pages/my/abroadFlow/index.js
+const app = getApp();
+const domainName = app.globalData.domainName;
+var WxParse = require('../../../wxParse/wxParse.js');
 Page({
 
   /**
@@ -11,8 +14,8 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad: function () {
+      this.getFlow();
   },
 
   /**
@@ -62,5 +65,19 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  } ,
+  getFlow(){
+    const that = this
+    wx.request({
+      url: domainName+'/information/getInforContent/OverseaStudy',
+      method: 'GET',
+      header: {},
+      credentials: 'omit',
+      success(res) {
+        console.log(res.data);
+        that.setData({content:res.data});
+        WxParse.wxParse('body', 'html', that.content, that, 0);
+      }
+    })
+  },
 })

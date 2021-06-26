@@ -25,8 +25,8 @@ Page({
       header: {},
       credentials: 'omit',
       success(res) {
-        console.log(res.data)
-        that.setData({htmlData:res.data})
+        console.log(res.data);
+        that.setData({htmlData:res.data});
       }
     })
   },

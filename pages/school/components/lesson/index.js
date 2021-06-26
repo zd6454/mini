@@ -1,18 +1,20 @@
 // pages/school/components/lesson/index.js
+const app = getApp();
+const domainName = app.globalData.domainName;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+      departments:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      this.getAllDepartments();
   },
 
   /**
@@ -62,5 +64,18 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  getAllDepartments(){
+    const that = this
+      wx.request({
+        url: domainName+'/department/getAllDepartments',
+        method: 'GET',
+        header: {},
+        credentials: 'omit',
+        success(res) {
+          console.log(res.data)
+          that.setData({departments:res.data})
+        }
+      })
   }
 })

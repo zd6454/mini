@@ -1,4 +1,6 @@
 // pages/school/index.js
+const app = getApp();
+const domainName = app.globalData.domainName;
 Page({
 
   /**
@@ -27,13 +29,14 @@ Page({
         path:'./components/photos/index'
       }
     ],
+    htmlData:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      this.getOverview();
   },
 
   /**
@@ -83,5 +86,19 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  getOverview(){
+    const that = this
+    wx.request({
+      url: domainName+'/information/getInforContent/SchoolOverview',
+      method: 'GET',
+      header: {},
+      credentials: 'omit',
+      success(res) {
+        console.log(res.data);
+        that.setData({htmlData:res.data});
+        //WxParse.wxParse('body', 'html', that.content, that, 0);
+      }
+    })
   }
 })

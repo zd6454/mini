@@ -1,2 +1,6 @@
 <!--pages/school/components/experience/index.wxml-->
 <text>pages/school/components/experience/index.wxml</text>
+<block>
+  <rich-text nodes="{{htmlData}}"></rich-text>
+  <view>{{htmlData}}</view>
+</block>
