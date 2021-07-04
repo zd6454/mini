@@ -29,7 +29,8 @@ Page({
         path:'./components/photos/index'
       }
     ],
-    htmlData:""
+    htmlData:"",
+    videoSrc:""
   },
 
   /**
@@ -37,6 +38,7 @@ Page({
    */
   onLoad: function (options) {
       this.getOverview();
+      this.getSchoolVideo();
   },
 
   /**
@@ -97,6 +99,20 @@ Page({
       success(res) {
         console.log(res.data);
         that.setData({htmlData:res.data});
+        //WxParse.wxParse('body', 'html', that.content, that, 0);
+      }
+    })
+  },
+  getSchoolVideo(){
+    const that = this
+    wx.request({
+      url: domainName+'/schoolVideo/getSchoolVideo',
+      method: 'GET',
+      header: {},
+      credentials: 'omit',
+      success(res) {
+        console.log(res.data);
+        that.setData({videoSrc:res.data});
         //WxParse.wxParse('body', 'html', that.content, that, 0);
       }
     })
