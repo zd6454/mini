@@ -1,14 +1,11 @@
-// pages/alumn/index.js
+// pages/my/abroad/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-     mateList:[
-       {img:'../../icons/abroad.png',name:'彼得多兰',info:'1234567685454545454545454545'},
-       {img:'../../icons/abroad.png',name:'彼得多兰',info:'1234567685454545454545454545'},
-     ]
+
   },
 
   /**
@@ -31,16 +28,7 @@ Page({
   onShow: function () {
 
   },
-  toEvents(){
-   wx.navigateTo({
-     url: './event/index',
-   })
-  },
-  toStruct(){
-    wx.navigateTo({
-      url: './struct/index',
-    })
-   },
+
   /**
    * 生命周期函数--监听页面隐藏
    */
