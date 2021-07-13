@@ -4,6 +4,8 @@
     "pages/school/index",
     "pages/exc/index",
     "pages/alumn/index",
+    "pages/alumn/event/index",
+    "pages/alumn/struct/index",
     "pages/alumn/alumnDetail/index",
     "pages/my/index",
     "pages/logs/logs",
@@ -17,6 +19,7 @@
     "pages/index/components/doctor/index",
     "pages/my/info/index",
     "pages/my/forum/index",
+    "pages/my/abroad/index",
     "pages/my/abroadFlow/index",
     "pages/my/publishforum/index",
     "pages/my/edit/index",
@@ -29,7 +32,7 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#CAE2FA",
     "navigationBarTitleText": "三一圣大卫",
     "navigationBarTextStyle": "black"
   },

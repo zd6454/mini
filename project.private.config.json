@@ -23,6 +23,12 @@
           "pathName": "pages/alumn/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/my/abroad/index",
+          "pathName": "pages/my/abroad/index",
+          "query": "",
+          "scene": null
         }
       ]
     }

@@ -1,0 +1,50 @@
+<!--pages/my/abroad/index.wxml-->
+<view>
+  <view class="head">
+      <view class="first">
+            <view>{{headContent.tip1}}</view>
+            <view>{{headContent.tip2}}</view>
+      </view>
+      <view class="tipList">
+        <mp-row >
+        <view class="setFor" wx:for="{{headContent.tip3}}" wx:key="item" data-item="{{item}}" wx:for-item="item">
+            <mp-col span="{{12}}">
+                <view class="textSet">
+                 <view>
+                  <image  class="star" src="../../../icons/start_five.png" />
+                 </view>
+                  <view>{{item}}</view>
+                </view>
+              </mp-col>
+        </view>
+      </mp-row>
+      </view>
+  </view>
+
+  <view class="body">
+      <view  wx:for="{{process}}" wx:key="item"   data-index="{{index}}" wx:for-item="item">
+         <view class="step">
+            <view class="setting">
+              <view class="type">{{item.type}}</view>
+              <view class="action">
+                 <view class="quan"></view>
+                 <view class="line"></view>
+              </view>
+              <view>
+                <view class="content">{{item.content}}</view>
+                <view class="putIn" wx:if="{{!item.isUpload}}">
+                     {{item.file}}
+                 </view>
+                 <view wx:else class="fileName">
+                   <view wx:if="{{item.type==='STEP1'||item.type==='STEP3'}}">
+                      {{item.fileName}}
+                   </view>
+                   <image wx:else class="iamgeSize"  src="{{item.url}}"  />
+                 </view>
+              </view>
+            </view>
+            <view class="upload" data-item="{{item}}" data-index="{{index}}" bindtap="upload">上传</view>
+         </view>
+      </view>
+  </view>
+</view>

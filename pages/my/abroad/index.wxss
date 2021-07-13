@@ -1,0 +1,93 @@
+/* pages/my/abroad/index.wxss */
+
+.head{
+  background: #024463;
+  margin: 40rpx;
+  border-radius: 12rpx;
+  box-shadow: 5rpx 4rpx 21rpx  gray;
+  padding-bottom: 17rpx;
+}
+.first{
+  padding-top: 20rpx;
+  text-align: center;
+  color:white;
+  font-size: 30rpx;
+}
+.star{
+  width:50rpx;
+  height:50rpx;
+}
+
+.setFor{
+ margin-left: 20rpx;
+}
+.textSet{
+  color:white;
+  display: flex;
+  font-size: 30rpx;
+ 
+}
+.body{
+  margin:40rpx;
+
+}
+.step{
+  display: flex;
+  justify-content: space-between;
+}
+.type{
+  font-weight: bold;
+}
+.setting{
+  display: flex;
+  margin:0;
+  padding: 0;
+}
+.action{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+.quan{
+  width: 20rpx;
+  height: 20rpx;
+  border: 8rpx solid #024463;
+  border-radius:50% ;
+}
+.line{
+  margin-right: 16rpx;
+  height:150rpx;
+  border-right:8rpx solid #024463;
+}
+
+.content{
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.upload{
+  background:#024463 ;
+  color:white;
+  height:50rpx;
+  width: 120rpx;
+  text-align: center;
+  margin-top: 60rpx;
+  font-size: 30rpx;
+  border-radius: 15rpx;
+}
+.putIn{
+ display: flex;
+  font-size: 30rpx;
+  color:#A08B70;
+  height:100rpx;
+  width:250rpx;
+  border: 5rpx dashed gray;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fileName{
+  font-size: 30rpx;
+}
+.iamgeSize{
+  height:100rpx;
+  width:250rpx;
+}

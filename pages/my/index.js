@@ -7,7 +7,7 @@ Page({
   data: {
     tabs:[
       {name:'留学流程',icon:'../../icons/public.png',url:'./abroadFlow/index'},
-      {name:'我的留学',icon:'../../icons/abroad.png',url:''},
+      {name:'我的留学',icon:'../../icons/abroad.png',url:'./abroad/index'},
       {name:'论坛发布',icon:'../../icons/list.png',url:'./publishforum/index'},
       {name:'系统消息',icon:'../../icons/message.png',url:'./forum/index'},
     ],
