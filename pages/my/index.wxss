@@ -33,10 +33,13 @@
 }
 .base{
   display: flex;
-  margin: 20rpx;
+  margin: 10rpx;
 }
 .level{
   margin-left: 20rpx;
+}
+.school{
+  margin-bottom: 10rpx;
 }
 .body{
   background-color: #a88b61;
