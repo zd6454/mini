@@ -1,5 +1,4 @@
 <!--pages/alumn/event/index.wxml-->
-<text>pages/alumn/event/index.wxml</text>
 <block>
   <rich-text nodes="{{htmlData}}"></rich-text>
   <view>{{htmlData}}</view>
