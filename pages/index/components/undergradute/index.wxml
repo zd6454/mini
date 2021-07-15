@@ -1,3 +1,4 @@
 <block>
   <rich-text nodes="{{htmlData}}"></rich-text>
+  <view>{{htmlData}}</view>
 </block>

@@ -1,2 +1,6 @@
 <!--pages/alumn/struct/index.wxml-->
 <text>pages/alumn/struct/index.wxml</text>
+<block>
+  <rich-text nodes="{{htmlData}}"></rich-text>
+  <view>{{htmlData}}</view>
+</block>

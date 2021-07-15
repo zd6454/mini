@@ -1,7 +1,7 @@
 // index.js
 // 获取应用实例
-const app = getApp()
-
+const app = getApp();
+const domainName = app.globalData.domainName;
 Page({
   data: {
     motto: 'Hello World',
@@ -93,7 +93,7 @@ Page({
   getSwiper(){
     const that = this
     wx.request({
-      url: 'http://duing.site:2333/banner/getAllUseBanners',
+      url: domainName+'/banner/getAllUseBanners',
       method: 'GET',
       header: {},
       credentials: 'omit',
@@ -106,7 +106,7 @@ Page({
   getNotice(){
     const that = this
     wx.request({
-      url: 'http://duing.site:2333/notice/overheadNotice',
+      url: domainName+'notice/overheadNotice',
       method: 'GET',
       header: {},
       data:{

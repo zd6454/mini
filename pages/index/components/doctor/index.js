@@ -1,4 +1,6 @@
 // pages/index/components/office/index.js
+const app = getApp();
+const domainName = app.globalData.domainName;
 Page({
 
   /**
@@ -12,18 +14,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getOffice()
+    this.getOffice();
+    console.log(this.htmlData);
   },
 
   getOffice(){
     const that = this
     wx.request({
-      url: 'http://duing.site:2333/information/getInforContent/DoctorEdu',
+      url: domainName+'/information/getInforContent/DoctorEdu',
       method: 'GET',
       header: {},
       credentials: 'omit',
       success(res) {
-        console.log(res.data)
+        console.log(res.data);
         that.setData({htmlData:res.data})
       }
     })

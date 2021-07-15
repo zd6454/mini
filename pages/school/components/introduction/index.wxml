@@ -6,3 +6,7 @@
     <view class="text"> {{item.text}}</view>
   </view>
 </view>
+<block>
+  <rich-text nodes="{{htmlData}}"></rich-text>
+  <view>{{htmlData}}</view>
+</block>

@@ -1,4 +1,6 @@
 // pages/alumn/index.js
+const app = getApp();
+const domainName = app.globalData.domainName;
 Page({
 
   /**
@@ -8,14 +10,19 @@ Page({
      mateList:[
        {img:'../../icons/abroad.png',name:'彼得多兰',info:'1234567685454545454545454545'},
        {img:'../../icons/abroad.png',name:'彼得多兰',info:'1234567685454545454545454545'},
-     ]
+     ],
+     htmlData1:"",
+     htmlData2:"",
+     htmlData3:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      this.getAgent1();
+      this.getAgent2();
+      this.getAgent3()
   },
 
   /**
@@ -74,5 +81,47 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  
+  getAgent1(){
+    const that = this
+      wx.request({
+        url: domainName+'/information/getInforContent/AgentRight1',
+        method: 'GET',
+        header: {},
+        credentials: 'omit',
+        success(res) {
+          console.log(res.data)
+          that.setData({htmlData1:res.data})
+        }
+      })
+  },
+
+  getAgent2(){
+    const that = this
+      wx.request({
+        url: domainName+'/information/getInforContent/AgentRight2',
+        method: 'GET',
+        header: {},
+        credentials: 'omit',
+        success(res) {
+          console.log(res.data)
+          that.setData({htmlData2:res.data})
+        }
+      })
+  },
+
+  getAgent3(){
+    const that = this
+      wx.request({
+        url: domainName+'/information/getInforContent/AgentRight3',
+        method: 'GET',
+        header: {},
+        credentials: 'omit',
+        success(res) {
+          console.log(res.data)
+          that.setData({htmlData3:res.data})
+        }
+      })
   }
 })

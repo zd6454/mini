@@ -1,18 +1,20 @@
 // pages/alumn/event/index.js
+const app = getApp();
+const domainName = app.globalData.domainName;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    htmlData:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      this.getEvent();
   },
 
   /**
@@ -62,5 +64,19 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  getEvent(){
+    const that = this
+      wx.request({
+        url: domainName+'/information/getInforContent/SchoolmateActivities',
+        method: 'GET',
+        header: {},
+        credentials: 'omit',
+        success(res) {
+          console.log(res.data)
+          that.setData({htmlData:res.data})
+        }
+      })
   }
 })

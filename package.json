@@ -6,6 +6,7 @@
   "dependencies": {
     "@miniprogram-component-plus/col": "^1.0.0",
     "@miniprogram-component-plus/row": "^1.0.0",
+    "docxtemplater": "^3.22.3",
     "weui-miniprogram": "^1.0.8"
   },
   "devDependencies": {},

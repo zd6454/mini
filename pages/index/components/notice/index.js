@@ -1,4 +1,6 @@
 // pages/index/components/notice/index.js
+const app = getApp();
+const domainName = app.globalData.domainName;
 Page({
 
   /**
@@ -18,7 +20,7 @@ Page({
   getNotice(){
     const that = this
     wx.request({
-      url: 'http://duing.site:2333/notice/getAllUseNotices',
+      url: domainName+'/notice/getAllUseNotices',
       method: 'GET',
       header: {},
       credentials: 'omit',

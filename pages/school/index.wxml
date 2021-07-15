@@ -1,4 +1,4 @@
-<video src="" loop vslide-gesture show-mute-btn enable-play-gesture object-fit="contain" class="video" autoplay></video>
+<video src="{{videoSrc}}" loop vslide-gesture show-mute-btn enable-play-gesture object-fit="contain" class="video" autoplay></video>
 <view class="boxWrap" >
   <view class="wrap" wx:for="{{schoolList}}">
     <image src="{{item.image}}" class="boxImg"></image>
@@ -6,4 +6,6 @@
   </view>
 </view>
 <view>学校概况</view>
-
+<block>
+  <rich-text nodes="{{htmlData}}"></rich-text>
+</block>
