@@ -1,2 +1,8 @@
 <!--pages/school/components/lesson/index.wxml-->
-<text>pages/school/components/lesson/index.wxml</text>
+<block>
+  <view wx:if="{{htmlData}}">
+  <rich-text nodes="{{htmlData}}"></rich-text>
+  <view>{{htmlData}}</view>
+</view>
+<view class="null" wx:else>请等待管理员发布。</view>
+</block>

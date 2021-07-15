@@ -99,7 +99,6 @@ Page({
       success(res) {
         console.log(res.data);
         that.setData({htmlData:res.data});
-        //WxParse.wxParse('body', 'html', that.content, that, 0);
       }
     })
   },

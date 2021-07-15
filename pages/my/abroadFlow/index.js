@@ -1,14 +1,13 @@
 // pages/my/abroadFlow/index.js
 const app = getApp();
 const domainName = app.globalData.domainName;
-var WxParse = require('../../../wxParse/wxParse.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      content:''
+      htmlData:''
   },
  
   /**
@@ -75,8 +74,7 @@ Page({
       credentials: 'omit',
       success(res) {
         console.log(res.data);
-        that.setData({content:res.data});
-        WxParse.wxParse('body', 'html', that.content, that, 0);
+        that.setData({htmlData:res.data});
       }
     })
   },

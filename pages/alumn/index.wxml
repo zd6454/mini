@@ -1,8 +1,11 @@
 <!--pages/alumn/index.wxml-->
 <view class="container">
+  <view wx:if="{{htmlData1 || htmlData2 || htmlData3}}">
   <rich-text nodes="{{htmlData1}}"></rich-text>
   <rich-text nodes="{{htmlData2}}"></rich-text>
   <rich-text nodes="{{htmlData3}}"></rich-text>
+  </view>
+  <view wx:else class="null">请等待管理员发布。</view>
   <view class="box" bindtap="toEvents">
   <view class="event">校友会活动</view>
   <image class="img" src="../../icons/alumn1.png"></image>

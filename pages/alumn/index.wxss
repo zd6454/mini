@@ -23,3 +23,8 @@
   width:185rpx;
   border-bottom: 7rpx solid #a88b61;
 }
+.null{
+  position: relative;
+  left: 13%;
+  color: gray;
+}

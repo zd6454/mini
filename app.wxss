@@ -11,3 +11,11 @@
   box-sizing: border-box;
   background-color: rgb(240, 242, 245);
 } 
+
+.null{
+  position: absolute;
+  left: 45%;
+  top: 30%;
+  transform: translate(-30%,-40%);
+  color: gray;
+}
