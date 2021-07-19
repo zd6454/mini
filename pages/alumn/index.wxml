@@ -8,15 +8,17 @@
   <view wx:else class="null">请等待管理员发布。</view>
   <view class="box" bindtap="toEvents">
   <view class="event">校友会活动</view>
-  <image class="img" src="../../icons/alumn1.png"></image>
+  <image class="img" src="{{Img}}"></image>
   
   </view>
   <view class="box" bindtap="toStruct" >
     <view class="event">校友会架构</view>
-    <image class="img" src="../../icons/alumn1.png"></image>
+    <image class="img" src="{{Img}}"></image>
   </view>
   <view class="mate">
    <view class="mateTitle">荣誉校友</view>
+  <view wx:if="mateList != null">
    <matelist list="{{mateList}}" />
+   </view>
   </view>
 </view>

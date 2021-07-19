@@ -13,7 +13,8 @@ Page({
      ],
      htmlData1:"",
      htmlData2:"",
-     htmlData3:""
+     htmlData3:"",
+     Img:domainName+"/saveFiles/images/微信图片_20210511164456.jpg",
   },
 
   /**
@@ -22,7 +23,9 @@ Page({
   onLoad: function (options) {
       this.getAgent1();
       this.getAgent2();
-      this.getAgent3()
+      this.getAgent3();
+      this.getImage();
+      //this.getAllSchoolmates();
   },
 
   /**
@@ -121,6 +124,20 @@ Page({
         success(res) {
           console.log(res.data)
           that.setData({htmlData3:res.data})
+        }
+      })
+  },
+
+  getAllSchoolmates(){
+    const that = this
+      wx.request({
+        url: domainName+'/schoolmate/getAllSchoolmates',
+        method: 'GET',
+        header: {},
+        credentials: 'omit',
+        success(res) {
+          console.log(res.data)
+          that.setData({mateList:res.data})
         }
       })
   }
