@@ -15,6 +15,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    domainName: 'http://duing.site:2333'       //后端接口域名地址
+    domainName: 'http://1.116.77.118:2333'       //后端接口域名地址
   }
 })
