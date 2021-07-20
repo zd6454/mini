@@ -26,14 +26,14 @@
   /*margin-left:25%;*/
   font-size: 36rpx;
   width:185rpx;
-  border-bottom: 7rpx solid #a88b61;
+  border-bottom: 8rpx solid #a88b61;
   margin-bottom: 3%;
 }
 .activityTitle{
   /*margin-left:25%;*/
   font-size: 36rpx;
   width:185rpx;
-  border-bottom: 7rpx solid #a88b61;
+  border-bottom: 8rpx solid #a88b61;
   margin-bottom: 3%;
 }
 .rewardTitle{
@@ -48,14 +48,14 @@
 }
 .line{
   width: 185rpx;
-  height: 5rpx;
+  height: 8rpx;
   background-color: #a68c63;
   margin-bottom: 3%;
 }
 .line1{
   margin-left: 37%;
   width: 185rpx;
-  height: 5rpx;
+  height: 8rpx;
   background-color: #a68c63;
   margin-bottom: 3%;
 }

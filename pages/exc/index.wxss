@@ -64,7 +64,7 @@ page{
   display: flex;
   flex-direction: row;
   background-color: rgb(15, 91, 153);
-  box-shadow: 0 5rpx 10rpx 10rpx #e7e7e7;
+  box-shadow:  3rpx 9rpx 9rpx gray;
   margin-top: 20rpx;
 }
 
@@ -78,9 +78,9 @@ page{
 .exc .activity .actImgWrap .actImg{
   position: relative;
   top: 0;
-  height: 150rpx;
-  width: 150rpx;
-  margin: 15rpx;
+  height: 179rpx;
+  width: 176rpx;
+  /* margin: 15rpx; */
   border: 2rpx white solid;
 }
 .exc .activity .txtWrap{
