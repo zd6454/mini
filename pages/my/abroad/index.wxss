@@ -91,3 +91,6 @@
   height:100rpx;
   width:250rpx;
 }
+view{
+  overflow: inherit;
+}

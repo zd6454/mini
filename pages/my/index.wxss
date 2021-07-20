@@ -27,6 +27,7 @@
 .info{
   color: #ffffff;
   font-size: 25rpx;
+  margin-left: 20rpx;
 }
 .name{
   font-size: 45rpx;
@@ -81,7 +82,25 @@
   font-weight: bold;
 }
 .login{
-  margin:30rpx;
+  margin-top: 15rpx;
+  margin-left: 30rpx;
+}
+button[size='mini']{
+  background-color: #5795D0;
+  width:300rpx !important;
+  font-size:34rpx !important;
+  color:white;
+}
+view {
+  overflow: hidden;
+}
+.logintip{
+  font-size: 36rpx;
+  color: white;
+  font-weight: bold;
+}
+.getuser2{
+  background-color: #95b2ce;
 }
 .loginOut{
   color:rgb(2, 68, 99);

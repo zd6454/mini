@@ -1,0 +1,16 @@
+<!--pages/my/addinfo/index.wxml-->
+<view class="box">
+     <view class="Hd">{{title}}</view>
+     <view class="info">
+        <form catchsubmit="formSubmit" catchreset="formReset">
+             <view class="inline" wx:for="{{infoName}}" wx:key="item"  wx:for-item="item" wx:for-index="index" >
+                <view class="title">{{item.name}}</view>
+                <input name="{{item.type}}" class="infoinput"/>
+             </view>
+             <view class="btn-area">
+                <button  size="mini" type="primary" class="comfirm" hover-class="comfirm2"  formType="submit">确认</button>
+                <button size="mini" bindtap="omitto">跳过</button>
+            </view>
+        </form>
+     </view>
+</view>

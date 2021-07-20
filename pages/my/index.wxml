@@ -13,7 +13,8 @@
       <view class="school">武汉理工大学</view>
     </view>
     <view wx:else class="login">
-      <button size="mini"  bindtap="getuser">点击登录</button>
+      <view class="logintip">您好！请登录</view>
+      <button size="mini"  bindtap="getuser"  hover-class="getuser2">点击登录</button>
     </view>
   </view>
   <view class="body">
