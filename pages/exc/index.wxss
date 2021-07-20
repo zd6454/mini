@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* pages/exc/index.wxss */
 page{
   background-color: #f9f9f9;
@@ -49,7 +48,7 @@ page{
   font-weight: 400;
   position: absolute;
   bottom: 10rpx;
-=======
+}
 /* pages/exc/index.wxss */
 page{
   background-color: #f9f9f9;
@@ -100,5 +99,4 @@ page{
   font-weight: 400;
   position: absolute;
   bottom: 10rpx;
->>>>>>> 871479ec9c4bfd4e72cdb526fcfacd219d0ae7aa
 }
