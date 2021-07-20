@@ -24,8 +24,7 @@ Page({
       this.getAgent1();
       this.getAgent2();
       this.getAgent3();
-      this.getImage();
-      //this.getAllSchoolmates();
+      this.getAllSchoolmates();
   },
 
   /**
@@ -136,8 +135,10 @@ Page({
         header: {},
         credentials: 'omit',
         success(res) {
-          console.log(res.data)
-          that.setData({mateList:res.data})
+          console.log(res.data);
+          if(res.data == []){
+            that.setData({mateList:res.data})
+          }
         }
       })
   }
