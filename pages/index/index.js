@@ -14,22 +14,22 @@ Page({
     schoolList:[
       {
         text:'置顶通知',
-        icon:'../../icons/first1.png',
+        icon:domainName+'/saveFiles/images/通知公告.png',
         path:'./components/notice/index'
       },
       {
         text:'关于UWTSD',
-        icon:'../../icons/first1.png',
+        icon:domainName+'/saveFiles/images/博士帽.png',
         path:'./components/banner/index'
       },
       {
         text:'东亚办公室',
-        icon:'../../icons/first1.png',
+        icon:domainName+'/saveFiles/images/打印机,纸,办公室,打印,文档,线性,扁平,填充,单色,简约,圆润.png',
         path:'./components/office/index'
       },
       {
         text:'校园相册',
-        icon:'../../icons/first1.png',
+        icon:domainName+'/saveFiles/images/相册.png',
         path:'./components/photos/index'
       }
     ],

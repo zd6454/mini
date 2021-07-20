@@ -49,3 +49,54 @@ page{
   position: absolute;
   bottom: 10rpx;
 }
+/* pages/exc/index.wxss */
+page{
+  background-color: #f9f9f9;
+}
+.exc{
+  margin-top: 100rpx;
+  margin: auto;
+  width: 95%;
+  margin-top: 20rpx;
+}
+.exc .activity{
+  height: 180rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(15, 91, 153);
+  box-shadow: 0 5rpx 10rpx 10rpx #e7e7e7;
+  margin-top: 20rpx;
+}
+
+.exc .activity .actImgWrap{
+  height: 180rpx;
+  width: 180rpx;
+  /* box-shadow: #b8b7b7 10rpx 0rpx 8rpx -5rpx; */
+  background-color: #cccccc;
+  margin: 0rpx;
+}
+.exc .activity .actImgWrap .actImg{
+  position: relative;
+  top: 0;
+  height: 150rpx;
+  width: 150rpx;
+  margin: 15rpx;
+  border: 2rpx white solid;
+}
+.exc .activity .txtWrap{
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+  width: 65%;
+  position: relative;
+  color: rgb(230, 227, 227);
+}
+.exc .activity .txtWrap .title{
+  font-weight: 500;
+  font-size: 31rpx;
+}
+.exc .activity .txtWrap .time{
+  font-size: 26rpx;
+  font-weight: 400;
+  position: absolute;
+  bottom: 10rpx;
+}

@@ -1,22 +1,29 @@
 <!--pages/alumn/index.wxml-->
 <view class="container">
-  <view wx:if="{{htmlData1 || htmlData2 || htmlData3}}">
+  <view class="structTitle">校友会架构</view>
+  <view wx:if="{{htmlData1}}">
   <rich-text nodes="{{htmlData1}}"></rich-text>
+  </view>
+  <view wx:else class="null">请等待管理员发布。</view>
+
+  <view class="activityTitle">校友会活动</view>
+  <view wx:if="{{htmlData2}}">
   <rich-text nodes="{{htmlData2}}"></rich-text>
+  </view>
+  <view wx:else class="null">请等待管理员发布。</view>
+
+  <view class="rewardTitle">校友推荐奖励</view>
+  <view class = "line"></view>
+  <view wx:if="{{htmlData3}}">
   <rich-text nodes="{{htmlData3}}"></rich-text>
   </view>
   <view wx:else class="null">请等待管理员发布。</view>
-  <view class="box" bindtap="toEvents">
-  <view class="event">校友会活动</view>
-  <image class="img" src="../../icons/alumn1.png"></image>
-  
-  </view>
-  <view class="box" bindtap="toStruct" >
-    <view class="event">校友会架构</view>
-    <image class="img" src="../../icons/alumn1.png"></image>
-  </view>
+
   <view class="mate">
    <view class="mateTitle">荣誉校友</view>
+   <view class="line1"></view>
+  <view wx:if="mateList != null">
    <matelist list="{{mateList}}" />
+   </view>
   </view>
 </view>

@@ -10,22 +10,22 @@ Page({
     schoolList:[
       {
         text:'教学实力',
-        image:'../../icons/first1.png',
+        image:domainName+'/saveFiles/images/微信图片_20210512113244.png',
         path:'./components/notice/index'
       },
       {
         text:'学部简介',
-        image:'../../icons/first1.png',
+        image:domainName+'/saveFiles/images/微信图片_20210512113554.jpg',
         path:'./components/banner/index'
       },
       {
         text:'学习体验',
-        image:'../../icons/first1.png',
+        image:domainName+'/saveFiles/images/R6a4a35499754f599e5ab10fff057d020.jpg',
         path:'./components/office/index'
       },
       {
         text:'课程介绍',
-        image:'../../icons/first1.png',
+        image:domainName+'/saveFiles/images/微信图片_20210511163947.jpg',
         path:'./components/photos/index'
       }
     ],

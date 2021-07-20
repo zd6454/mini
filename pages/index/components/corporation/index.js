@@ -1,4 +1,6 @@
 // pages/index/components/corporation/index.js
+const app = getApp();
+const domainName = app.globalData.domainName;
 Page({
 
   /**
@@ -18,7 +20,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      this.getCooperation();
   },
 
   /**
@@ -68,5 +70,19 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  getCooperation(){
+    const that = this
+    wx.request({
+      url: domainName+'/interCooperation/getAllInterCoopers',
+      method: 'GET',
+      header: {},
+      credentials: 'omit',
+      success(res) {
+        console.log(res.data);
+        that.setData({corporationList:res.data})
+      }
+    })
   }
 })

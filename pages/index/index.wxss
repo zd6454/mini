@@ -80,12 +80,13 @@ page{
   height: 100%;
   font-size: 32rpx;
   line-height: 170rpx;
-  text-align: center;
+  margin-left: 4%;
 }
 .school .boxWrap .box .boxImg{
-  width: 120rpx;
-  height: 120rpx;
-  margin: 25rpx 5rpx;
+  width: 140rpx;
+  height: 105rpx;
+  margin-right: 15px;
+  margin-top: 16px;
 }
 .school .leason{
   height: 180rpx;
