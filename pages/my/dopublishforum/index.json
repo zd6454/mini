@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "forumList":"../components/formList/index"
+  }
+}

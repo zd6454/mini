@@ -1,1 +1,126 @@
-/* pages/exc/first/first.wxss */
+.page{
+  background: #ecf1f1;
+  width: 100vw;
+  height:100vh;
+}
+.body{
+  width: 95%;
+  margin-top: 100rpx;
+  margin: auto;
+  margin-bottom: 20rpx;
+}
+.top{
+  margin-top: 20rpx;
+}
+.title{
+  font-weight: 1000;
+  font-size: 33rpx;
+  padding-top: 20rpx;
+  padding-bottom: 10rpx;
+}
+.author{
+  font-weight: 500;
+  font-size: 30rpx;
+}
+.ImgWrap{
+  height: 300rpx;
+  width: 95%;
+  margin: 0rpx;
+}
+.txt{
+  font-weight: 500;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.reply{
+  margin-top: 20rpx;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 20rpx;
+}
+.reply_item{
+  height: 40rpx;
+  display: flex;
+  flex-direction: row;
+}
+.item_txt{
+  width: 10%;
+  font-weight: 500;
+  font-size: 30rpx;
+}
+.reply_time{
+  font-weight: 500;
+  font-size: 30rpx;
+}
+
+.head{
+  display: flex;
+  height: 120rpx;
+  margin-top: 20rpx;
+  margin-right: 80rpx;
+  justify-content: space-between;
+}
+.avatar{
+  align-items: center;
+}
+.imageset{
+  border-radius: 50%;
+  background-color: darkgray;
+  width:110rpx;
+  height:110rpx;
+}
+.head textarea{
+  width:480rpx;
+  height:110rpx;
+  border: 2rpx solid #b2c1c2;
+  font-weight: 400;
+  font-size: 32rpx;
+}
+
+.foot{
+  margin: auto;
+  margin-top: 20rpx;
+}
+.foot .reply_a{
+  height: 110rpx;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+}
+
+.replyWrap{
+  margin-left: 45rpx;
+  width: 50%;
+  position: relative;
+  color: black;
+}
+.replyWrap .reply_author{
+  font-weight: 550;
+  font-size: 30rpx;
+}
+.replyWrap .reply_txt{
+  font-weight: 400;
+  font-size: 29rpx;
+  position: relative;
+}
+.interaction{
+  height: 100%;
+  width: 90rpx;
+  font-size: 25rpx;
+  text-align: center;
+}
+.Img{
+  width:40rpx;
+  height:40rpx;
+  margin-top: 30rpx;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+}
+.foot .reply_b{
+  height: 110rpx;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+  margin-left: 20%;
+}

@@ -29,6 +29,12 @@
           "pathName": "pages/my/abroad/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/my/addinfo/index",
+          "pathName": "pages/my/addinfo/index",
+          "query": "",
+          "scene": null
         }
       ]
     }

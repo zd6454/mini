@@ -1,28 +1,11 @@
-// pages/index/components/photos/index.js
+// pages/my/dopublishforum/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    photoList:[
-     [
-        '../../../../icons/22.png',
-        '../../../../icons/22.png',
-        '../../../../icons/22.png',
-        '../../../../icons/22.png',
-        '../../../../icons/22.png',
-        '../../../../icons/22.png',
-     ],
-     [
-      '../../../../icons/22.png',
-      '../../../../icons/22.png',
-      '../../../../icons/22.png',
-      '../../../../icons/22.png',
-      '../../../../icons/22.png',
-      '../../../../icons/22.png',
-   ],
-    ]
+    url:''
   },
 
   /**
@@ -32,25 +15,11 @@ Page({
 
   },
 
-  handlePreview(e){
-    const  src = e.currentTarget.dataset.src
-    const {photoList} = this.data
-    let urls = []
-    photoList.map(item=>{
-      urls=[...urls,...item]
-    })
-    // console.log([...photoList],urls)
-    wx.previewImage({
-      urls: urls,
-      current:src
-    })
-  },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**

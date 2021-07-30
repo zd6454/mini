@@ -1,0 +1,4 @@
+<!--pages/my/dopublishforum/index.wxml-->
+<view>
+  <forumList url="{{url}}" ></forumList>
+</view>

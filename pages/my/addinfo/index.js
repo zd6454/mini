@@ -1,30 +1,34 @@
-// pages/index/components/photos/index.js
+// pages/my/addinfo/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    photoList:[
-     [
-        '../../../../icons/22.png',
-        '../../../../icons/22.png',
-        '../../../../icons/22.png',
-        '../../../../icons/22.png',
-        '../../../../icons/22.png',
-        '../../../../icons/22.png',
-     ],
-     [
-      '../../../../icons/22.png',
-      '../../../../icons/22.png',
-      '../../../../icons/22.png',
-      '../../../../icons/22.png',
-      '../../../../icons/22.png',
-      '../../../../icons/22.png',
-   ],
-    ]
+       info:{
+         name:'',
+         phone:'',
+         college:'',
+         academy:'',
+         class:'',
+       },
+      infoName:[
+       { name:"姓名:",type:"name"},
+       {name:'电话:',type:"phone"},
+       {name:"大学:",type:"college"},
+       {name:"学院:",type:"academy"},
+       {name:"班级:",type:"class"},
+      ],
+      title:"同学您好，为了给您提供方便，请你完善您的个人信息"
   },
-
+  formSubmit(value){
+   console.log(value)
+  },
+  omitto(){
+   wx.navigateBack({
+    delta: 1
+   })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -32,25 +36,11 @@ Page({
 
   },
 
-  handlePreview(e){
-    const  src = e.currentTarget.dataset.src
-    const {photoList} = this.data
-    let urls = []
-    photoList.map(item=>{
-      urls=[...urls,...item]
-    })
-    // console.log([...photoList],urls)
-    wx.previewImage({
-      urls: urls,
-      current:src
-    })
-  },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**

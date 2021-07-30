@@ -1,0 +1,33 @@
+/* pages/my/addinfo/index.wxss */
+
+.box{
+  margin: 20rpx;
+}
+.Hd{
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.title{
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.inline{
+  margin: 30rpx 0rpx;
+  display: flex;
+  border-bottom: 6rpx solid rgb(2, 68, 99);
+}
+.infoinput{
+  margin-left: 20rpx;
+}
+.btn-area{
+  margin-top:130rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.comfirm{
+  background:rgb(15, 91, 153) !important ;
+}
+.comfirm2{
+  background:rgb(84, 113, 138) !important ;
+}

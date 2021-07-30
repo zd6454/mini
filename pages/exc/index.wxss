@@ -6,15 +6,15 @@ page{
   margin-top: 100rpx;
   margin: auto;
   width: 95%;
-  margin-top: 20rpx;
+  margin-top: 10rpx;
 }
 .exc .activity{
   height: 180rpx;
   display: flex;
   flex-direction: row;
   background-color: rgb(15, 91, 153);
-  box-shadow: 0 5rpx 10rpx 10rpx #e7e7e7;
-  margin-top: 20rpx;
+  margin: 15rpx 0rpx;
+  box-shadow:  9rpx 6rpx 3rpx gray;
 }
 
 .exc .activity .actImgWrap{
@@ -27,15 +27,15 @@ page{
 .exc .activity .actImgWrap .actImg{
   position: relative;
   top: 0;
-  height: 150rpx;
-  width: 150rpx;
-  margin: 15rpx;
+  height: 179rpx;
+  width: 176rpx;
+  /* margin: 15rpx; */
   border: 2rpx white solid;
 }
 .exc .activity .txtWrap{
   margin-left: 20rpx;
   margin-top: 10rpx;
-  width: 65%;
+  width:73%;
   position: relative;
   color: rgb(230, 227, 227);
 }
@@ -64,7 +64,7 @@ page{
   display: flex;
   flex-direction: row;
   background-color: rgb(15, 91, 153);
-  box-shadow: 0 5rpx 10rpx 10rpx #e7e7e7;
+  box-shadow:  3rpx 9rpx 9rpx gray;
   margin-top: 20rpx;
 }
 
@@ -78,9 +78,9 @@ page{
 .exc .activity .actImgWrap .actImg{
   position: relative;
   top: 0;
-  height: 150rpx;
-  width: 150rpx;
-  margin: 15rpx;
+  height: 179rpx;
+  width: 176rpx;
+  /* margin: 15rpx; */
   border: 2rpx white solid;
 }
 .exc .activity .txtWrap{
