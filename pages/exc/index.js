@@ -1,4 +1,6 @@
 // pages/exc/index.js
+const app = getApp();
+const domainName = app.globalData.domainName;
 Page({
 
   /**
@@ -49,6 +51,7 @@ Page({
         url:'./first/index'
       },
     ],
+    test: []
   },
 
   todetail(e){
@@ -62,7 +65,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      this.getAllUserForums();
   },
 
   /**
@@ -112,5 +115,19 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  getAllUserForums(){
+    const that = this
+    wx.request({
+      url: domainName+'/forum/getAllUseForums',
+      method: 'GET',
+      header: {},
+      credentials: 'omit',
+      success(res) {
+        console.log(res.data)
+        that.setData({test:res.data})
+      }
+    })
   }
 })
