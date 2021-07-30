@@ -51,15 +51,18 @@ Page({
         url:'./first/index'
       },
     ],
+    path: './first/index',
     test: [],
     detail: ""
   },
 
   todetail(e){
+    const that = this;
     console.log(e)
+    const id = e.currentTarget.dataset.set.forumId;
     const path = e.currentTarget.dataset.path;
     wx.navigateTo({
-      url: path,
+      url: path + "?forumId=" + id,
     })
     },
   /**

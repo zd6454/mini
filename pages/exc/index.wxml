@@ -2,7 +2,7 @@
 <view class="page">
 <view class="exc">
 <view wx:if="{{activityList != []}}">
-  <div class="activity" wx:for="{{activityList}}" wx:key="item" data-set="{{item}}" wx:for-item="item" wx:for-index="index" bindtap="todetail">
+  <div class="activity" wx:for="{{activityList}}" wx:key="item" data-set="{{item}}" wx:for-item="item" data-path="{{path}}" wx:for-index="index" bindtap="todetail">
     <view class="actImgWrap">
       <image src="{{item.image}}" class="actImg"></image>
     </view>

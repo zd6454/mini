@@ -141,7 +141,13 @@ Page({
     })
   },
   handlePreview(e){
-    const  src = e.currentTarget.dataset.src
+    console.log(e.currentTarget.dataset.src)
+    var path = './components/banner/index';
+    var id = e.currentTarget.dataset.src.bannerId;
+    wx.navigateTo({
+      url: path + "?id=" + id,
+    })
+    /*const  src = e.currentTarget.dataset.src
     let urls = []
     this.data.swiperList.map(item=>{
       urls=[...urls,item.imgUrl]
@@ -149,8 +155,9 @@ Page({
     wx.previewImage({
       urls,
       current:src
-    })
+    })*/
   },
+
   handleSchool(e){
     const  path = e.currentTarget.dataset.path
     if(path){

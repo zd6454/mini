@@ -1,18 +1,21 @@
 // pages/index/components/banner/index.js
+const app = getApp();
+const domainName = app.globalData.domainName;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+      bannerDetail:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      console.log(options);
+      this.getBanner(options.id);
   },
 
   /**
@@ -62,5 +65,22 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  getBanner(id){
+    const that = this
+    wx.request({
+      url: domainName+'/banner/getBanner',
+      method: 'GET',
+      header: {},
+      data:{
+        bannerId:id
+      },
+      credentials: 'omit',
+      success(res) {
+        console.log(res.data)
+        that.setData({bannerDetail:res.data})
+      }
+    })
   }
 })

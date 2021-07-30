@@ -1,6 +1,7 @@
 var app = getApp();
 var cdata;
 var ldata;
+const domainName = app.globalData.domainName;
 Page({
 
   /**
@@ -25,7 +26,7 @@ Page({
     {icon:'http://1.116.77.118:2333/saveFiles/images/点赞.png', number:ldata},
     ],
     reply_time: '1',
-    
+    test:[]
   },
 
   login: function () {
@@ -63,6 +64,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options.forumId);
+    this.getForum(options.forumId);
     this.intital();
   },
   intital:function(){
@@ -146,5 +149,20 @@ Page({
    */
   onShareAppMessage: function () {
     
+  },
+
+  getForum(Id){
+    const that = this
+    wx.request({
+      url: domainName+'/forum/getForum',
+      method: 'GET',
+      header: {},
+      data:{forumId: Id},
+      credentials: 'omit',
+      success(res) {
+        console.log(res.data)
+        that.setData({test:res.data})
+      }
+    })
   }
 })
