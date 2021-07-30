@@ -136,9 +136,7 @@ Page({
         credentials: 'omit',
         success(res) {
           console.log(res.data);
-          if(res.data == []){
-            that.setData({mateList:res.data})
-          }
+          that.setData({mateList:res.data})
         }
       })
   }

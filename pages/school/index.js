@@ -11,27 +11,40 @@ Page({
       {
         text:'教学实力',
         image:domainName+'/saveFiles/images/微信图片_20210512113244.png',
-        path:'./components/notice/index'
+        path:'detail/index',
+        id:"1"
       },
       {
         text:'学部简介',
         image:domainName+'/saveFiles/images/微信图片_20210512113554.jpg',
-        path:'./components/banner/index'
+        path:'detail/index',
+        id:"2"
       },
       {
         text:'学习体验',
         image:domainName+'/saveFiles/images/R6a4a35499754f599e5ab10fff057d020.jpg',
-        path:'./components/office/index'
+        path:'detail/index',
+        id:"3"
       },
       {
         text:'课程介绍',
         image:domainName+'/saveFiles/images/微信图片_20210511163947.jpg',
-        path:'./components/photos/index'
+        path:'detail/index',
+        id:"4"
       }
     ],
     htmlData:"",
     videoSrc:""
   },
+
+  todetail(e){
+    console.log(e)
+    var path = e.currentTarget.dataset.path;
+    var id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: path + "?id=" + id,
+    })
+    },
 
   /**
    * 生命周期函数--监听页面加载

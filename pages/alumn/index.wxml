@@ -22,7 +22,7 @@
   <view class="mate">
    <view class="mateTitle">荣誉校友</view>
    <view class="line1"></view>
-  <view wx:if="mateList != null">
+  <view wx:if="mateList != []">
    <matelist list="{{mateList}}" />
    </view>
   </view>

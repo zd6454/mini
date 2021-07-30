@@ -1,5 +1,6 @@
 <!--pages/index/components/notice/index.wxml-->
 <!-- <text>pages/index/components/notice/index.wxml</text> -->
+<view wx:if="{{corporationList == []}}">
 <view wx:for="{{corporationList}}" class="notice">
  <view class="noticeWrap">
    <view class="dot" wx:if="{{item.isRead}}"></view>
@@ -10,3 +11,5 @@
    </view>
  </view>
 </view>
+</view>
+<view class="null" wx:else>请等待管理员发布。</view>

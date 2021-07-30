@@ -51,14 +51,15 @@ Page({
         url:'./first/index'
       },
     ],
-    test: []
+    test: [],
+    detail: ""
   },
 
   todetail(e){
     console.log(e)
-    const {url} = e.currentTarget.dataset.set;
+    const path = e.currentTarget.dataset.path;
     wx.navigateTo({
-      url: url,
+      url: path,
     })
     },
   /**
@@ -66,6 +67,7 @@ Page({
    */
   onLoad: function (options) {
       this.getAllUserForums();
+      this.getAllForums();
   },
 
   /**
@@ -120,13 +122,27 @@ Page({
   getAllUserForums(){
     const that = this
     wx.request({
-      url: domainName+'/forum/getAllUseForums',
+      url: domainName+'/forum/getAllForums',
       method: 'GET',
       header: {},
       credentials: 'omit',
       success(res) {
         console.log(res.data)
-        that.setData({test:res.data})
+        that.setData({activityList:res.data})
+      }
+    })
+  },
+
+  getAllForums(){
+    const that = this
+    wx.request({
+      url: domainName+'/forum/getAllForums',
+      method: 'GET',
+      header: {},
+      credentials: 'omit',
+      success(res) {
+        console.log(res.data)
+        that.setData({detail:res.data})
       }
     })
   }

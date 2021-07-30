@@ -25,7 +25,7 @@
     "pages/my/edit/index",
     "pages/school/components/teach/index",
     "pages/school/components/introduction/index",
-    "pages/school/components/detail/index",
+    "pages/school/detail/index",
     "pages/school/components/experience/index",
     "pages/school/components/lesson/index",
     "pages/index/components/noticeDetail/index"
