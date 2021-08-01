@@ -1,4 +1,4 @@
-<!--pages/alumn/alumnDetail/index.wxml-->
+
 <view class="container">
    {{htmlData}}
 </view>

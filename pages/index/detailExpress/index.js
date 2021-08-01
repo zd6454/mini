@@ -9,7 +9,8 @@ Page({
   data: {
      id:"",
      type:{
-       "interCooperId":'/interCooperation/getInterCooper'
+       "interCooperId":'/interCooperation/getInterCooper',
+       "schoolmateId":'/schoolmate/getSchoolmate'
      },
      htmlData:"",
   },
@@ -26,9 +27,7 @@ Page({
     const that = this
     const {type}=this.data;
     const data={};
-    if(key==="interCooperId"){
-      data.interCooperId=id;
-    }
+     data[key]=id;
     wx.request({
       url: domainName+type[key],
       method: 'GET',

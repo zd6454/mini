@@ -202,6 +202,14 @@ Page({
       url: `./detailExpress/index?id=${interCooperId}&key=${"interCooperId"}`,
     })
    },
+
+   handleFriend(e){
+    console.log(e)
+    const {schoolmateId} = e.currentTarget.dataset.item;
+    wx.navigateTo({
+      url: `./detailExpress/index?id=${schoolmateId}&key=${"schoolmateId"}`,
+    })
+   }
 })
 
 
