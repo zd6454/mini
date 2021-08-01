@@ -100,7 +100,7 @@ page{
 
 .school .leason .leaImgWrap{
   height: 180rpx;
-  width: 180rpx;
+  width: 250rpx;
   box-shadow: #005478 10rpx 0rpx 8rpx -5rpx;
   background-color: #a88b61;
   border-radius: 10rpx 0 0 10rpx;
@@ -109,10 +109,38 @@ page{
 .school .leason .leaImgWrap .leaImg{
   position: relative;
   top: 0;
-  height: 120rpx;
-  width: 120rpx;
-  margin: 30rpx;
+  height: 170rpx;
+  width: 170rpx;
+  margin-top: 15rpx;
+  margin-left: 10rpx;
 }
+
+.triangleWrap{
+  width: 40rpx;
+  background-color: #005478;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.school .leason .triangle{
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid transparent;  
+  border-top: 10px solid transparent;  
+  border-left: 18px solid #a88b61;
+  color: #a88b61;
+}
+
+.school .leason0 .triangle0{
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid transparent;  
+  border-top: 10px solid transparent;  
+  border-right: 18px solid #a88b61;
+  color: #a88b61;
+}
+
 .school .leason .txtWrap{
   width: 100%;
   background-color: #005478;
@@ -121,7 +149,7 @@ page{
 
 }
 .school .leason .txtWrap .edu{
-  margin-left: 30rpx;
+  margin-left: 15rpx;
   margin-top: 45rpx;
   /* font-weight: 600; */
   font-size: 32rpx;
@@ -129,7 +157,7 @@ page{
   /* margin-bottom: 10rpx; */
 }
 .school .leason .txtWrap .look{
-  margin-left: 30rpx;
+  margin-left: 15rpx;
   font-size: 28rpx;
   font-weight: 400;
 }
@@ -144,7 +172,7 @@ page{
 }
 .school .leason0 .leaImgWrap{
   height: 180rpx;
-  width: 180rpx;
+  width: 250rpx;
   box-shadow: #005478 -10rpx 0rpx 8rpx -5rpx;
   background-color: #a88b61;
   border-radius: 0 10rpx 10rpx 0;
@@ -152,14 +180,15 @@ page{
 .school .leason0 .leaImgWrap .leaImg{
   position: relative;
   top: 0;
-  height: 120rpx;
-  width: 120rpx;
-  margin: 30rpx;
+  height: 170rpx;
+  width: 170rpx;
+  margin-top: 18rpx;
+  margin-left: 10rpx;
 }
 .school .leason0 .txtWrap{
   text-align: right;
   float: right;
-  margin-right: 30rpx;
+  margin-right: 15rpx;
   margin-top: 38rpx;
   width: 100%;
   color: white;

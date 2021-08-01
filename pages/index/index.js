@@ -68,7 +68,10 @@ Page({
         name:'fdsffv',
       },
     ],
-    corporationList:[]
+    corporationList:[],
+    undergraduateImg:domainName+'/saveFiles/images/博士帽.png',
+    graduateImg:domainName+'/saveFiles/images/字典管理.png',
+    doctorImg:domainName+'/saveFiles/images/书.png'
   },
   // 事件处理函数
   bindViewTap() {
