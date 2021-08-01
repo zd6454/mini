@@ -79,5 +79,8 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+
+  
 })

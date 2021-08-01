@@ -82,7 +82,8 @@ Page({
         canIUseGetUserProfile: true
       })
     }
-    this.getSwiper()
+    this.getSwiper();
+    this.getFriend();
     this.getcooperation()
   },
   getSwiper(){
@@ -114,6 +115,24 @@ Page({
       }
     })
   },
+
+  getFriend(){
+    const that = this
+    wx.request({
+      url: domainName+'/schoolmate/getAllSchoolmates',
+      method: 'GET',
+      header: {},
+      data:{
+        noticeId:12
+      },
+      credentials: 'omit',
+      success(res) {
+        console.log(res.data)
+        that.setData({friendList:res.data})
+      }
+    })
+  },
+
   getUserProfile(e) {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
     wx.getUserProfile({
