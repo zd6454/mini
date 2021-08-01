@@ -23,8 +23,9 @@ Component({
   methods: {
   todetail(e){
     console.log(e)
+    const {schoolmateId} = e.currentTarget.dataset.item;
    wx.navigateTo({
-     url: './alumnDetail/index',
+     url: `./alumnDetail/index?id=${schoolmateId}`,
    })
   }
   }

@@ -1,0 +1,4 @@
+<!--pages/index/detailExpress/index.wxml-->
+<view>
+  {{htmlData}}
+</view>

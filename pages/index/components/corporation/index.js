@@ -22,7 +22,13 @@ Page({
   onLoad: function (options) {
       this.getCooperation();
   },
-
+  todetail(e){
+   console.log(e)
+   const {interCooperId} = e.currentTarget.dataset.item;
+   wx.navigateTo({
+     url: `../../detailExpress/index?id=${interCooperId}&key=${"interCooperId"}`,
+   })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

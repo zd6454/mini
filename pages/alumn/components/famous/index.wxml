@@ -4,10 +4,10 @@
     <view wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key='index' >
       <view class="box" bindtap="todetail" data-item="{{item}}">
           <view class="setting">
-            <image class="img" src="{{item.img}}" />
+            <image class="img" src="{{item.imgUrl}}" />
             <view class="detail">
               <view class="title">{{item.name}}</view>
-              <view class="info">{{item.info}}</view>
+              <view class="info">{{item.content}}</view>
             </view>
           </view>
         </view>

@@ -3,9 +3,9 @@
   background-color:rgb(2, 68, 99) ;
   color:white;
   width: 700rpx;
-  margin:20rpx auto;
+  margin:10rpx auto;
   border-radius: 10rpx;
-  box-shadow: 0rpx 4rpx 4rpx rgb(2, 68, 99);
+  box-shadow:  3rpx 9rpx 9rpx gray;
 }
 .setting{
   display: flex;
@@ -13,6 +13,9 @@
 .img{
   width:200rpx;
   height:200rpx;
+}
+.detail{
+  padding-left: 40rpx;
 }
 .title{
   margin-top: 10rpx;
@@ -22,4 +25,9 @@
   font-size: 30rpx;
   width:400rpx;
   word-wrap:break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }

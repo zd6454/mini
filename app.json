@@ -27,7 +27,8 @@
     "pages/my/publishforum/index",
     "pages/my/edit/index",
     "pages/school/detail/index",
-    "pages/index/components/noticeDetail/index"
+    "pages/index/components/noticeDetail/index",
+    "pages/index/detailExpress/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

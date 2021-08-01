@@ -185,15 +185,15 @@ page{
   display: flex;
   flex-direction: row;
   background-color: #005478;
-  box-shadow: 0 5rpx 10rpx 10rpx #e7e7e7;
+  box-shadow:  3rpx 9rpx 9rpx gray;
   margin-top: 20rpx;
   border-radius: 10rpx;
 }
 
 .school .activity .actImgWrap{
   height: 200rpx;
-  width: 200rpx;
-  /* box-shadow: #005478 10rpx 0rpx 8rpx -5rpx; */
+  width: 292rpx;
+ 
   /* background-color: #cccccc; */
   /* margin: 20rpx; */
 }
@@ -201,7 +201,7 @@ page{
   position: relative;
   top: 0;
   height: 200rpx;
-  width: 200rpx;
+  width: 215rpx;
   border-radius: 10rpx 0 0 10rpx;
   /* margin: 15rpx; */
   /* border: 2rpx white solid; */

@@ -88,7 +88,7 @@ Page({
   getAgent1(){
     const that = this
       wx.request({
-        url: domainName+'/information/getInforContent/AgentRight1',
+        url: domainName+'/information/getInforContent/SchoolmateArchitecture',
         method: 'GET',
         header: {},
         credentials: 'omit',
@@ -102,7 +102,7 @@ Page({
   getAgent2(){
     const that = this
       wx.request({
-        url: domainName+'/information/getInforContent/AgentRight2',
+        url: domainName+'/information/getInforContent/SchoolmateActivities',
         method: 'GET',
         header: {},
         credentials: 'omit',
@@ -116,7 +116,7 @@ Page({
   getAgent3(){
     const that = this
       wx.request({
-        url: domainName+'/information/getInforContent/AgentRight3',
+        url: domainName+'/information/getInforContent/AgentRight1',
         method: 'GET',
         header: {},
         credentials: 'omit',

@@ -68,13 +68,7 @@ Page({
         name:'fdsffv',
       },
     ],
-    corporationList:[
-      {
-        title:'武汉理工大学合作政策',
-        time:'2020-3-5',
-        image:''
-      }
-    ]
+    corporationList:[]
   },
   // 事件处理函数
   bindViewTap() {
@@ -89,6 +83,7 @@ Page({
       })
     }
     this.getSwiper()
+    this.getcooperation()
   },
   getSwiper(){
     const that = this
@@ -165,5 +160,29 @@ Page({
         url: path,
       })
     }
-  }
+  },
+  //获取国际合作信息
+  getcooperation(){
+    const that = this;
+    wx.request({
+      url: domainName+'/interCooperation/getAllUseInterCoopers',
+      method: 'GET',
+      header: {},
+      credentials: 'omit',
+      success(res) {
+        console.log(res.data)
+        that.setData({corporationList:res.data.slice(0,2)})
+      }
+    })
+  },
+  //国际合作跳转
+  todetail(e){
+    console.log(e)
+    const {interCooperId} = e.currentTarget.dataset.item;
+    wx.navigateTo({
+      url: `./detailExpress/index?id=${interCooperId}&key=${"interCooperId"}`,
+    })
+   },
 })
+
+

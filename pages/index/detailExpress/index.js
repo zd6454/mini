@@ -1,4 +1,4 @@
-// pages/alumn/alumnDetail/index.js
+// pages/index/detailExpress/index.js
 const app = getApp();
 const domainName = app.globalData.domainName;
 Page({
@@ -7,31 +7,40 @@ Page({
    * 页面的初始数据
    */
   data: {
-    schoolmateId:0,
-    htmlData:"",
+     id:"",
+     type:{
+       "interCooperId":'/interCooperation/getInterCooper'
+     },
+     htmlData:"",
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({schoolmateId:options.id});
-    this.getDetail(options.id);
+    const {id,key}=options;
+    this.setData({id,key})
+    this.getInitData(id,key)
   },
-  getDetail(schoolmateId){
+   getInitData(id,key){
     const that = this
-      wx.request({
-        url: domainName+'/schoolmate/getSchoolmate',
-        method: 'GET',
-        data:{schoolmateId},
-        header: {},
-        credentials: 'omit',
-        success(res) {
-          console.log(res.data)
-          that.setData({htmlData:res.data.content?res.data:"请等待管理员发布"})
-        }
-      })
-  },
+    const {type}=this.data;
+    const data={};
+    if(key==="interCooperId"){
+      data.interCooperId=id;
+    }
+    wx.request({
+      url: domainName+type[key],
+      method: 'GET',
+      data,
+      header: {},
+      credentials: 'omit',
+      success(res) {
+        console.log(res.data)
+        that.setData({htmlData:res.data.content?res.data.content:'请等待管理员发布'})
+      }
+    })
+   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

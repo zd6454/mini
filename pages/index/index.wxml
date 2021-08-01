@@ -66,9 +66,9 @@
   <view class="text">国际合作</view>
   <view class="line"></view>
   <view class="more" bindtap="handleSchool" data-path="./components/corporation/index">查看更多></view>
-  <div class="activity" wx:for="{{corporationList}}">
+  <div class="activity" wx:for="{{corporationList}}" wx:key="item" bindtap="todetail" data-item="{{item}}" wx:for-item="item" wx:for-index="index" >
     <view class="actImgWrap">
-      <image src="{{item.image}}" class="actImg"></image>
+      <image src="{{item.imgUrl}}" class="actImg"></image>
     </view>
     <view class="txtWrap">
       <view class="title">{{item.title}}</view>
