@@ -1,1 +1,16 @@
 /* pages/index/components/noticeDetail/index.wxss */
+.container{
+  height: 672px;
+  width: 414px;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.content{
+  font-size: 20px;
+  margin-top: -40%;
+}

@@ -7,7 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      noticeList:{
+        content:"111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111"
+      }
   },
 
   /**
@@ -22,7 +24,7 @@ Page({
   getNotice(noticeId){
     const that = this
     wx.request({
-      url: domainName+'/notice/overheadNotice',
+      url: domainName+'/notice/getNotice',
       method: 'GET',
       header: {},
       data:{
@@ -31,7 +33,7 @@ Page({
       credentials: 'omit',
       success(res) {
         console.log(res.data)
-        // that.setData({noticeList:res.data})
+        that.setData({noticeList:res.data})
       }
     })
   },

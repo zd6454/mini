@@ -1,18 +1,21 @@
 // pages/alumn/alumnDetail/index.js
+const app = getApp();
+const domainName = app.globalData.domainName;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+      detail:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      console.log(options);
+      this.getDeatil(options.schoolmateId);
   },
 
   /**
@@ -62,5 +65,22 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  getDeatil(id){
+    const that = this;
+    wx.request({
+      url: domainName+'/schoolmate/getSchoolmate',
+      method: 'GET',
+      header: {},
+      data:{
+        noticeId:id
+      },
+      credentials: 'omit',
+      success(res) {
+        console.log(res.data)
+        that.setData({detail:res.data})
+      }
+    })
   }
 })
