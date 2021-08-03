@@ -2,7 +2,7 @@
 <view class="page">
    <view class="head">
       <view>标题:</view>
-      <view class="title"><input  type="text"  value="" placeholder="请输入标题"/>
+      <view class="title"><input  type="text" bindinput="gettitle"  value="" placeholder="请输入标题"/>
       </view>
    </view>
    <view class="body">
@@ -10,7 +10,7 @@
      <view>
       <mp-cells>
             <mp-cell>
-                <mp-uploader  bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" max-count="2" ></mp-uploader>
+                <mp-uploader  bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" max-count="1" ></mp-uploader>
             </mp-cell>
         </mp-cells>
      </view>
@@ -18,11 +18,11 @@
    <view class="foot">
      <view>正文:</view>
      <view >
-       <textarea placeholder='请编辑内容' maxlength='500' auto-focus  bindinput></textarea>
+       <textarea placeholder='请编辑内容' maxlength='500' auto-focus  bindinput="getContent"></textarea>
      </view>
    </view>
    <view class="comfirm">
-     <button type="primary" size="mini" class="button"  hover-class="button2">保存</button>
-     <button type="primary" size="mini" class="button"  hover-class="button2">发布</button>
+     <button type="primary" size="mini" class="button" bindtap="comfirm"  hover-class="button2">保存</button>
+     <button type="primary" size="mini" class="button" bindtap="publish"  hover-class="button2">发布</button>
    </view>
 </view>

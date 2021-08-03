@@ -1,4 +1,8 @@
 // pages/my/addinfo/index.js
+const app = getApp();
+const domainName = app.globalData.domainName;
+const openid = wx.getStorageSync('openid');
+var util=require('../../../utils/util.js')
 Page({
 
   /**
@@ -6,23 +10,71 @@ Page({
    */
   data: {
        info:{
-         name:'',
+        username:'',
          phone:'',
-         college:'',
-         academy:'',
-         class:'',
+         school:'',
+         institute:'',
+         clazz:'',
        },
       infoName:[
-       { name:"姓名:",type:"name"},
+       { name:"姓名:",type:"username"},
        {name:'电话:',type:"phone"},
-       {name:"大学:",type:"college"},
-       {name:"学院:",type:"academy"},
-       {name:"班级:",type:"class"},
+       {name:"大学:",type:"school"},
+       {name:"学院:",type:"institute"},
+       {name:"班级:",type:"clazz"},
       ],
-      title:"同学您好，为了给您提供方便，请你完善您的个人信息"
+      title:"同学您好，为了给您提供方便，请完善您的个人信息",
+      userInfo:{},
   },
-  formSubmit(value){
-   console.log(value)
+  
+  getUser(){
+    const that=this;
+   wx.request({
+     url: domainName+'/user/getUser',
+     method:"GET",
+     data:{userId:openid},
+     success(res){
+      that.setData({userInfo:res.data})
+     }
+   })
+  },
+
+  formSubmit(e){
+   const {value}=e.detail;
+   const that = this;
+   console.log(value,'vare')
+   const{userInfo}=this.data;
+   userInfo.username=value.username?value.username:userInfo.username;
+   userInfo.phone=value.phone?value.phone:userInfo.phone;
+   userInfo.school=value.school?value.school:userInfo.school;
+   userInfo.institute=value.institute?value.institute:userInfo.institute;
+   userInfo.clazz=value.calzz?value.clazz:userInfo.clazz;
+   wx.request({
+     url: domainName+'/user/updateUser',
+     method:'POST',
+      data:userInfo,
+      success(res){
+        if(res.data==""){
+          wx.showModal({
+         title:"完善成功",
+         icon:"success",
+         success (res) {
+          if (res.confirm) {
+            that.omitto();
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+            that.omitto();
+          }
+        }
+       })
+        }else{
+         wx.showModal({
+           title: '网络错误',
+         })
+        }
+      },
+   })
+
   },
   omitto(){
    wx.navigateBack({
@@ -33,7 +85,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+   this.getUser();
   },
 
   /**

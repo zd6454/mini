@@ -7,12 +7,12 @@
                </view>
                <view class="detail">
                  <view class="detailInfo">
-                   <view wx:if="{{item.myinfo==='党员头像'}}" bindtap="changeAvatar">
+                   <view wx:if="{{item.myinfo==='头像'}}" >
                      <image class="avatar" src="{{item.content}}" />
                    </view>
                    <view  wx:else>{{item.content}}</view>
                   </view>
-                 <view data-item="item" class="switch2">></view>
+                 <view wx:if="{{item.myinfo!=='头像'}}" data-item="item" class="switch2">></view>
                </view>
             </view>
          </view>

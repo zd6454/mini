@@ -1,6 +1,11 @@
 // pages/my/index.js
+const appid = "wx2bee8de96f3462d6";   //wx.getAccountInfoSync().miniProgram.appId;
+const secret = "8967de4bc48b2e1631c4b6ad49ea3f53";
+const app = getApp();
+const domainName = app.globalData.domainName;
+const openid = app.globalData.openid;
+var util=require('../../utils/util.js')
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -19,7 +24,9 @@ Page({
        {name:'联系我们',url:''}
      ],
      login:false,
-     userInfo:{}
+     userInfo:{},
+     openid:"",
+     register:false,
   },
 
   todetail(e){
@@ -37,14 +44,25 @@ Page({
   },
  
   login(){
+    const that=this;
     wx.login({
       success (res) {
         if (res.code) {
           //发起网络请求
+          console.log(res.code)
           wx.request({
-            url: 'https://example.com/onLogin',
+            url: domainName+'/user/getUserId',
+            method:'POST',
             data: {
-              code: res.code
+              "code": res.code,
+              "appid":appid,
+              "secret":secret,
+            },
+            success(res){
+              if(res.data.openid){
+                that.setData({openid:res.data.openid})
+                wx.setStorageSync('openid', res.data.openid)
+              }
             }
           })
         } else {
@@ -53,33 +71,79 @@ Page({
       }
     })
   },
+  
+  loginInfo(userInfo){
+    const that=this;
+    const date=util.formatTime(new Date());
+    const data={
+      "userId":openid?openid:this.data.openid,
+      "username":userInfo.nickName,
+      "imgUrl":userInfo.avatarUrl,
+      "gender":Number(userInfo.gender),
+      "address":userInfo.province,
+      "school":"",
+      "institute":"",
+      "clazz":"",
+      "registerTime":date,
+      "phone":"",
+      "privilege":Number(0),
+    };
+   wx.request({
+     url: domainName+'/user/login',
+     method:'POST',
+     data,
+      success(res){
+        console.log(res.data)
+        if(res.data!=="登陆成功！"){
+           wx.navigateTo({
+          url: './addinfo/index',
+        })
+        }
+      },
+   })
+  },
 
   getuser(e){
     const that =this;
-    wx.getUserProfile({
-      desc: '用于完善用户资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-      success: (res) => {
-        this.setData({
-          userInfo: res.userInfo,
-          login:true
+    if(!that.data.register){
+       wx.getUserProfile({
+          desc: '用于完善用户资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+          success: (res) => {
+            this.setData({
+              userInfo: res.userInfo,
+              login:true
+            })
+            that.loginInfo(res.userInfo);
+          }
         })
-        wx.navigateTo({
-          url: './addinfo/index',
-        })
+    }else{
+      this.setData({login:true})
+    }
+      wx.setStorageSync('login', true);
+  },
+ getafterUser (){
+    const that=this;
+    wx.request({
+      url: domainName+'/user/getUser',
+      method:"GET",
+      data:{userId:wx.getStorageSync('openid')},
+      success(res){
+        if(res.data.userId)
+       that.setData({userInfo:res.data,register:true,login:true})
       }
     })
   },
-
   loginout(){
    this.setData({
-     login:false
+     login:false,
    })
+   wx.setStorageSync('login', false);
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+    this.login();
   },
 
   /**
@@ -93,7 +157,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+      setTimeout(()=>{
+        this.getafterUser();
+      },1000)
+       
   },
 
   /**

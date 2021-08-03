@@ -1,4 +1,8 @@
 // pages/my/edit/index.js
+const app = getApp();
+const domainName = app.globalData.domainName;
+const openid = wx.getStorageSync('openid');
+var util=require('../../../utils/util.js')
 Page({
 
   /**
@@ -6,18 +10,72 @@ Page({
    */
   data: {
      name:'',
-     content:''
+     content:'',
+     userInfo:{},
+     title:"",
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.getUser();
   this.setData({
     name:options.name,
-    content:options.content
+    content:options.content,
+    title:options.title,
   })
   },
+  getValue(e){
+   console.log(e);
+   const{value}=e.detail;
+   this.setData({content:value})
+  },
+  comfirm(){
+    const {userInfo,name,content}=this.data;
+    userInfo[name]=content;
+    wx.request({
+      url: domainName+'/user/updateUser',
+      method:"POST",
+      data:userInfo,
+      success(res){
+      console.log(res.data)
+      wx.showModal({
+        title: '修改成功',
+        icon:"success",
+        success(res){
+          if (res.confirm) {
+            that.omitto();
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+            that.omitto();
+          }
+        }
+      })
+      wx.navigateBack({
+        delta: 1
+      })
+      }
+    })
+  },
+  omitto(){
+   wx.navigateBack({
+     delta:1,
+   })
+  },
+  //获取用户信息
+  getUser(){
+    const that = this;
+    wx.request({
+      url: domainName+'/user/getUser',
+      method:"GET",
+      data:{userId:openid},
+      success(res){
+      console.log(res.data)
+      that.setData({userInfo:res.data});
+      }
+    })
+   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -30,7 +88,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getUser();
   },
 
   /**

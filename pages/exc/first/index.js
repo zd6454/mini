@@ -11,8 +11,8 @@ Page({
     activityList:[{
       title:'秋日伯明翰，一起走在森林与城市之间',
       author:'三一圣大卫',
-      image:'http://1.116.77.118:2333/saveFiles/images/秋天落叶.png',
-      txt:'秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间'
+      imgUrl:'http://1.116.77.118:2333/saveFiles/images/秋天落叶.png',
+      content:'秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间'
     }],
     replyList:[{
       avatarUrl:'',
@@ -66,6 +66,7 @@ Page({
   onLoad: function (options) {
     console.log(options.forumId);
     this.getForum(options.forumId);
+    this.setData({forumId:options.forumId})
     this.intital();
   },
   intital:function(){
@@ -76,24 +77,29 @@ Page({
   },
 
   formSubmit: function (e) {
-    wx.showToast({
-      title: '已留言',
-      icon: 'success'
-    })
     var that = this;
+    const {forumId}=this.data;
     var liuyantext = e.detail.value.liuyantext; //获取表单所有name=liuyantext的值 
     var nickName = e.detail.value.nickname; //获取表单所有name=nickName的值 
     var headimg = e.detail.value.headimg; //获取表单所有name=headimg的值 
+     const data={
+      commentId:0,
+      isUse:0,
+      forumId,
+      replyId:"",
+      content:"",
+      time:new Date(),
+     }
     wx.request({
-      url: '',
-      data: {
-        liuyantext,
-        nickName,
-        headimg
-      },
+      url: domainName+'/comment/addComment',
+      data,
       header: { 'Content-Type': 'application/json' },
       success: function (res) {
         console.log(res.data)
+        wx.showToast({
+          title: '留言成功',
+          icon: 'success'
+        })
         that.setData({
           re: res.data,
         })
@@ -154,14 +160,14 @@ Page({
   getForum(Id){
     const that = this
     wx.request({
-      url: domainName+'/forum/getForum',
+      url: domainName+'/comment/getForumComments',
       method: 'GET',
       header: {},
       data:{forumId: Id},
       credentials: 'omit',
       success(res) {
         console.log(res.data)
-        that.setData({test:res.data})
+        that.setData({replyList:res.data})
       }
     })
   }

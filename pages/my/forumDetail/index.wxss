@@ -1,0 +1,21 @@
+/* pages/my/forumDetail/index.wxss */
+.page{
+  margin:40rpx
+}
+.head{
+  font-size: 40rpx;
+}
+.title{
+  text-align: center;
+  font-weight: bold;
+}
+.time{
+  position: absolute;
+  float: right;
+  right:5%;
+  font-size: 24rpx;
+}
+.body{
+  overflow: hidden;
+  margin-top: 30rpx;
+}
