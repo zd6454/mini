@@ -1,4 +1,8 @@
 // pages/my/publishforum/index.js
+const app = getApp();
+const domainName = app.globalData.domainName;
+const openid = wx.getStorageSync('openid');
+var util=require('../../../utils/util.js')
 Page({
 
   /**
@@ -6,7 +10,19 @@ Page({
    */
   data: {
      inti:{},
-     files: []
+     files: [],
+     title:"",
+     content:"",
+     forumId:0,
+  },
+  gettitle(e){
+   const{value}=e.detail;
+   this.setData({title:value});
+  },
+
+  getContent(e){
+  const{value}=e.detail;
+  this.setData({content:value})
   },
 
   chooseImage: function (e) {
@@ -16,9 +32,9 @@ Page({
         sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
         success: function (res) {
             // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-            console.log(res)
+            console.log(res,'56')
             that.setData({
-                files: that.data.files.concat(res.tempFilePaths)
+                files: res.tempFilePaths
             });
         },
     })
@@ -35,6 +51,7 @@ selectFile(files) {
 },
 uplaodFile(files) {
     console.log('upload files', files)
+    // this.setData({files:files,})
     // 文件上传的函数，返回一个promise
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -58,6 +75,80 @@ uploadSuccess(e) {
   })
   },
 
+  uploadImg(forumId){
+      const{files}=this.data;
+   wx.request({
+     url: domainName+'/forum/uploadFile',
+     method:"POST",
+     data:{
+        uploadfile:files.tempFiles[0],
+        forumId
+     },
+     success(res){
+     console.log("上传图片",res)
+     }
+   })
+  },
+  //保存
+  comfirm(){
+      const that = this;
+   const{title,content,files}=this.data;
+   const date=util.formatTime(new Date());
+   if(title==""){
+       wx.showModal({
+         title: '请填写标题',
+       })
+       return;
+   }
+   wx.request({
+     url: domainName+'/forum/addForum',
+     method:"POST",
+     data:{
+        forumId:0,
+        sort:0,
+        isUse:0,
+        imgUrl:"",
+        date,
+        title,
+        content,
+     },
+     success(res){
+        console.log(res);
+        that.setData({forumId:res.data.forumId})
+        that.uploadImg(res.data.forumId);
+     },
+   })
+  },
+  //发布
+  publish(){
+      const that=this;
+   const{title,content,files}=this.data;
+   const date=util.formatTime(new Date());
+   if(title==""){
+    wx.showModal({
+      title: '请填写标题',
+    })
+    return;
+}
+   wx.request({
+     url: domainName+'/forum/addForum',
+     method:"POST",
+     data:{
+        forumId:0,
+        sort:0,
+        isUse:1,
+        date,
+        imgUrl:"",
+        title,
+        content,
+     },
+     success(res){
+     console.log(res);
+     that.setData({forumId:res.data.forumId})
+     that.uploadImg(res.data.forumId);
+     },
+   })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

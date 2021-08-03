@@ -35,6 +35,12 @@
           "pathName": "pages/my/addinfo/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/my/forumDetail/index",
+          "pathName": "pages/my/forumDetail/index",
+          "query": "",
+          "scene": null
         }
       ]
     }

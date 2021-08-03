@@ -1,4 +1,8 @@
 // pages/my/info/index.js
+const app = getApp();
+const domainName = app.globalData.domainName;
+const openid = wx.getStorageSync('openid');
+var util=require('../../../utils/util.js')
 Page({
 
   /**
@@ -6,48 +10,101 @@ Page({
    */
   data: {
      items:[
-       {myinfo:'头像',content:'123'},
-       {myinfo:'昵称',content:'123'},
-       {myinfo:'性别',content:'男'},
-       {myinfo:'学院',content:'计算机学院'},
-       {myinfo:'班级',content:'软件1805班'},
-       {myinfo:'姓名',content:'zd'},
-       {myinfo:'手机号',content:'123456789'},
-       {myinfo:'地址',content:'武汉理工大学'},
+       {myinfo:'头像',content:'123',type:"imgUrl"},
+       {myinfo:'昵称',content:'123',type:"username"},
+       {myinfo:'性别',content:'男',type:"gender"},
+       {myinfo:'学校',content:'武汉理工',type:"school"},
+       {myinfo:'学院',content:'计算机学院',type:"institute"},
+       {myinfo:'班级',content:'软件1805班',type:"clazz"},
+       {myinfo:'姓名',content:'zd',type:"username"},
+       {myinfo:'手机号',content:'123456789',type:"phone"},
+       {myinfo:'地址',content:'武汉理工大学',type:"address"},
      ]
   },
 
   fixone(e){
     const{items}=this.data;
+    const that=this;
     const {index}=e.currentTarget.dataset;
      if(index===0||index===2){
-
+       if(index===0){
+         return;
+       }else{
+        wx.showActionSheet({
+          itemList: ['女','男'],
+          success (res) {
+           console.log(res)
+           that.updateInfo(res.tapIndex);
+          },
+          fail (res) {
+            console.log(res.errMsg)
+          }
+        })
+       }
+       
      }else{
        wx.navigateTo({
-         url: `../edit/index?name=${items[index].myinfo}&content=${items[index].content}`,
+         url: `../edit/index?name=${items[index].type}&content=${items[index].content}&title=${items[index].myinfo}`,
        })
      }
-    console.log(e)
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+   this.getUser();
   },
+  getUser(){
+    const that=this;
+    wx.request({
+      url: domainName+'/user/getUser',
+      method:"GET",
+      data:{userId:openid},
+      success(res){
+      const userInfo=res.data;
+      userInfo.gender=res.data.gender==1?'男':'女';
+      that.setData({userInfo})
+      that.setInfo(userInfo);
+      }
+    })
+   },
 
+   setInfo(userInfo){
+    const {items}=this.data;
+    items.map((item)=>{
+      item.content=userInfo[item.type];
+    })
+    this.setData({items});
+   },
+  
+
+
+  updateInfo(gender){
+    const that=this;
+    const{userInfo,items}=this.data;
+    userInfo.gender=gender;
+    items[2].content=gender===1?'男':'女';
+    wx.request({
+     url: domainName+'/user/updateUser',
+     method:"POST",
+     data:userInfo,
+     success(res){
+       that.setData({items})
+     }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
 
   },
-
+ 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getUser();
   },
 
   /**

@@ -1,13 +1,9 @@
 <view class="page">
 <view class="body">
-<div class="top" wx:for="{{activityList}}" wx:key="item" data-set="{{item}}" wx:for-item="item" wx:for-index="index">
   <view class="title">{{item.title}}</view>
   <view class="txtWrap">
-    <view class="author">{{item.author}}</view>
-    <view class="ImgWrap">{{item.img}}</view>
-    <view class="txt">{{item.txt}}</view>
+    <view class="txt">{{item.content}}</view>
   </view>
-</div>
 </view>
 
 <view class="reply">
@@ -44,13 +40,6 @@
         <view>{{item.number}}</view>
         </view>
       </view>
-      <!-- <view class="actImgWrap">
-      <image src="{{item.image}}" class="actImg"></image>
-    </view>
-    <view class="txtWrap">
-      <view class="title">{{item.title}}</view>
-      <view class="time">{{item.time}}</view>
-    </view> -->
   </div>
   <view class="reply_b" wx:for="{{replyList}}" wx:key="item" data-set="{{item}}" wx:for-item="item" wx:for-index="index">
     <view class="avatar">

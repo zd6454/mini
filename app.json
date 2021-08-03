@@ -28,7 +28,8 @@
     "pages/my/edit/index",
     "pages/school/detail/index",
     "pages/index/components/noticeDetail/index",
-    "pages/index/detailExpress/index"
+    "pages/index/detailExpress/index",
+    "pages/my/forumDetail/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

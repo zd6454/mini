@@ -130,7 +130,7 @@ Page({
   getAllSchoolmates(){
     const that = this
       wx.request({
-        url: domainName+'/schoolmate/getAllSchoolmates',
+        url: domainName+'/schoolmate/getAllUseSchoolmates',
         method: 'GET',
         header: {},
         credentials: 'omit',
