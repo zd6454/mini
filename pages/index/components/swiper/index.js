@@ -1,4 +1,4 @@
-// pages/exc/index.js
+// pages/index/components/swiper/index.js
 const app = getApp();
 const domainName = app.globalData.domainName;
 Page({
@@ -7,26 +7,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    activityList:[],
-    path: './first/index',
-    detail: ""
+      bannerDetail:[]
   },
 
-  todetail(e){
-    const that = this;
-    console.log(e)
-    const id = e.currentTarget.dataset.set.forumId;
-    const path = e.currentTarget.dataset.path;
-    wx.navigateTo({
-      url: path + "?forumId=" + id,
-    })
-    },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      this.getAllUserForums();
-      this.getAllForums();
+      console.log(options);
+      this.getBanner(options.id);
   },
 
   /**
@@ -78,30 +67,19 @@ Page({
 
   },
 
-  getAllUserForums(){
+  getBanner(id){
     const that = this
     wx.request({
-      url: domainName+'/forum/getAllForums',
+      url: domainName+'/banner/getBanner',
       method: 'GET',
       header: {},
+      data:{
+        bannerId:id
+      },
       credentials: 'omit',
       success(res) {
         console.log(res.data)
-        that.setData({activityList:res.data})
-      }
-    })
-  },
-
-  getAllForums(){
-    const that = this
-    wx.request({
-      url: domainName+'/forum/getAllForums',
-      method: 'GET',
-      header: {},
-      credentials: 'omit',
-      success(res) {
-        console.log(res.data)
-        that.setData({detail:res.data})
+        that.setData({bannerDetail:res.data})
       }
     })
   }

@@ -1,0 +1,2 @@
+<!--pages/index/components/swiper/index.wxml-->
+<rich-text nodes="{{bannerDetail.content}}"></rich-text>

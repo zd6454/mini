@@ -159,7 +159,7 @@ Page({
   },
   handlePreview(e){
     console.log(e.currentTarget.dataset.src)
-    var path = './components/banner/index';
+    var path = './components/swiper/index';
     var id = e.currentTarget.dataset.src.bannerId;
     wx.navigateTo({
       url: path + "?id=" + id,
@@ -176,7 +176,8 @@ Page({
   },
 
   handleSchool(e){
-    const  path = e.currentTarget.dataset.path
+    const path = e.currentTarget.dataset.path
+    console.log(e)
     if(path){
       wx.navigateTo({
         url: path,
