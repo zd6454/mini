@@ -25,20 +25,6 @@ Page({
   this.setData({content:value})
   },
 
-  chooseImage: function (e) {
-    var that = this;
-    wx.chooseImage({
-        sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-        sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-        success: function (res) {
-            // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-            console.log(res,'56')
-            that.setData({
-                files: res.tempFilePaths
-            });
-        },
-    })
-},
 previewImage: function(e){
     wx.previewImage({
         current: e.currentTarget.id, // 当前显示图片的http链接
@@ -49,16 +35,26 @@ selectFile(files) {
     console.log('files', files)
     // 返回false可以阻止某次文件上传
 },
+deleteImg(){
+    this.setData({files:[]})
+},
 uplaodFile(files) {
     console.log('upload files', files)
     // this.setData({files:files,})
     // 文件上传的函数，返回一个promise
+    const {tempFilePaths} = files
     return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            reject('some error')
-        }, 1000)
+        console.log(resolve);
+        console.log(reject);
+        let obj = {
+          url: files.tempFilePaths[0]
+        }
+        this.setData({
+          files: this.data.files.concat(obj),
+        });
     })
 },
+
 uploadError(e) {
     console.log('upload error', e.detail)
 },
@@ -77,17 +73,21 @@ uploadSuccess(e) {
 
   uploadImg(forumId){
       const{files}=this.data;
-   wx.request({
-     url: domainName+'/forum/uploadFile',
-     method:"POST",
-     data:{
-        uploadfile:files.tempFiles[0],
-        forumId
-     },
-     success(res){
-     console.log("上传图片",res)
-     }
-   })
+      wx.uploadFile({
+        filePath: files[0].url,
+        name: 'uploadfile',
+        formData:{forumId},
+        url: domainName+'/forum/uploadFile',
+        success(res){
+        // console.log(res,'uplaod');
+        },
+        fail(err){
+          //  console.log(err)
+        },
+        complete(res){
+          // console.log(23,'res')
+        }
+      })
   },
   //保存
   comfirm(){
@@ -104,19 +104,41 @@ uploadSuccess(e) {
      url: domainName+'/forum/addForum',
      method:"POST",
      data:{
+        userId:openid,
         forumId:0,
         sort:0,
         isUse:0,
         imgUrl:"",
-        date,
+        time:date,
         title,
         content,
      },
      success(res){
         console.log(res);
+    try {
         that.setData({forumId:res.data.forumId})
         that.uploadImg(res.data.forumId);
+        wx.showModal({
+          title: '保存成功',
+          success(res){
+            if (res.confirm) {
+                that.omitto();
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+                that.omitto();
+              }
+          }
+        })
+    } catch (error) {
+        console.log('something error')
+    }
+        
      },
+   })
+  },
+  omitto(){
+   wx.navigateBack({
+       delta:1,
    })
   },
   //发布
@@ -134,6 +156,7 @@ uploadSuccess(e) {
      url: domainName+'/forum/addForum',
      method:"POST",
      data:{
+        userId:openid,
         forumId:0,
         sort:0,
         isUse:1,
@@ -146,6 +169,17 @@ uploadSuccess(e) {
      console.log(res);
      that.setData({forumId:res.data.forumId})
      that.uploadImg(res.data.forumId);
+     wx.showModal({
+      title: '发布成功',
+      success(res){
+        if (res.confirm) {
+            that.omitto();
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+            that.omitto();
+          }
+      }
+    })
      },
    })
   },

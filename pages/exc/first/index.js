@@ -14,58 +14,30 @@ Page({
       imgUrl:'http://1.116.77.118:2333/saveFiles/images/秋天落叶.png',
       content:'秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间'
     }],
-    replyList:[{
-      avatarUrl:'',
-      name:'天气很好',
-      txt:'你好',
-    }],
-    commend:[
-    {icon:'http://1.116.77.118:2333/saveFiles/images/评论.png', number:cdata},
-    ],
-    like:[
-    {icon:'http://1.116.77.118:2333/saveFiles/images/点赞.png', number:ldata},
-    ],
+    replyList:[
+      {
+        imgUrl:'',
+      title:'天气很好',
+      content:'你好',
+      time:"2021-08-23"
+    },
+    {
+      imgUrl:'',
+    title:'天气很好',
+    content:'你好',
+    time:"2021-08-23"
+  },
+  ],
     reply_time: '1',
     test:[]
   },
 
-  login: function () {
-    var that = this;
-    // 查看是否授权
-    wx.getSetting({
-      success(res) {
-        if (res.authSetting['scope.userInfo']) {
-          wx.getUserInfo({
-            success: function (res) {
-              console.log(res.userInfo),
-                that.setData({
-                  nickName: res.userInfo.nickName,
-                  avatarUrl: res.userInfo.avatarUrl,
-                })
-            }
-          })
-        }
-      }
-    })
-  },
-
-  bindGetUserInfo(e) {
-    console.log(e.detail.userInfo)
-  },
-
-  tolike:function(){
-    ldata++;
-  },
-
-  tocommend:function(){
-    cdata++;
-  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     console.log(options.forumId);
-    this.getForum(options.forumId);
+    // this.getForum(options.forumId);
     this.setData({forumId:options.forumId})
     this.intital();
   },

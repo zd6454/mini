@@ -1,18 +1,33 @@
 // pages/my/dopublishforum/index.js
+const app = getApp();
+const domainName = app.globalData.domainName;
+const openid = wx.getStorageSync('openid');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    url:''
+    data:[],
   },
-
+  
+  getMyPublish(){
+    const that=this;
+  wx.request({
+    url: domainName+'/forum/getUserForums',
+    method:"GET",
+    data:{userId:openid},
+    success(res){
+    console.log(res)
+     that.setData({data:res.data})
+    },
+  })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+   this.getMyPublish();
   },
 
   /**

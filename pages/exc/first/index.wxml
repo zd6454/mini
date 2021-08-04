@@ -6,51 +6,25 @@
   </view>
 </view>
 
-<view class="reply">
-  <view class="reply_item">
-    <view class="item_txt">评论</view>
-    <view class="reply_time">{{reply_time}}</view>
-  </view>
-  <view class="head">
-    <view class="avatar">
-      <image src="nickName"  class="imageset" />
-    </view>
-    <view >
-       <textarea placeholder='写下你的评论' maxlength='500' auto-focus  bindinput></textarea>
-     </view>
-  </view>
-  <view class="foot">
-    <div class="reply_a" wx:for="{{replyList}}" wx:key="item" data-set="{{item}}" wx:for-item="item" wx:for-index="index">
-      <view class="avatar">
-        <image src="{{item.avatarUrl}}" class="imageset" />
+  <view class="reply">
+  <view class="total">评论{{2}}</view>
+      <view class="box" wx:for="{{replyList}}" >
+      <view class="inline">
+          <view class="head">
+              <image class="avatar" src="http://1.116.77.118:2333/saveFiles/images/秋天落叶.png" />
+              <view class="username">{{item.title}}</view>
+            </view>
+            <view class="time">
+             {{item.time}}
+            </view>
       </view>
-      <view class="replyWrap">
-        <view class="reply_author">{{item.name}}</view>
-        <view class="reply_txt">{{item.txt}}</view>
-      </view>
-      <view class="taps" wx:for="{{commend}}" wx:key="item" data-set="{{item}}" wx:for-item="item" wx:for-index="index">
-        <view class="interaction" bindtap="tocommand">
-        <image src="{{item.icon}}" class="Img"></image>
-        <view>{{item.number}}</view>
-        </view>
-      </view>
-      <view class="taps" wx:for="{{like}}" wx:key="item" data-set="{{item}}" wx:for-item="item" wx:for-index="index">
-        <view class="interaction" bindtap="tolike">
-        <image src="{{item.icon}}" class="Img"></image>
-        <view>{{item.number}}</view>
-        </view>
-      </view>
-  </div>
-  <view class="reply_b" wx:for="{{replyList}}" wx:key="item" data-set="{{item}}" wx:for-item="item" wx:for-index="index">
-    <view class="avatar">
-        <image src="{{item.avatarUrl}}" class="imageset" />
-      </view>
-      <view class="replyWrap">
-        <view class="reply_author">{{item.name}}</view>
-        <view class="reply_txt">{{item.txt}}</view>
+        <view class="content">{{item.content}}</view>
       </view>
   </view>
+  <view class="userPublish">
+  <form class="form">
+    <textarea adjust-position="true" placeholder="输入评论" auto-focus class="textarea"   />
+      <button size="mini" class="mini-btn buttonset" type="default" form-type="submit">发布</button>
+  </form>
   </view>
-
-</view>
 </view>

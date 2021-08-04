@@ -10,15 +10,15 @@ Page({
    */
   data: {
      items:[
-       {myinfo:'头像',content:'123',type:"imgUrl"},
-       {myinfo:'昵称',content:'123',type:"username"},
-       {myinfo:'性别',content:'男',type:"gender"},
-       {myinfo:'学校',content:'武汉理工',type:"school"},
-       {myinfo:'学院',content:'计算机学院',type:"institute"},
-       {myinfo:'班级',content:'软件1805班',type:"clazz"},
-       {myinfo:'姓名',content:'zd',type:"username"},
-       {myinfo:'手机号',content:'123456789',type:"phone"},
-       {myinfo:'地址',content:'武汉理工大学',type:"address"},
+       {myinfo:'头像',content:'',type:"imgUrl"},
+       {myinfo:'昵称',content:'',type:"username"},
+       {myinfo:'性别',content:'',type:"gender"},
+       {myinfo:'学校',content:'',type:"school"},
+       {myinfo:'学院',content:'',type:"institute"},
+       {myinfo:'班级',content:'',type:"clazz"},
+       {myinfo:'姓名',content:'',type:"username"},
+       {myinfo:'手机号',content:'',type:"phone"},
+       {myinfo:'地址',content:'',type:"address"},
      ]
   },
 

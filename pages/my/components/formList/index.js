@@ -5,17 +5,6 @@ Component({
    * 组件的属性列表
    */
   properties: {
-       url:{
-         type:String,
-         value:'',
-         observer: function (newVal, oldVal) {
-          // 属性值变化时执行 
-          url = newVal
-          this.setData({
-            url
-          })
-        }
-       },
        data:{
          type:Array,
          value:[],
@@ -83,12 +72,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-   
     todetail(e){
       console.log(e)
-      const {url} = this.data;
+      const{forumId} = e.currentTarget.dataset.item;
       wx.navigateTo({
-        url: url,
+        url: `../../../exc/first/index?forumId=${forumId}`,
       })
       },
   }

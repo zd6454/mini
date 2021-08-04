@@ -35,93 +35,61 @@
 }
 
 .reply{
-  margin-top: 20rpx;
-  width: 95%;
-  margin: auto;
-  margin-bottom: 20rpx;
+  margin:20rpx;
 }
-.reply_item{
-  height: 40rpx;
-  display: flex;
-  flex-direction: row;
-}
-.item_txt{
-  width: 10%;
-  font-weight: 500;
+.total{
   font-size: 30rpx;
+  color:gray;
 }
-.reply_time{
-  font-weight: 500;
-  font-size: 30rpx;
+.box{
+  margin-top:20rpx;
 }
-
-.head{
+.inline{
   display: flex;
-  height: 120rpx;
-  margin-top: 20rpx;
-  margin-right: 80rpx;
   justify-content: space-between;
 }
-.avatar{
-  align-items: center;
-}
-.imageset{
-  border-radius: 50%;
-  background-color: darkgray;
-  width:110rpx;
-  height:110rpx;
-}
-.head textarea{
-  width:480rpx;
-  height:110rpx;
-  border: 2rpx solid #b2c1c2;
-  font-weight: 400;
-  font-size: 32rpx;
-}
-
-.foot{
-  margin: auto;
-  margin-top: 20rpx;
-}
-.foot .reply_a{
-  height: 110rpx;
+.head{
   display: flex;
-  flex-direction: row;
-  margin-top: 20rpx;
+  flex-direction:row;
+  align-items:center;
 }
-
-.replyWrap{
-  margin-left: 45rpx;
-  width: 50%;
-  position: relative;
-  color: black;
+.avatar{
+  width:64rpx;
+  height:64rpx;
+  border-radius: 50%;
 }
-.replyWrap .reply_author{
-  font-weight: 550;
+.username{
+  margin-left: 20rpx;
   font-size: 30rpx;
 }
-.replyWrap .reply_txt{
-  font-weight: 400;
-  font-size: 29rpx;
-  position: relative;
+.content{
+  margin-top: 10rpx;
+  font-size: 33rpx;
+  color: gray;
+  margin-left: 20rpx;
+  text-indent:2em;
 }
-.interaction{
-  height: 100%;
-  width: 90rpx;
-  font-size: 25rpx;
-  text-align: center;
+.time{
+  font-size: 24rpx;
+  color: gray;
 }
-.Img{
-  width:40rpx;
-  height:40rpx;
-  margin-top: 30rpx;
-  margin-left: 5rpx;
-  margin-right: 5rpx;
+.userPublish{
+  position: fixed;
+  bottom:20rpx;
+  left:20rpx;
 }
-.foot .reply_b{
-  height: 110rpx;
+.form{
   display: flex;
-  flex-direction: row;
-  margin-top: 20rpx;
-  margin-left: 20%;
+  justify-content: space-between;
+}
+.textarea{
+   height:50rpx;
+   width:80rpx;
+   border: 2rpx solid  gray;
+}
+.buttonset{
+  position: fixed;
+}
+button[type='default'] {
+  color: rgb(2, 68, 99) !important;
 }

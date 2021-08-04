@@ -10,7 +10,7 @@
      <view>
       <mp-cells>
             <mp-cell>
-                <mp-uploader  bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" max-count="1" ></mp-uploader>
+                <mp-uploader  bindfail="uploadError" binddelete="deleteImg" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" max-count="1" delete="true" title="" tips="封面上传" ></mp-uploader>
             </mp-cell>
         </mp-cells>
      </view>
