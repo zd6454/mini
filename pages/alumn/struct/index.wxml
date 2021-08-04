@@ -1,7 +1,7 @@
 <!--pages/alumn/struct/index.wxml-->
 <block>
   <view wx:if="{{htmlData}}">
-  <rich-text nodes="{{htmlData}}"></rich-text>
+  <rich-text class="text" nodes="{{htmlData}}"></rich-text>
 </view>
 <view class="null" wx:else>请等待管理员发布。</view>
 </block>
