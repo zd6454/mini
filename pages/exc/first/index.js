@@ -1,19 +1,14 @@
 var app = getApp();
-var cdata;
-var ldata;
 const domainName = app.globalData.domainName;
+const openid = wx.getStorageSync('openid');
+var util=require('../../../utils/util.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    activityList:[{
-      title:'秋日伯明翰，一起走在森林与城市之间',
-      author:'三一圣大卫',
-      imgUrl:'http://1.116.77.118:2333/saveFiles/images/秋天落叶.png',
-      content:'秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间秋日伯明翰，一起走在森林与城市之间'
-    }],
+    forum:{},
     replyList:[
       {
         imgUrl:'',
@@ -24,62 +19,83 @@ Page({
     {
       imgUrl:'',
     title:'天气很好',
-    content:'你好',
+    content:'你好aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
     time:"2021-08-23"
   },
   ],
-    reply_time: '1',
-    test:[]
+    content:"",
+    height:0,
+    replyId:0,
+    replyWho:"评论",
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.forumId);
     // this.getForum(options.forumId);
     this.setData({forumId:options.forumId})
-    this.intital();
+    this.getDetail(options.forumId);
   },
-  intital:function(){
-    this.setData({
-      cdata:0,
-      ldata:0
+  getDetail(forumId){
+   const that=this;
+    wx.request({
+      url:domainName+'/forum/getForum' ,
+      method:"GET",
+      data:{forumId},
+      success(res){
+       if(res.data.title){
+         that.setData({forum:res.data})
+       }
+      },
     })
+  },
+  getInput(e){
+   const{value}=e.detail;
+   this.setData({content:value})
+  },
+  heightChange(e){
+  this.setData({height:e.detail.height})
   },
 
   formSubmit: function (e) {
     var that = this;
-    const {forumId}=this.data;
-    var liuyantext = e.detail.value.liuyantext; //获取表单所有name=liuyantext的值 
-    var nickName = e.detail.value.nickname; //获取表单所有name=nickName的值 
-    var headimg = e.detail.value.headimg; //获取表单所有name=headimg的值 
+    const date=util.formatTime(new Date());
+    const {forumId,content,replyId}=this.data;
      const data={
       commentId:0,
       isUse:0,
-      forumId,
-      replyId:"",
-      content:"",
-      time:new Date(),
+      userId:openid,
+      forumId:Number(forumId),
+      replyId:replyId,
+      content,
+      time:date,
      }
     wx.request({
       url: domainName+'/comment/addComment',
+      method:"POST",
       data,
-      header: { 'Content-Type': 'application/json' },
       success: function (res) {
         console.log(res.data)
-        wx.showToast({
-          title: '留言成功',
+        if(res.data.commentId){
+           wx.showToast({
+          title: '评论成功，审核通过后显示,',
           icon: 'success'
         })
-        that.setData({
-          re: res.data,
-        })
-        wx.hideToast();
+        that.setData({replyId:0,content:"" })
+         that.getForum(forumId);
+        }    
       }
     })
   },
-
+  reSet(){
+  this.setData({replyId:0,replyWho:"评论"})
+  },
+  replyOne(e){
+   console.log(e);
+   const {commentId} = e.currentTarget.dataset.item;
+   this.setData({replyId:commentId,replyWho:"回复此评论",content:""});
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -130,7 +146,8 @@ Page({
   },
 
   getForum(Id){
-    const that = this
+    const that = this;
+    
     wx.request({
       url: domainName+'/comment/getForumComments',
       method: 'GET',
@@ -140,6 +157,7 @@ Page({
       success(res) {
         console.log(res.data)
         that.setData({replyList:res.data})
+        wx.hideToast({})
       }
     })
   }

@@ -30,8 +30,10 @@
 }
 .txt{
   font-weight: 500;
-  font-size: 30rpx;
+  font-size: 35rpx;
+  text-indent:1rem;
   margin-bottom: 20rpx;
+  line-height:100%
 }
 
 .reply{
@@ -63,33 +65,44 @@
   font-size: 30rpx;
 }
 .content{
-  margin-top: 10rpx;
-  font-size: 33rpx;
+ margin-top: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content2{
+  background-color: rgb(217, 220, 221);
+}
+.contentSet{
+  font-size: 30rpx;
   color: gray;
-  margin-left: 20rpx;
+  width:88%;
   text-indent:2em;
+}
+.replyIcon{
+  height:52rpx;
+  width: 52rpx;
 }
 .time{
   font-size: 24rpx;
   color: gray;
 }
-.userPublish{
-  position: fixed;
-  bottom:20rpx;
-  left:20rpx;
-}
-.form{
-  display: flex;
-  justify-content: space-between;
-}
+
 .textarea{
+  position: fixed;
+  bottom:30rpx;
+  left:40rpx;
+  width:60%;
    height:50rpx;
-   width:80rpx;
-   border: 2rpx solid  gray;
+   border: 6rpx solid   rgb(2, 68, 99);
+   border-radius: 4rpx;
+   line-height:100%
 }
 .buttonset{
   position: fixed;
+  right:40rpx;
 }
 button[type='default'] {
   color: rgb(2, 68, 99) !important;
 }
+

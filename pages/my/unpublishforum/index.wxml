@@ -1,4 +1,4 @@
 <!--pages/my/unpublishforum/index.wxml-->
 <view>
-  <forumList url="{{url}}" ></forumList>
+  <forumList data="{{data}}" type="undone"></forumList>
 </view>

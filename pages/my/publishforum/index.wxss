@@ -33,3 +33,6 @@
 .button2{
   background-color: rgb(74, 157, 196) !important;
 }
+.textContent{
+  line-height:100%
+}

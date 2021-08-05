@@ -87,7 +87,6 @@ Page({
       header: {},
       credentials: 'omit',
       success(res) {
-        console.log(res.data)
         that.setData({activityList:res.data})
       }
     })
@@ -101,7 +100,6 @@ Page({
       header: {},
       credentials: 'omit',
       success(res) {
-        console.log(res.data)
         that.setData({detail:res.data})
       }
     })

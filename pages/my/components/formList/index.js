@@ -15,6 +15,17 @@ Component({
             activityList:data
           })
         }
+       },
+       type:{
+         type:String,
+         value:"",
+         observer: function (newVal, oldVal) {
+          // 属性值变化时执行 
+          const data = newVal
+          this.setData({
+            type:data
+          })
+        }
        }
   },
 
@@ -66,6 +77,7 @@ Component({
         url:'url'
       },
     ],
+    type:"",
   },
 
   /**
@@ -75,9 +87,14 @@ Component({
     todetail(e){
       console.log(e)
       const{forumId} = e.currentTarget.dataset.item;
-      wx.navigateTo({
-        url: `../../../exc/first/index?forumId=${forumId}`,
-      })
+      const{type}=this.data;
+      let url="";
+      if(type==="done"){
+        url=`/pages/exc/first/index?forumId=${forumId}`
+      }else{
+        url=`../publishforum/index?forumId=${forumId}&type=undone`
+      }
+      wx.navigateTo({url,})
       },
   }
 })

@@ -1,4 +1,4 @@
 <!--pages/my/dopublishforum/index.wxml-->
 <view>
-  <forumList data="{{data}}" ></forumList>
+  <forumList data="{{data}}" type="done" ></forumList>
 </view>

@@ -14,6 +14,11 @@ Page({
      title:"",
      content:"",
      forumId:0,
+     uploadUrl:{
+       demo:"/forumDemo/uploadFile",
+       publish:"/forum/uploadFile"
+     },
+     type:"",
   },
   gettitle(e){
    const{value}=e.detail;
@@ -40,18 +45,12 @@ deleteImg(){
 },
 uplaodFile(files) {
     console.log('upload files', files)
+    const that=this;
     // this.setData({files:files,})
     // 文件上传的函数，返回一个promise
-    const {tempFilePaths} = files
     return new Promise((resolve, reject) => {
-        console.log(resolve);
-        console.log(reject);
-        let obj = {
-          url: files.tempFilePaths[0]
-        }
-        this.setData({
-          files: this.data.files.concat(obj),
-        });
+        let obj = [{url: files.tempFilePaths[0]}]
+        that.setData({files: obj,});
     })
 },
 
@@ -67,47 +66,71 @@ uploadSuccess(e) {
   onLoad: function (options) {
     this.setData({
       selectFile: this.selectFile.bind(this),
-      uplaodFile: this.uplaodFile.bind(this)
+      uplaodFile: this.uplaodFile.bind(this),
+      type:options.type,
+      forumId:options.forumId,
   })
+  if(options.forumId){
+  this.getForum(options.forumId);
+  }
+  },
+  
+  getForum(forumId){
+    const that=this;
+    let files=[];
+   wx.request({
+     url: domainName+'/forumDemo/getForum',
+     method:"GET",
+     data:{forumId},
+     success(res){
+       if(res.data.forumId){
+         const{title,content,imgUrl}=res.data;
+         files.push({url:imgUrl});
+       that.setData({
+        title,content,files
+       })
+       }
+     }
+   })
   },
 
-  uploadImg(forumId){
+  uploadImg(forumId,uploadUrl){
       const{files}=this.data;
       wx.uploadFile({
         filePath: files[0].url,
         name: 'uploadfile',
         formData:{forumId},
-        url: domainName+'/forum/uploadFile',
+        url: domainName+uploadUrl,
         success(res){
-        // console.log(res,'uplaod');
+        console.log(res,'uplaod');
         },
         fail(err){
-          //  console.log(err)
+           console.log(err,'33')
         },
         complete(res){
-          // console.log(23,'res')
+          console.log(23,'res')
         }
       })
   },
   //保存
   comfirm(){
       const that = this;
-   const{title,content,files}=this.data;
+   const{title,content,uploadUrl,type,files,forumId}=this.data;
    const date=util.formatTime(new Date());
-   if(title==""){
+   if(title==""||files.length<1){
        wx.showModal({
-         title: '请填写标题',
+         title: '请确保信息填写完整',
        })
        return;
    }
+  
+   const urlType=type==="undone"?"/forumDemo/updateForum":"/forumDemo/addForum";
    wx.request({
-     url: domainName+'/forum/addForum',
+     url: domainName+urlType,
      method:"POST",
      data:{
         userId:openid,
         forumId:0,
-        sort:0,
-        isUse:0,
         imgUrl:"",
         time:date,
         title,
@@ -116,8 +139,9 @@ uploadSuccess(e) {
      success(res){
         console.log(res);
     try {
+        const forumIdDemo=type==="undone"?Number(forumId):res.data.forumId ;
         that.setData({forumId:res.data.forumId})
-        that.uploadImg(res.data.forumId);
+        that.uploadImg(forumIdDemo,uploadUrl.demo);
         wx.showModal({
           title: '保存成功',
           success(res){
@@ -144,11 +168,11 @@ uploadSuccess(e) {
   //发布
   publish(){
       const that=this;
-   const{title,content,files}=this.data;
+   const{title,content,files,uploadUrl}=this.data;
    const date=util.formatTime(new Date());
-   if(title==""){
+   if(title==""||files.length<1){
     wx.showModal({
-      title: '请填写标题',
+      title: '请确保信息填写完整',
     })
     return;
 }
@@ -159,8 +183,8 @@ uploadSuccess(e) {
         userId:openid,
         forumId:0,
         sort:0,
-        isUse:1,
-        date,
+        isUse:0,
+        time:date,
         imgUrl:"",
         title,
         content,
@@ -168,7 +192,7 @@ uploadSuccess(e) {
      success(res){
      console.log(res);
      that.setData({forumId:res.data.forumId})
-     that.uploadImg(res.data.forumId);
+     that.uploadImg(res.data.forumId,uploadUrl.publish);
      wx.showModal({
       title: '发布成功',
       success(res){
