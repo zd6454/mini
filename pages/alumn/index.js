@@ -7,10 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-     mateList:[
-       {img:'../../icons/abroad.png',name:'彼得多兰',info:'1234567685454545454545454545'},
-       {img:'../../icons/abroad.png',name:'彼得多兰',info:'1234567685454545454545454545'},
-     ],
+     mateList:[],
      htmlData1:"",
      htmlData2:"",
      htmlData3:"",

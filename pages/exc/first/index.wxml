@@ -5,7 +5,6 @@
     <view class="txt">{{forum.content?forum.content:"请等待管理员发布"}}</view>
   </view>
 </view>
-
   <view class="reply">
   <view class="total">评论{{replyList.length}}</view>
   <scroll-view scroll-y="true" style="height: 110vh;" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">

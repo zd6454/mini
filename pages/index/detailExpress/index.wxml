@@ -1,4 +1,10 @@
-<!--pages/index/detailExpress/index.wxml-->
-<view>
-  {{htmlData}}
+
+<view class="page">
+  <view class="head" wx:if="{{key=='schoolmateId'}}">
+   <view class="avatar">
+     <image class="img" src="{{data.imgUrl}}"></image>
+   </view>
+   <view class="name">{{data.name}}</view>
+  </view>
+   <view class="content">{{data.content}}</view>
 </view>

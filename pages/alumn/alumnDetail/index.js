@@ -8,7 +8,7 @@ Page({
    */
   data: {
     schoolmateId:0,
-    htmlData:"",
+    data:"",
   },
 
   /**
@@ -28,7 +28,7 @@ Page({
         credentials: 'omit',
         success(res) {
           console.log(res.data)
-          that.setData({htmlData:res.data.content?res.data:"请等待管理员发布"})
+          that.setData({data:res.data})
         }
       })
   },

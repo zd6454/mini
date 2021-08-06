@@ -1,1 +1,25 @@
 /* pages/alumn/alumnDetail/index.wxss */
+.page{
+  margin:20rpx;
+}
+.head{
+ clear: both;
+}
+.avatar{
+  float: left;
+}
+.img{
+  height:64rpx;
+  width:64rpx;
+  border-radius: 50%;
+}
+.name{
+  float:left;
+  margin-left: 20rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.content{
+  line-height: 100%;
+  text-indent: 2em;
+}

@@ -12,7 +12,8 @@ Page({
        "interCooperId":'/interCooperation/getInterCooper',
        "schoolmateId":'/schoolmate/getSchoolmate'
      },
-     htmlData:"",
+     key:"",
+     data:"",
   },
 
   /**
@@ -32,11 +33,10 @@ Page({
       url: domainName+type[key],
       method: 'GET',
       data,
-      header: {},
       credentials: 'omit',
       success(res) {
         console.log(res.data)
-        that.setData({htmlData:res.data.content?res.data.content:'请等待管理员发布'})
+        that.setData({data:res.data?res.data:'请等待管理员发布'})
       }
     })
    },
