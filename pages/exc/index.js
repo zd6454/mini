@@ -9,7 +9,6 @@ Page({
   data: {
     activityList:[],
     path: './first/index',
-    test: [],
     detail: ""
   },
 

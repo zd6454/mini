@@ -68,7 +68,10 @@ Page({
         name:'fdsffv',
       },
     ],
-    corporationList:[]
+    corporationList:[],
+    undergraduateImg:domainName+'/saveFiles/images/博士帽.png',
+    graduateImg:domainName+'/saveFiles/images/字典管理.png',
+    doctorImg:domainName+'/saveFiles/images/书.png'
   },
   // 事件处理函数
   bindViewTap() {
@@ -156,7 +159,7 @@ Page({
   },
   handlePreview(e){
     console.log(e.currentTarget.dataset.src)
-    var path = './components/banner/index';
+    var path = './components/swiper/index';
     var id = e.currentTarget.dataset.src.bannerId;
     wx.navigateTo({
       url: path + "?id=" + id,
@@ -173,7 +176,8 @@ Page({
   },
 
   handleSchool(e){
-    const  path = e.currentTarget.dataset.path
+    const path = e.currentTarget.dataset.path
+    console.log(e)
     if(path){
       wx.navigateTo({
         url: path,

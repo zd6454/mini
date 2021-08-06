@@ -19,3 +19,8 @@
   transform: translate(-30%,-40%);
   color: gray;
 }
+
+.text{
+  line-height: 1.5;
+  letter-spacing: 2px;
+}

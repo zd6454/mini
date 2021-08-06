@@ -1,4 +1,4 @@
-// pages/index/components/banner/index.js
+// pages/index/components/swiper/index.js
 const app = getApp();
 const domainName = app.globalData.domainName;
 Page({
@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    htmlData:"<p>等待管理员发布</p>"
+      bannerDetail:[]
   },
 
   /**
@@ -15,6 +15,7 @@ Page({
    */
   onLoad: function (options) {
       console.log(options);
+      this.getBanner(options.id);
   },
 
   /**
@@ -64,5 +65,22 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  getBanner(id){
+    const that = this
+    wx.request({
+      url: domainName+'/banner/getBanner',
+      method: 'GET',
+      header: {},
+      data:{
+        bannerId:id
+      },
+      credentials: 'omit',
+      success(res) {
+        console.log(res.data)
+        that.setData({bannerDetail:res.data})
+      }
+    })
   }
 })

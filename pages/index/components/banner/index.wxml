@@ -1,2 +1,2 @@
 <!--pages/index/components/banner/index.wxml-->
-<rich-text nodes="{{bannerDetail.content}}"></rich-text>
+<rich-text class="text" nodes="{{htmlData}}"></rich-text>

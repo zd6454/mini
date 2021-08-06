@@ -20,7 +20,10 @@
   <view class="block"></view>
   <div class="leason">
     <view class="leaImgWrap">
-      <image src="" class="leaImg"></image>
+      <image src="{{undergraduateImg}}" class="leaImg"></image>
+    </view>
+    <view class="triangleWrap">
+    <view class="triangle"></view>
     </view>
     <view class="txtWrap" bindtap="handleSchool" data-path="./components/undergradute/index">
       <view class="edu">本科生教育</view>
@@ -29,7 +32,10 @@
   </div>
   <div class="leason0">
     <view class="leaImgWrap">
-      <image src="" class="leaImg"></image>
+      <image src="{{graduateImg}}" class="leaImg"></image>
+    </view>
+    <view class="triangleWrap">
+    <view class="triangle0"></view>
     </view>
     <view class="txtWrap" bindtap="handleSchool" data-path="./components/postgradute/index">
       <view class="edu">研究生教育</view>
@@ -38,7 +44,10 @@
   </div>
   <div class="leason">
     <view class="leaImgWrap">
-      <image src="" class="leaImg"></image>
+      <image src="{{doctorImg}}" class="leaImg"></image>
+    </view>
+    <view class="triangleWrap">
+    <view class="triangle"></view>
     </view>
     <view class="txtWrap" bindtap="handleSchool" data-path="./components/doctor/index">
       <view class="edu">博士生教育</view>
