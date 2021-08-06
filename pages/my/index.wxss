@@ -9,7 +9,7 @@
   height: 250rpx;
   border-radius: 2%;
   margin: 0rpx 20rpx;
-  background-color: rgb(2, 68, 99);
+  background-color: rgb(10, 90, 128);
   padding: 40rpx;
   border-bottom-right-radius:150rpx;
   border-bottom-left-radius:150rpx;
@@ -44,9 +44,10 @@
 }
 .body{
   background-color: #a88b61;
-  margin:-110rpx 40rpx;
-  border-radius: 5rpx;
-  height:140rpx;
+  margin:-110rpx 60rpx;
+  border-radius: 7rpx;
+  height:120rpx;
+  width: 640rpx;
   color:#ffffff;
   display: flex;
   justify-content: space-around;
@@ -54,9 +55,12 @@
 .tabs{
 }
 .tab{
- margin: 20rpx;
- font-size: 25rpx;
+ margin: 15rpx 20rpx 10rpx;
+ font-size: 20rpx;
  text-align: center;
+}
+.function{
+  margin-top: -15rpx;
 }
 .tabIcon{
   width:70rpx;
@@ -65,9 +69,11 @@
   margin-right: 20rpx;
 }
 .foot{
-  margin: 180rpx 20rpx 0rpx 20rpx;
+  height: 520rpx;
+  margin: 150rpx 20rpx 0rpx 20rpx;
   background-color: #ffffff;
-  border-radius: 2rpx;
+  border-radius: 8rpx;
+  box-shadow: 0rpx 0rpx 7rpx 3rpx gray;
 }
 .setting{
   color:rgb(2, 68, 99);
@@ -79,14 +85,14 @@
 }
 .detail{
   font-size: 35rpx;
-  font-weight: bold;
+  font-weight: 500;
 }
 .login{
   margin-top: 15rpx;
   margin-left: 30rpx;
 }
 button[size='mini']{
-  background-color: #5795D0;
+  background-color: #4897e0;
   width:300rpx !important;
   font-size:34rpx !important;
   color:white;

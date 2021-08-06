@@ -21,7 +21,7 @@
     <view class="tabs" wx:for="{{tabs}}" wx:key="item" data-set="{{item}}" wx:for-item="item" wx:for-index="index" >
       <view class="tab" bindtap="switchto" data-item="{{item}}">
         <image src="{{item.icon}}"  class="tabIcon"   />
-        <view>{{item.name}}</view>
+        <view class="function">{{item.name}}</view>
       </view>
     </view>
   </view>

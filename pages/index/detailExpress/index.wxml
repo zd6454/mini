@@ -6,5 +6,5 @@
    </view>
    <view class="name">{{data.name}}</view>
   </view>
-   <view class="content">{{data.content}}</view>
+  <rich-text nodes="{{data.content}}"></rich-text>
 </view>
