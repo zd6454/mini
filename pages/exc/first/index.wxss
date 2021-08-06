@@ -50,6 +50,7 @@
   display: flex;
   justify-content: space-between;
 }
+
 .head{
   display: flex;
   flex-direction:row;
@@ -69,6 +70,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-left: 26rpx;
 }
 .content2{
   background-color: rgb(217, 220, 221);
@@ -88,21 +90,58 @@
   color: gray;
 }
 
-.textarea{
+.userPublish{
   position: fixed;
+  bottom:0rpx;
+  left:0rpx;
+  width:100%;
+  background-color: rgb(242, 247, 248);
+}
+
+.textarea{
+  /* position: fixed;
   bottom:30rpx;
-  left:40rpx;
+  left:40rpx; */
   width:60%;
    height:50rpx;
    border: 6rpx solid   rgb(2, 68, 99);
    border-radius: 4rpx;
    line-height:100%
 }
+.heightset{
+  clear:both; height:0; overflow:hidden;
+}
 .buttonset{
-  position: fixed;
-  right:40rpx;
+  /* position: fixed; */
+  padding: 0 10rpx !important ;
 }
 button[type='default'] {
   color: rgb(2, 68, 99) !important;
+}
+.boxreply{
+  margin-left: 60rpx;
+  background-color:rgb(217, 222, 224) ;
+}
+.contentSet2{
+  font-size: 30rpx;
+  color: gray;
+  width:88%;
+  text-indent:2em;
+  margin-left: 26rpx;
+}
+.verticla{
+  justify-content: space-around;
+  align-items: center;
+  margin: 20rpx 0;
+}
+
+
+
+button[size='mini'] {
+  width: auto;
+  padding: 0rpx !important ;
+  line-height: 2;
+  font-size: 13px !important;
+  margin:0 !important;
 }
 

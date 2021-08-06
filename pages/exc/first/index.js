@@ -9,20 +9,7 @@ Page({
    */
   data: {
     forum:{},
-    replyList:[
-      {
-        imgUrl:'',
-      title:'天气很好',
-      content:'你好',
-      time:"2021-08-23"
-    },
-    {
-      imgUrl:'',
-    title:'天气很好',
-    content:'你好aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-    time:"2021-08-23"
-  },
-  ],
+    replyList:[ ],
     content:"",
     height:0,
     replyId:0,
@@ -33,7 +20,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // this.getForum(options.forumId);
+    this.getForum(options.forumId);
     this.setData({forumId:options.forumId})
     this.getDetail(options.forumId);
   },
@@ -55,7 +42,8 @@ Page({
    this.setData({content:value})
   },
   heightChange(e){
-  this.setData({height:e.detail.height})
+    console.log(e,'w')
+  this.setData({height:e.detail.height-20})
   },
 
   formSubmit: function (e) {
@@ -93,8 +81,8 @@ Page({
   },
   replyOne(e){
    console.log(e);
-   const {commentId} = e.currentTarget.dataset.item;
-   this.setData({replyId:commentId,replyWho:"回复此评论",content:""});
+   const {commentId,username} = e.currentTarget.dataset.item;
+   this.setData({replyId:commentId,replyWho:`回复${username}`,content:""});
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

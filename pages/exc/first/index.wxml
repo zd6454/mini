@@ -8,11 +8,12 @@
 
   <view class="reply">
   <view class="total">评论{{replyList.length}}</view>
+  <scroll-view scroll-y="true" style="height: 110vh;" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
       <view class="box" wx:for="{{replyList}}" wx:key="index"  >
       <view class="inline">
-          <view class="head">
-              <image class="avatar" src="http://1.116.77.118:2333/saveFiles/images/秋天落叶.png" />
-              <view class="username">{{item.title}}</view>
+            <view class="head">
+              <image class="avatar" src="{{item.imgUrl}}" />
+              <view class="username">{{item.username}}</view>
             </view>
             <view class="time">
              {{item.time}}
@@ -24,10 +25,26 @@
             <image src="../../../icons/reply.png" class="replyIcon"></image>
           </view>
         </view>
+        <view class="boxreply" wx:for="{{item.replies}}" wx:key="index"  >
+          <view class="inline">
+            <view class="head">
+              <image class="avatar" src="{{item.imgUrl}}" />
+              <view class="username">{{item.username}}</view>
+            </view>
+            <view class="time">
+             {{item.time}}
+            </view>
+         </view>
+           <view class="contentSet2">{{item.content}}</view> 
+        </view>
       </view>
+      </scroll-view>
   </view>
   <view class="userPublish">
-    <textarea adjust-position="true" bindlinechange="heightChange" bindinput="getInput" auto-height="true" placeholder="{{replyWho}}" auto-focus class="textarea"   />
+  <view class="inline verticla">
+   <textarea adjust-position="true" bindlinechange="heightChange" value="{{content}}" bindinput="getInput" auto-height="true" placeholder="{{replyWho}}" auto-focus class="textarea"   />
       <button size="mini" class="mini-btn buttonset" type="default" style="bottom:{{height}}rpx" bindtap="formSubmit">发布</button>
   </view>
+  </view>
+   <view class="heightset"></view>
 </view>
