@@ -3,7 +3,7 @@ const appid = "wx2bee8de96f3462d6";   //wx.getAccountInfoSync().miniProgram.appI
 const secret = "8967de4bc48b2e1631c4b6ad49ea3f53";
 const app = getApp();
 const domainName = app.globalData.domainName;
-const openid = app.globalData.openid;
+const openid = wx.getStorageSync('openid');
 var util=require('../../utils/util.js')
 Page({
   /**

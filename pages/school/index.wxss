@@ -35,3 +35,7 @@ page{
   /* top: 100rpx; */
   /* left: 50rpx; */
 }
+.text2{
+  line-height: 110%;
+  text-indent: 2em;
+}
