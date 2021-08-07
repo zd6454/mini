@@ -20,7 +20,12 @@
   <view class="body">
     <view class="tabs" wx:for="{{tabs}}" wx:key="item" data-set="{{item}}" wx:for-item="item" wx:for-index="index" >
       <view class="tab" bindtap="switchto" data-item="{{item}}">
-        <image src="{{item.icon}}"  class="tabIcon"   />
+        <view  >
+            <image src="{{item.icon}}"  class="tabIcon"   />
+            <view wx:if="{{item.name=='系统消息'&&messageNum!=0}}" class="dotset" >
+              <mp-badge class="dot" ext-class="blue" content="{{messageNum}}"/>
+            </view>
+        </view>
         <view class="function">{{item.name}}</view>
       </view>
     </view>

@@ -22,7 +22,7 @@ Page({
     wx.request({
       url: domainName+'/forumDemo/getUserForums',
       method:"GET",
-      data:{userId:openid},
+      data:{userId:openid?openid:wx.getStorageSync('openid')},
       success(res){
       console.log(res)
        that.setData({data:res.data})

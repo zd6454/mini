@@ -14,18 +14,21 @@
   margin: 20rpx;
   font-size: 35rpx;
   font-weight: bold;
+  display: flex;
+  justify-content: space-between;
   border-bottom: 2rpx solid #d3c7c7;
 }
+
 .type{
   padding: 20rpx;
 }
 .body{
-  text-indent: 3rem;
+  text-indent: 1.5rem;
   font-size: 30rpx;
   width: 100%;
-  white-space: nowrap;
+  /* white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: ellipsis; */
 }
 .foot{
   font-size: 25rpx;

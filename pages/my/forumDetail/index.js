@@ -9,27 +9,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-    title:"系统消息",
-    time:"2021-12-1",
-    content:"123"
+    message:{},
+    messageId:0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const{messageId}=options;
-   this.setData({ messageId});
+    const{messToUserId}=options;
+   this.setData({ messageId:messToUserId});
    this.getMessage();
   },
   getMessage(){
     const{messageId}=this.data;
+    const that=this;
   wx.request({
     url: domainName+'/message/getMessage',
     method:"GET",
     data:{messageId},
     success(res){
      console.log(res.data)
+     that.setData({message:res.data})
     }
   })
   },
