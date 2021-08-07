@@ -299,3 +299,8 @@ page{
   text-align: left;
   justify-content: center;
 }
+
+
+view {
+    overflow: initial;
+}

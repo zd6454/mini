@@ -27,6 +27,7 @@ Page({
      userInfo:{},
      openid:"",
      register:false,
+     messageNum:0,
   },
 
   todetail(e){
@@ -123,13 +124,16 @@ Page({
   },
  getafterUser (){
     const that=this;
+    const{oepnid}=this.data;
     wx.request({
       url: domainName+'/user/getUser',
       method:"GET",
-      data:{userId:wx.getStorageSync('openid')},
+      data:{userId:openid?openid:wx.getStorageSync('openid')},
       success(res){
-        if(res.data.userId)
-       that.setData({userInfo:res.data,register:true,login:true})
+        if(res.data.userId){
+          that.setData({userInfo:res.data,register:true,login:true})
+          that.getMessageNum();
+        }
       }
     })
   },
@@ -138,6 +142,19 @@ Page({
      login:false,
    })
    wx.setStorageSync('login', false);
+  },
+
+  getMessageNum(){
+    const that=this;
+    wx.request({
+      url: domainName+'/message/getUserUnreadMessNum',
+      method:"GET",
+      data:{userId:openid?openid:wx.getStorageSync('openid')},
+      success(res){
+        console.log(res.data)
+        that.setData({messageNum:res.data.num})
+      },
+    })
   },
   /**
    * 生命周期函数--监听页面加载
