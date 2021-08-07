@@ -33,18 +33,19 @@
 }
 
 .notice .noticeWrap .titleWrap{
-  margin-left: 20rpx;
+  margin-left: 30rpx;
   margin-top: 20rpx;
   width: 100%;
   position: relative;
   color: white;
 }
 .notice .noticeWrap .titleWrap .title{
-  font-size: 33rpx;
+  font-size: 30rpx;
+  font-weight: lighter;
 }
 .notice .noticeWrap .titleWrap .time{
-  font-size: 25rpx;
-  font-weight: 400;
+  font-size: 20rpx;
+  font-weight: 1;
   position: absolute;
   bottom: 15rpx;
   /* left: 20rpx; */
