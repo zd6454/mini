@@ -6,9 +6,10 @@
     <view class="boxTxt">{{item.text}}</view>
   </view>
 </view>
-<view>学校概况</view>
+<view class="school">学校概况</view>
+<view class="line"></view>
 <block>
-  <view wx:if="{{htmlData}}">
+  <view class="data" wx:if="{{htmlData}}">
   <rich-text class="text text2" nodes="{{htmlData}}"></rich-text>
 </view>
 <view class="null" wx:else>请等待管理员发布。</view>
