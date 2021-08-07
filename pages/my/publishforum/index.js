@@ -129,7 +129,7 @@ uploadSuccess(e) {
      url: domainName+urlType,
      method:"POST",
      data:{
-        userId:openid,
+        userId:openid?openid:wx.getStorageSync('openid'),
         forumId:0,
         imgUrl:"",
         time:date,
@@ -180,7 +180,7 @@ uploadSuccess(e) {
      url: domainName+'/forum/addForum',
      method:"POST",
      data:{
-        userId:openid,
+        userId:openid?openid:wx.getStorageSync('openid'),
         forumId:0,
         sort:0,
         isUse:0,
