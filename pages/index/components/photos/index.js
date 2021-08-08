@@ -1,4 +1,6 @@
 // pages/index/components/photos/index.js
+const app = getApp();
+const domainName = app.globalData.domainName;
 Page({
 
   /**
@@ -29,7 +31,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      this.getPhotos();
   },
 
   handlePreview(e){
@@ -93,5 +95,19 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  getPhotos(){
+    const that = this
+    wx.request({
+      url: domainName+'/photo/getAllUsePhotos',
+      method: 'GET',
+      header: {},
+      credentials: 'omit',
+      success(res) {
+        console.log(res.data)
+        that.setData({photoList:res.data})
+      }
+    })
+  },
 })
