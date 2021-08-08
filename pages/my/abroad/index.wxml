@@ -31,13 +31,18 @@
                  <view class="line"></view>
               </view>
               <view>
-                <view class="content">{{item.content}}</view>
+                <view class="content">
+                  {{item.content}}
+                <view wx:if="{{item.type=='STEP1'}}" class="modal" bindtap="downfile">
+                  模板下载
+                </view>
+                </view>
                 <view class="putIn" wx:if="{{!item.isUpload}}">
                      {{item.file}}
                  </view>
                  <view wx:else class="fileName">
                    <view wx:if="{{item.type==='STEP1'||item.type==='STEP3'}}">
-                      {{item.fileName}}
+                     <view>  {{item.fileName}}</view>
                    </view>
                    <image wx:else class="iamgeSize"  src="{{item.url}}"  />
                  </view>

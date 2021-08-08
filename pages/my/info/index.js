@@ -11,7 +11,7 @@ Page({
   data: {
      items:[
        {myinfo:'头像',content:'',type:"imgUrl"},
-       {myinfo:'昵称',content:'',type:"username"},
+       {myinfo:'昵称',content:'',type:"nickname"},
        {myinfo:'性别',content:'',type:"gender"},
        {myinfo:'学校',content:'',type:"school"},
        {myinfo:'学院',content:'',type:"institute"},

@@ -1,0 +1,16 @@
+<!--pages/my/contactUs/index.wxml-->
+<view class="page">
+    <view class="box">
+      <view wx:for="{{initData}}" class="bgset" wx:key='item'>
+        <view class="title">{{item.name}}</view>
+        <view class="content">
+        <view class="inline">
+         地址： <view class="texttype">{{item.address}}</view>
+        </view>
+         <view class="inline">
+          联系方式：<view class="texttype">{{item.way}}</view>
+         </view>
+        </view>
+      </view>
+    </view>
+</view>

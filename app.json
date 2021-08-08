@@ -30,7 +30,8 @@
     "pages/index/components/noticeDetail/index",
     "pages/index/detailExpress/index",
     "pages/my/forumDetail/index",
-    "pages/index/components/swiper/index"
+    "pages/index/components/swiper/index",
+    "pages/my/contactUs/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
