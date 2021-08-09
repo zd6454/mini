@@ -59,7 +59,7 @@ Page({
     wx.request({
       url: domainName+'/user/getUser',
       method:"GET",
-      data:{userId:openid},
+      data:{userId:openid?openid:wx.getStorageSync('openid')},
       success(res){
       const userInfo=res.data;
       userInfo.gender=res.data.gender==1?'男':'女';
