@@ -16,8 +16,8 @@ page{
   width: 100%;
 }
 .boxWrap .wrap{
-  width: 48%;
-  height: 250rpx;
+  width: 49%;
+  height: 215rpx;
   position: relative;
   text-align: center;
   justify-content: center;
@@ -25,6 +25,7 @@ page{
 .boxWrap .wrap .boxImg{
   width: 100%;
   height: 200rpx;
+  border-radius: 10rpx;
 }
 .boxWrap .wrap .boxTxt{
   margin-top: -140rpx;
@@ -38,4 +39,23 @@ page{
 .text2{
   line-height: 110%;
   text-indent: 2em;
+}
+
+.school{
+  margin: auto;
+  width: 95%;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.school .text{
+  font-size: 40rpx;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 5rpx;
+}
+.school .line{
+  width: 25%;
+  height: 7rpx;
+  background-color: #a68c63;
+  margin: auto;
 }
