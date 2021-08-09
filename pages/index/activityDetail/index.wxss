@@ -1,0 +1,19 @@
+/* pages/index/activityDetail/index.wxss */
+.page{
+  background: #ecf1f1;
+  width: 100vw;
+  height:100vh;
+}
+.body{
+  width: 95%;
+  margin-top: 100rpx;
+  margin: auto;
+  margin-bottom: 20rpx;
+}
+.title{
+  font-weight: 1000;
+  font-size: 33rpx;
+  text-align: center;
+  padding-top: 20rpx;
+  padding-bottom: 10rpx;
+}

@@ -87,7 +87,8 @@ Page({
     }
     this.getSwiper();
     this.getFriend();
-    this.getcooperation()
+    this.getcooperation();
+    this.getActivity();
   },
   getSwiper(){
     const that = this
@@ -211,13 +212,33 @@ Page({
     })
    },
 
+   toActivityDetail(e){
+     console.log(e);
+     wx.navigateTo({
+       url: './activityDetail/index?id=' + e.currentTarget.dataset.item.activityId,
+     })
+   },
+
    handleFriend(e){
     console.log(e)
     const {schoolmateId} = e.currentTarget.dataset.item;
     wx.navigateTo({
       url: `./detailExpress/index?id=${schoolmateId}&key=${"schoolmateId"}`,
     })
-   }
+   },
+   getActivity(){
+    const that = this;
+    wx.request({
+      url: domainName+'/activity/getAllActivitys',
+      method: 'GET',
+      header: {},
+      credentials: 'omit',
+      success(res) {
+        console.log(res.data)
+        that.setData({activityList:res.data})
+      }
+    })
+  },
 })
 
 
