@@ -20,7 +20,7 @@ Page({
       {
         text:'关于UWTSD',
         icon:domainName+'/saveFiles/images/博士帽.png',
-        path:'./components/banner/index'
+        path:'../school/index'
       },
       {
         text:'东亚办公室',
@@ -181,6 +181,10 @@ Page({
     if(path){
       wx.navigateTo({
         url: path,
+      }).catch((error) => {
+        wx.switchTab({
+          url: path,
+        })
       })
     }
   },
