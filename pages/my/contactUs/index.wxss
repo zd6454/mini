@@ -1,0 +1,35 @@
+/* pages/my/contactUs/index.wxss */
+.page{
+  background: #ecf1f1;
+  width: 100vw;
+  height:100vh;
+}
+.box{
+   margin:20rpx;
+}
+
+.bgset{
+  margin: 20rpx 0;
+  border-radius: 10rpx;
+  background-color: rgb(10, 90, 128);
+  box-shadow: 9rpx 6rpx 3rpx gray;
+}
+
+.title{
+  font-size: 30rpx;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+.content{
+  font-size: 24rpx;
+  color: white;
+  margin-left: 40rpx;
+}
+.texttype{
+  color:rgb(212, 220, 223)
+}
+.inline{
+  display: flex;
+  padding-bottom: 10rpx;
+}

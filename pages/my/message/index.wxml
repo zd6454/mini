@@ -1,0 +1,15 @@
+<!--pages/my/message/index.wxml-->
+<view class="page">
+        <scroll-view scroll-y="true"  bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" style="height: 100%">
+           <view wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key='index' >
+              <view class="box"  data-item="{{item}}"  bindtap="read">
+                <view class="head">
+                   <view class="type">{{item.forumTitle}}</view>
+                </view>
+                <view class="body">{{item.username}} 评论：{{item.content}}</view>
+                <view class="foot">{{item.time}}</view>
+              </view>
+           </view>
+        </scroll-view>
+</view>
+
