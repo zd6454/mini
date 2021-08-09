@@ -23,7 +23,7 @@ Page({
     wx.request({
       url: domainName+'/message/getUserMessages',
       method:'GET',
-      data:{userId:openid},
+      data:{userId:openid?openid:wx.getStorageSync('openid')},
        success(res){
         console.log(res.data)
         that.setData({list:res.data})
