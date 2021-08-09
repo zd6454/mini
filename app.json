@@ -32,7 +32,8 @@
     "pages/my/forumDetail/index",
     "pages/index/components/swiper/index",
     "pages/my/contactUs/index",
-    "pages/my/message/index"
+    "pages/my/message/index",
+    "pages/index/components/activity/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

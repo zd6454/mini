@@ -1,0 +1,13 @@
+
+<view wx:if="{{activityList != []}}">
+  <div class="activity" wx:for="{{activityList}}">
+      <view class="actImgWrap">
+        <image src="{{item.imgUrl}}" class="actImg"></image>
+      </view>
+      <view class="txtWrap">
+        <view class="title">{{item.title}}</view>
+        <view class="time">{{item.time}}</view>
+      </view>
+    </div>
+</view>
+<view class="null" wx:else>请等待管理员发布。</view>   

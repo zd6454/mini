@@ -81,7 +81,7 @@ Page({
   getCooperation(){
     const that = this
     wx.request({
-      url: domainName+'/interCooperation/getAllInterCoopers',
+      url: domainName+'/interCooperation/getAllUseInterCoopers',
       method: 'GET',
       header: {},
       credentials: 'omit',

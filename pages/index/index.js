@@ -20,7 +20,7 @@ Page({
       {
         text:'关于UWTSD',
         icon:domainName+'/saveFiles/images/博士帽.png',
-        path:'./components/banner/index'
+        path:'../school/index'
       },
       {
         text:'东亚办公室',
@@ -87,7 +87,8 @@ Page({
     }
     this.getSwiper();
     this.getFriend();
-    this.getcooperation()
+    this.getcooperation();
+    this.getActivity()
   },
   getSwiper(){
     const that = this
@@ -98,7 +99,7 @@ Page({
       credentials: 'omit',
       success(res) {
         console.log(res.data)
-        that.setData({swiperList:res.data})
+        that.setData({swiperList:res.data.slice(0,3)})
       }
     })
   },
@@ -119,6 +120,19 @@ Page({
     })
   },
 
+  getActivity(){
+    const that = this
+    wx.request({
+      url: domainName+'/activity/getAllActivitys',
+      method: 'GET',
+      header: {},
+      credentials: 'omit',
+      success(res) {
+        that.setData({activityList:res.data.slice(0,3)})
+      }
+    })
+  },
+
   getFriend(){
     const that = this
     wx.request({
@@ -131,7 +145,7 @@ Page({
       credentials: 'omit',
       success(res) {
         console.log(res.data)
-        that.setData({friendList:res.data})
+        that.setData({friendList:res.data.slice(0,3)})
       }
     })
   },
@@ -181,6 +195,10 @@ Page({
     if(path){
       wx.navigateTo({
         url: path,
+      }).catch((error) => {
+        wx.switchTab({
+          url: path,
+        })
       })
     }
   },

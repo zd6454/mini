@@ -11,7 +11,7 @@
   <view class="line"></view>
 </view>
 <block>
-  <view wx:if="{{htmlData}}">
+  <view class="data" wx:if="{{htmlData}}">
   <rich-text class="text text2" nodes="{{htmlData}}"></rich-text>
 </view>
 <view class="null" wx:else>请等待管理员发布。</view>

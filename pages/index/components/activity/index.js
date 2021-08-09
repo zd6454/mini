@@ -1,33 +1,31 @@
-// pages/my/forum/index.js
+// pages/index/components/activity/index.js
 const app = getApp();
 const domainName = app.globalData.domainName;
-const openid = wx.getStorageSync('openid');
-var util=require('../../../utils/util.js');
-
 Page({
+
   /**
    * 页面的初始数据
    */
   data: {
-     list:[]
+    activityList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   this.getMessage();
+    this.getActivity();
   },
-  getMessage(){
-    const that=this;
+  getActivity(){
+    const that = this
     wx.request({
-      url: domainName+'/message/getUserMessages',
-      method:'GET',
-      data:{userId:openid?openid:wx.getStorageSync('openid')},
-       success(res){
-        console.log(res.data)
-        that.setData({list:res.data})
-       },
+      url: domainName+'/activity/getAllActivitys',
+      method: 'GET',
+      header: {},
+      credentials: 'omit',
+      success(res) {
+        that.setData({activityList:res.data})
+      }
     })
   },
 

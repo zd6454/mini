@@ -91,6 +91,12 @@
         {
           "name": "学校简介",
           "pathName": "pages/school/components/introduction/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "活动咨询",
+          "pathName": "pages/index/components/activity/index",
           "scene": null
         }
       ]
