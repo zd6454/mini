@@ -20,7 +20,7 @@ Page({
          {type:'STEP3',content:'有条件offer',file:'pdf',isUpload:false,fileName:'offer.pdf',url:'',upUrl:'offer'},
          {type:'STEP4',content:'雅思/内部语言测试成绩单',file:'图片',isUpload:false,fileName:'',url:'',upUrl:'grade_report'},
          {type:'STEP5',content:'学费/押金银行缴纳回执',file:'图片',isUpload:false,fileName:'',url:'',upUrl:'tuition'},
-         {type:'STEP6',content:'指定机构肺结核检测证明',file:'图片',isUpload:false,fileName:'',url:'',upUrl:'test_certification'},
+         {type:'STEP6',content:'核酸检测证明',file:'图片',isUpload:false,fileName:'',url:'',upUrl:'test_certificate'},
        ],
       
   },
