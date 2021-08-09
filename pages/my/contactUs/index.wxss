@@ -6,14 +6,15 @@
 }
 .box{
    margin:20rpx;
-
 }
+
 .bgset{
   margin: 20rpx 0;
   border-radius: 10rpx;
   background-color: rgb(10, 90, 128);
   box-shadow: 9rpx 6rpx 3rpx gray;
 }
+
 .title{
   font-size: 30rpx;
   font-weight: bold;

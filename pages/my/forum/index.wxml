@@ -1,4 +1,4 @@
 <!--pages/my/forum/index.wxml-->
 <view>
-  <list  list='{{list}}'></list>
+  <list  list='{{list}}' type='system'></list>
 </view>

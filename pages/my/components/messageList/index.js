@@ -10,14 +10,13 @@ Component({
         list:{
           type:Array,
           value:[]
-        }
+        },
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-
   },
 
   /**
@@ -40,6 +39,7 @@ Component({
        }
      })
    },
+
    getMessage(){
     const that=this;
     wx.request({

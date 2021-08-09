@@ -18,7 +18,7 @@ Page({
     ],
      setting:[
        {name:'个人信息',url:'./info/index'},
-       {name:'论坛消息',url:'./forum/index'},
+       {name:'论坛消息',url:'./message/index'},
        {name:'我的发布',url:'./dopublishforum/index'},
        {name:'论坛草稿',url:'./unpublishforum/index'},
        {name:'联系我们',url:'./contactUs/index'}
