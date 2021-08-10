@@ -9,6 +9,8 @@
   margin-top: 100rpx;
   margin: auto;
   margin-bottom: 20rpx;
+  line-height: 110%;
+  font-size: 34rpx;
 }
 .title{
   font-weight: 1000;
