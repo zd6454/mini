@@ -1,4 +1,4 @@
-// pages/index/components/activity/index.js
+// pages/index/activityDetail/index.js
 const app = getApp();
 const domainName = app.globalData.domainName;
 Page({
@@ -7,34 +7,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    activityList:[]
+      activity: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getActivity();
-  },
-  getActivity(){
-    const that = this
-    wx.request({
-      url: domainName+'/activity/getAllActivitys',
-      method: 'GET',
-      header: {},
-      credentials: 'omit',
-      success(res) {
-        that.setData({activityList:res.data})
-      }
-    })
-  },
-
-  handleNar(e){
-    console.log(e)
-    const {activityId} = e.currentTarget.dataset.item;
-    wx.navigateTo({
-      url: `../../activityDetail/index?id=${activityId}`,
-    })
+      console.log(options.id);
+      this.getActivity(options.id);
   },
 
   /**
@@ -84,5 +65,23 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  getActivity(id){
+    const that = this;
+    wx.request({
+      url: domainName+'/activity/getActivity',
+      method: 'GET',
+      header: {
+      },
+      data: {
+        activityId:id
+      },
+      credentials: 'omit',
+      success(res) {
+        console.log(res.data)
+        that.setData({activity:res.data})
+      }
+    })
   }
 })

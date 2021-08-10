@@ -225,13 +225,20 @@ Page({
     })
    },
 
+   toActivityDetail(e){
+     console.log(e);
+     wx.navigateTo({
+       url: './activityDetail/index?id=' + e.currentTarget.dataset.item.activityId,
+     })
+   },
+
    handleFriend(e){
     console.log(e)
     const {schoolmateId} = e.currentTarget.dataset.item;
     wx.navigateTo({
       url: `./detailExpress/index?id=${schoolmateId}&key=${"schoolmateId"}`,
     })
-   }
+    }
 })
 
 
