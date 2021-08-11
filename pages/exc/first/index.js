@@ -59,7 +59,7 @@ Page({
      const data={
       commentId:0,
       isUse:0,
-      userId:openid,
+      userId:wx.getStorageSync('openid'),
       forumId:Number(forumId),
       replyId:replyId,
       content,
