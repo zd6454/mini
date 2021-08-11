@@ -94,6 +94,7 @@ Page({
       "gender":Number(userInfo.gender),
       "address":userInfo.province,
       "school":"",
+      "nickname":userInfo.nickName,
       "institute":"",
       "clazz":"",
       "registerTime":date,
@@ -106,7 +107,7 @@ Page({
      data,
       success(res){
         console.log(res.data)
-        if(res.data!=="登陆成功！"){
+        if(res.data==="注册成功！"){
            wx.navigateTo({
           url: './addinfo/index',
         })
