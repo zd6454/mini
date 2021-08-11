@@ -7,7 +7,7 @@
    <view class="name">{{data.name}}</view>
   </view>
   <view wx:if="{{data.content}}">
-  <rich-text nodes="{{data.content}}"></rich-text>
+  <rich-text class="text" nodes="{{data.content}}"></rich-text>
   </view>
   <view class="null" wx:else>请等待管理员发布。</view>
 </view>

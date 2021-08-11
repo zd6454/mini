@@ -88,7 +88,7 @@ Page({
     const that=this;
     const date=util.formatTime(new Date());
     const data={
-      "userId":openid?openid:this.data.openid,
+      "userId":openid?openid:wx.getStorageSync('openid'),
       "username":userInfo.nickName,
       "imgUrl":userInfo.avatarUrl,
       "gender":Number(userInfo.gender),
