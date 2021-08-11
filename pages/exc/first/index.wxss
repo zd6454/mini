@@ -1,7 +1,7 @@
 .page{
   background: #ecf1f1;
   width: 100vw;
-  height:100vh;
+  height:100%;
 }
 .body{
   width: 95%;
@@ -49,6 +49,7 @@
 .inline{
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .head{
@@ -97,7 +98,13 @@
   width:100%;
   background-color: rgb(242, 247, 248);
 }
-
+.say{
+  display: inline-block; 
+   width: 700rpx; 
+    padding: 20rpx 0rpx 10rpx 24rpx; 
+     background-color: #F2F2F2; 
+      border-radius: 8rpx;
+}
 .textarea{
   /* position: fixed;
   bottom:30rpx;

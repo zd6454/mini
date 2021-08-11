@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/school/index",
     "pages/exc/index",
+    "pages/exc/first/index",
     "pages/alumn/index",
     "pages/alumn/event/index",
     "pages/alumn/struct/index",

@@ -33,50 +33,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    activityList:[
-      {
-        image:'./images/秋天落叶.png',
-        title:'秋日伯明翰，一起走在森林与城市之间',
-        time:'2020-10-23',
-        url:'url'
-      },
-      {
-        image:'./images/英国伯明翰.jpeg',
-        title:'英国伯明翰珠宝学院中英文介绍',
-        time:'2020-10-23',
-        url:'url'
-      },
-      {
-        image:'./images/英式学习.jpeg',
-        title:'BCU艺术、设计与媒体学部最热门的5大专业，快戳开看！',
-        time:'2020-10-23',
-        url:'url'
-      },
-      {
-        image:'./images/艺术.jpeg',
-        title:'CLASSROOM|预计开学一个月，英式艺术课堂初体验',
-        time:'2020-10-23',
-        url:'url'
-      },
-      {
-        image:'./images/英国伯明翰.jpeg',
-        title:'英国伯明翰珠宝学院中英文介绍',
-        time:'2020-10-23',
-        url:'url'
-      },
-      {
-        image:'./images/英式学习.jpeg',
-        title:'BCU艺术、设计与媒体学部最热门的5大专业，快戳开看！',
-        time:'2020-10-23',
-        url:'url'
-      },
-      {
-        image:'./images/艺术.jpeg',
-        title:'CLASSROOM|预计开学一个月，英式艺术课堂初体验',
-        time:'2020-10-23',
-        url:'url'
-      },
-    ],
+    activityList:[],
     type:"",
   },
 
@@ -94,7 +51,15 @@ Component({
       }else{
         url=`../publishforum/index?forumId=${forumId}&type=undone`
       }
-      wx.navigateTo({url,})
+      wx.navigateTo({
+        url:url,
+        success(res){
+           console.log(res)
+        },
+        fail(err){
+          console.log(err)
+        }
+      })
       },
   }
 })

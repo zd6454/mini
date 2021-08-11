@@ -123,7 +123,6 @@ uploadSuccess(e) {
        })
        return;
    }
-  
    const urlType=type==="undone"?"/forumDemo/updateForum":"/forumDemo/addForum";
    wx.request({
      url: domainName+urlType,
@@ -143,7 +142,7 @@ uploadSuccess(e) {
         that.setData({forumId:res.data.forumId})
         that.uploadImg(forumIdDemo,uploadUrl.demo);
         wx.showModal({
-          title: '保存成功',
+          title: "草稿保存成功",
           success(res){
             if (res.confirm) {
                 that.omitto();
@@ -168,7 +167,7 @@ uploadSuccess(e) {
   //发布
   publish(){
       const that=this;
-   const{title,content,files,uploadUrl}=this.data;
+   const{title,content,files,uploadUrl,type}=this.data;
    const date=util.formatTime(new Date());
    if(title==""||files.length<1){
     wx.showModal({
@@ -185,14 +184,17 @@ uploadSuccess(e) {
         sort:0,
         isUse:0,
         time:date,
-        imgUrl:"",
+        imgUrl:files[0].url,
         title,
         content,
      },
      success(res){
      console.log(res);
-     that.setData({forumId:res.data.forumId})
+    //  that.setData({forumId:res.data.forumId})
      that.uploadImg(res.data.forumId,uploadUrl.publish);
+     if(type=='undone'){
+          that.deleteItems()
+     }
      wx.showModal({
       title: '发布成功',
       success(res){
@@ -206,6 +208,18 @@ uploadSuccess(e) {
     })
      },
    })
+  },
+  deleteItems(){
+  const{forumId}=this.data;
+  const forums=[Number(forumId)];
+  wx.request({
+    url: domainName+'/forumDemo/deleteForums',
+    method:"POST",
+    data:{forums:forums},
+    success:function (res) {
+       console.log(res)
+    }
+  })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

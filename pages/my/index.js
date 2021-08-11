@@ -31,13 +31,24 @@ Page({
   },
 
   todetail(e){
-  console.log(e)
+    if(!wx.getStorageSync('login')){
+      wx.showModal({
+        title: '请先登录',
+      })
+      return;
+    }
   const {url} = e.currentTarget.dataset.set;
   wx.navigateTo({
     url: url,
   })
   },
   switchto(e){
+    if(!wx.getStorageSync('login')){
+      wx.showModal({
+        title: '请先登录',
+      })
+      return;
+    }
    const{url}=e.currentTarget.dataset.item;
    wx.navigateTo({
      url: url,
@@ -133,6 +144,7 @@ Page({
         if(res.data.userId){
           that.setData({userInfo:res.data,register:true,login:true})
           that.getMessageNum();
+          wx.setStorageSync('login', true);
         }
       }
     })

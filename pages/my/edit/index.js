@@ -27,19 +27,21 @@ Page({
   })
   },
   getValue(e){
-   console.log(e);
    const{value}=e.detail;
    this.setData({content:value})
   },
+
+
+
   comfirm(){
     const {userInfo,name,content}=this.data;
+    const that=this;
     userInfo[name]=content;
     wx.request({
       url: domainName+'/user/updateUser',
       method:"POST",
       data:userInfo,
       success(res){
-      console.log(res.data)
       wx.showModal({
         title: '修改成功',
         icon:"success",
@@ -51,9 +53,6 @@ Page({
             that.omitto();
           }
         }
-      })
-      wx.navigateBack({
-        delta: 1
       })
       }
     })
@@ -69,7 +68,7 @@ Page({
     wx.request({
       url: domainName+'/user/getUser',
       method:"GET",
-      data:{userId:openid},
+      data:{userId:openid?openid:wx.getStorageSync('openid')},
       success(res){
       console.log(res.data)
       that.setData({userInfo:res.data});

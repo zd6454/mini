@@ -19,6 +19,9 @@ Page({
     const path = e.currentTarget.dataset.path;
     wx.navigateTo({
       url: path + "?forumId=" + id,
+      fail(err){
+         console.log(err)
+      }
     })
     },
   /**
