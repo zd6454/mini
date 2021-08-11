@@ -1,25 +1,44 @@
 /* pages/alumn/alumnDetail/index.wxss */
 .page{
   margin:20rpx;
+  background-color:rgb(2, 68, 99);
+  height: 780rpx;
 }
 .head{
  clear: both;
 }
 .avatar{
-  float: left;
+  display: flex;
 }
 .img{
-  height:64rpx;
-  width:64rpx;
-  border-radius: 50%;
+  margin-top: 10rpx;
+  margin-left: 10rpx;
+  height:230rpx;
+  width:170rpx;
+}
+.detail{
+  padding-left: 30rpx;
 }
 .name{
-  float:left;
-  margin-left: 20rpx;
-  font-size: 32rpx;
+  margin-top: 15rpx;
+  font-size: 40rpx;
   font-weight: bold;
+  color: white;
 }
 .content{
   line-height: 100%;
+  color:white;
+  font-weight: lighter;
+  margin-top: 70rpx;
+  font-size: 25rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.introduction{
+  color: white;
   text-indent: 2em;
+  margin-top: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 100%;
 }
