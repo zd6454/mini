@@ -1,4 +1,8 @@
 <!--pages/my/forum/index.wxml-->
-<view>
+<view wx:if="{{list.length>1}}">
   <list  list='{{list}}' type='system'></list>
 </view>
+<view wx:else class="nullset">
+   您还没有存留草稿！
+</view>
+
