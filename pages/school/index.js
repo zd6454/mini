@@ -18,7 +18,7 @@ Page({
       {
         text:'学部简介',
         image:img+'/saveFiles/images/微信图片_20210512113554.jpg',
-        path:'detail/index',
+        path:'deprtments/index',
         id:"2"
       },
       {
