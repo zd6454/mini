@@ -1,21 +1,21 @@
 <!--pages/alumn/index.wxml-->
 <view class="container">
   <view class="structTitle">校友会架构</view>
-  <view wx:if="{{htmlData1}}">
-  <rich-text class="text" nodes="{{htmlData1}}"></rich-text>
+  <view class="text" wx:if="{{htmlData1}}">
+  <rich-text nodes="{{htmlData1}}"></rich-text>
   </view>
   <view wx:else class="null">请等待管理员发布。</view>
 
   <view class="activityTitle">校友会活动</view>
-  <view wx:if="{{htmlData2}}">
-  <rich-text class="text" nodes="{{htmlData2}}"></rich-text>
+  <view  class="text" wx:if="{{htmlData2}}">
+  <rich-text nodes="{{htmlData2}}"></rich-text>
   </view>
   <view wx:else class="null">请等待管理员发布。</view>
 
   <view class="rewardTitle">校友推荐奖励</view>
   <view class = "line"></view>
-  <view wx:if="{{htmlData3}}">
-  <rich-text class="text" nodes="{{htmlData3}}"></rich-text>
+  <view class="text" wx:if="{{htmlData3}}">
+  <rich-text nodes="{{htmlData3}}"></rich-text>
   </view>
   <view wx:else class="null">请等待管理员发布。</view>
 

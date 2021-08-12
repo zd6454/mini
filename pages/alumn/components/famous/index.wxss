@@ -2,7 +2,7 @@
 .box{
   background-color:rgb(2, 68, 99) ;
   color:white;
-  width: 700rpx;
+  width: 725rpx;
   margin:10rpx auto;
   border-radius: 10rpx;
   box-shadow:  3rpx 9rpx 9rpx gray;
@@ -21,8 +21,9 @@
   margin-top: 10rpx;
 }
 .info{
-  margin-top: 20rpx;
-  font-size: 30rpx;
+  margin-top: 35rpx;
+  font-size: 25rpx;
+  font-weight:lighter;
   width:400rpx;
   word-wrap:break-word;
   overflow: hidden;
