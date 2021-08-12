@@ -84,8 +84,20 @@ Page({
     url: domainName+'/abroad/getApplicationTemplate',
     method:"GET",
     success(res){
-      console.log(res)
-      
+      console.log(res.data)
+      wx.downloadFile({
+        url: res.data,
+        success: function (res) {
+          const filePath = res.tempFilePath
+          wx.openDocument({
+            filePath: filePath,
+            showMenu:true,
+            success: function (res) {
+              console.log('打开文档成功')
+            }
+          })
+        }
+      })
     },
   })
   },
