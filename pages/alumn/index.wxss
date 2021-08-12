@@ -9,6 +9,11 @@
  width:100%;
  height:490rpx
 }
+.text{
+  padding-left: 15rpx;
+  padding-right: 10rpx;
+  margin-top: -9rpx;
+}
 .event{
   font-weight: 700;
   font-size: 40rpx;
