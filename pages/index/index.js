@@ -35,39 +35,10 @@ Page({
       }
     ],
     activityList:[
-      {
-        image:'',
-        title:'伯明翰',
-        time:'2020-3-10'
-      },
-      {
-        image:'',
-        title:'伯明翰',
-        time:'2020-3-10'
-      },
-      {
-        image:'',
-        title:'伯明翰',
-        time:'2020-3-10'
-      },
+      
     ],
     friendList:[
-      {
-        image:'',
-        name:'fdsffv',
-      },
-      {
-        image:'',
-        name:'fdsffv',
-      },
-      {
-        image:'',
-        name:'fdsffv',
-      },
-      {
-        image:'',
-        name:'fdsffv',
-      },
+     
     ],
     corporationList:[],
     undergraduateImg:img+'/saveFiles/images/博士帽.png',
@@ -146,7 +117,7 @@ Page({
       credentials: 'omit',
       success(res) {
         console.log(res.data)
-        that.setData({friendList:res.data.slice(0,3)})
+        that.setData({friendList:res.data})
       }
     })
   },
@@ -213,7 +184,7 @@ Page({
       credentials: 'omit',
       success(res) {
         console.log(res.data)
-        that.setData({corporationList:res.data.slice(0,2)})
+        that.setData({corporationList:res.data.slice(0,3)})
       }
     })
   },

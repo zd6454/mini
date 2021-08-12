@@ -1,0 +1,11 @@
+<view wx:if="{{departments.length}}">
+  <view wx:for="{{departments}}" bindtap="todetail" data-item="{{item}}">
+ <view class="wrap"  >
+  <image class="img" src="{{item.imgUrl}}"></image>
+  <view class="name">{{item.name}}</view>
+ </view>
+</view>
+</view>
+<view wx:else class="null">
+  请等待管理员发布。
+</view>

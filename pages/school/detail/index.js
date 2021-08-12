@@ -20,7 +20,7 @@ Page({
           this.getTeachPower();
           break;
         case "2":
-          this.getAllDepartments();
+          this.toAllDepartments();
             break;
         case "3":
           this.getLearningExperience();
@@ -28,6 +28,9 @@ Page({
         case "4":
           this.getCourseIntroduction();
             break;
+        case "5":
+          this.getDepartment(options.departmentId);
+          break;
       }
   },
 
@@ -122,17 +125,23 @@ Page({
     })
   },
 
-  getAllDepartments(){
+  getDepartment(id){
     const that = this
-      wx.request({
-        url: domainName+'/department/getAllDepartments',
-        method: 'GET',
-        header: {},
-        credentials: 'omit',
-        success(res) {
-          console.log(res.data)
-          that.setData({departments:res.data})
-        }
-      })
-  }
+    wx.request({
+      url: domainName+'/department/getDepartment?departmentId='+id,
+      method: 'GET',
+      header: {},
+      credentials: 'omit',
+      success(res) {
+        console.log(res.data)
+        that.setData({htmlData:res.data.content})
+      }
+    })
+  },
+
+  toAllDepartments(){
+    wx.navigateTo({
+      url: '../deprtments/index',
+    })
+  },
 })

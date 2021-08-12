@@ -34,7 +34,8 @@
     "pages/index/components/swiper/index",
     "pages/my/contactUs/index",
     "pages/my/message/index",
-    "pages/index/components/activity/index"
+    "pages/index/components/activity/index",
+    "pages/school/deprtments/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

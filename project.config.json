@@ -97,6 +97,12 @@
         {
           "name": "活动咨询",
           "pathName": "pages/index/components/activity/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "学部介绍",
+          "pathName": "pages/school/deprtments/index",
           "scene": null
         }
       ]

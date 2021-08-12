@@ -1,16 +1,21 @@
-/* pages/index/components/noticeDetail/index.wxss */
-.container{
-  height: 672px;
-  width: 414px;
-  margin: 0;
-  padding: 0;
-  background-color: white;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+/* pages/index/activityDetail/index.wxss */
+.page{
+  background: #ecf1f1;
+  width: 100vw;
+  height:100vh;
 }
-
-.content{
-  font-size: 20px;
-  margin-top: -40%;
+.body{
+  width: 95%;
+  margin-top: 100rpx;
+  margin: auto;
+  margin-bottom: 20rpx;
+  line-height: 110%;
+  font-size: 34rpx;
+}
+.title{
+  font-weight: 1000;
+  font-size: 33rpx;
+  text-align: center;
+  padding-top: 20rpx;
+  padding-bottom: 10rpx;
 }

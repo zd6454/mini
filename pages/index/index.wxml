@@ -60,8 +60,8 @@
   <view class="text">活动咨询</view>
   <view class="line"></view>
   <view class="more" bindtap="handleSchool" data-path="./components/activity/index">查看更多></view>
-  <div class="activity" wx:for="{{activityList}}" data-item="{{item}}" bindtap="toActivityDetail"
-  wx:for-index="index" wx:if="{{index < 3}}">
+  <div class="activity" wx:for="{{activityList}}" bindtap="toActivityDetail" data-item="{{item}}" 
+  wx:for-index="index" >
     <view class="actImgWrap">
       <image src="{{item.imgUrl}}" class="actImg"></image>
     </view>
@@ -76,7 +76,7 @@
   <view class="text">国际合作</view>
   <view class="line"></view>
   <view class="more" bindtap="handleSchool" data-path="./components/corporation/index">查看更多></view>
-  <div class="activity" wx:for="{{corporationList}}" wx:key="item" bindtap="todetail" data-item="{{item}}" wx:for-item="item" wx:for-index="index" wx:if="{{index < 2}}">
+  <div class="activity" wx:for="{{corporationList}}" wx:key="item" bindtap="todetail" data-item="{{item}}" wx:for-item="item" wx:for-index="index" >
     <view class="actImgWrap">
       <image src="{{item.imgUrl}}" class="actImg"></image>
     </view>
@@ -91,7 +91,7 @@
   <view class="text">校友会</view>
   <view class="line"></view>
   <!-- <view class="friendTitle">荣誉校友</view> -->
-  <view class="more">查看更多></view>
+  <!-- <view class="more">查看更多></view> -->
   <view class="friend">
     <view class="friendWrap" wx:for="{{friendList}}">
     <!-- <view class="imageWrap"> -->
