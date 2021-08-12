@@ -1,5 +1,7 @@
 /* pages/index/components/office/index.wxss */
 page{
+  padding-top: 15rpx;
   width: 95%;
   margin: auto;
+  background-color: #f1f1f1;
 }

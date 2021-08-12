@@ -39,11 +39,14 @@
       </view>
       </scroll-view>
   </view>
-  <view class="userPublish">
-  <view class="inline verticla">
-   <textarea adjust-position="true" bindlinechange="heightChange" value="{{content}}" bindinput="getInput" auto-height="true" placeholder="{{replyWho}}" auto-focus class="textarea"   />
-      <button size="mini" class="mini-btn buttonset" type="default" style="bottom:{{height}}rpx" bindtap="formSubmit">发布</button>
+  <view class="userPublish" >
+  <view class="say">
+    <view class="inline verticla">
+          <textarea adjust-position="true" maxlength="-1" fixed="true" bindlinechange="heightChange" value="{{content}}" bindinput="getInput" auto-height="true" placeholder="{{replyWho}}" auto-focus class="textarea" confirm-type="send"   />
+            <button size="mini" class="mini-btn buttonset" type="default" style="bottom:{{height}}rpx" bindtap="formSubmit">发布</button>
+        </view>
   </view>
+     
   </view>
    <view class="heightset"></view>
 </view>

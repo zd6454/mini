@@ -32,7 +32,7 @@ Page({
    wx.request({
      url: domainName+'/user/getUser',
      method:"GET",
-     data:{userId:openid},
+     data:{userId:openid?openid:wx.getStorageSync('openid')},
      success(res){
       that.setData({userInfo:res.data})
      }

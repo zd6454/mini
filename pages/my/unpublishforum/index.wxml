@@ -1,4 +1,7 @@
 <!--pages/my/unpublishforum/index.wxml-->
-<view>
+<view wx:if="{{data.length>1}}">
   <forumList data="{{data}}" type="undone"></forumList>
+</view>
+<view wx:else class="nullset">
+   您还没有存留草稿！
 </view>

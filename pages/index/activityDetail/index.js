@@ -1,33 +1,21 @@
-// pages/my/dopublishforum/index.js
+// pages/index/activityDetail/index.js
 const app = getApp();
 const domainName = app.globalData.domainName;
-const openid = wx.getStorageSync('openid');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    data:[],
+      activity: []
   },
-  
-  getMyPublish(){
-    const that=this;
-  wx.request({
-    url: domainName+'/forum/getUserForums',
-    method:"GET",
-    data:{userId:openid?openid:wx.getStorageSync('openid')},
-    success(res){
-    console.log(res)
-     that.setData({data:res.data})
-    },
-  })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   this.getMyPublish();
+      console.log(options.id);
+      this.getActivity(options.id);
   },
 
   /**
@@ -77,5 +65,23 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  getActivity(id){
+    const that = this;
+    wx.request({
+      url: domainName+'/activity/getActivity',
+      method: 'GET',
+      header: {
+      },
+      data: {
+        activityId:id
+      },
+      credentials: 'omit',
+      success(res) {
+        console.log(res.data)
+        that.setData({activity:res.data})
+      }
+    })
   }
 })

@@ -1,33 +1,41 @@
-// pages/my/dopublishforum/index.js
+// pages/school/deprtments/index.js
 const app = getApp();
 const domainName = app.globalData.domainName;
-const openid = wx.getStorageSync('openid');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    data:[],
+    departments:[],
   },
-  
-  getMyPublish(){
-    const that=this;
-  wx.request({
-    url: domainName+'/forum/getUserForums',
-    method:"GET",
-    data:{userId:openid?openid:wx.getStorageSync('openid')},
-    success(res){
-    console.log(res)
-     that.setData({data:res.data})
-    },
-  })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   this.getMyPublish();
+    this.getAllDepartments();
+  },
+
+  getAllDepartments(){
+    const that = this
+      wx.request({
+        url: domainName+'/department/getAllDepartments',
+        method: 'GET',
+        header: {},
+        credentials: 'omit',
+        success(res) {
+          console.log(res.data)
+          that.setData({departments:res.data})
+        }
+      })
+  },
+
+  todetail(e){
+    console.log('kkkkkkkkkkkk',e.currentTarget.dataset)
+    wx.navigateTo({
+      url: '../detail/index?id=5&departmentId='+e.currentTarget.dataset.item.departmentId,
+    })
   },
 
   /**

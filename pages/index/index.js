@@ -2,6 +2,7 @@
 // 获取应用实例
 const app = getApp();
 const domainName = app.globalData.domainName;
+const img = app.globalData.imgDomain;
 Page({
   data: {
     motto: 'Hello World',
@@ -14,64 +15,35 @@ Page({
     schoolList:[
       {
         text:'置顶通知',
-        icon:domainName+'/saveFiles/images/通知公告.png',
+        icon:img+'/saveFiles/images/通知公告.png',
         path:'./components/notice/index'
       },
       {
         text:'关于UWTSD',
-        icon:domainName+'/saveFiles/images/博士帽.png',
+        icon:img+'/saveFiles/images/博士帽.png',
         path:'../school/index'
       },
       {
         text:'东亚办公室',
-        icon:domainName+'/saveFiles/images/打印机,纸,办公室,打印,文档,线性,扁平,填充,单色,简约,圆润.png',
+        icon:img+'/saveFiles/images/打印机,纸,办公室,打印,文档,线性,扁平,填充,单色,简约,圆润.png',
         path:'./components/office/index'
       },
       {
         text:'校园相册',
-        icon:domainName+'/saveFiles/images/相册.png',
+        icon:img+'/saveFiles/images/相册.png',
         path:'./components/photos/index'
       }
     ],
     activityList:[
-      {
-        image:'',
-        title:'伯明翰',
-        time:'2020-3-10'
-      },
-      {
-        image:'',
-        title:'伯明翰',
-        time:'2020-3-10'
-      },
-      {
-        image:'',
-        title:'伯明翰',
-        time:'2020-3-10'
-      },
+      
     ],
     friendList:[
-      {
-        image:'',
-        name:'fdsffv',
-      },
-      {
-        image:'',
-        name:'fdsffv',
-      },
-      {
-        image:'',
-        name:'fdsffv',
-      },
-      {
-        image:'',
-        name:'fdsffv',
-      },
+     
     ],
     corporationList:[],
-    undergraduateImg:domainName+'/saveFiles/images/博士帽.png',
-    graduateImg:domainName+'/saveFiles/images/字典管理.png',
-    doctorImg:domainName+'/saveFiles/images/书.png'
+    undergraduateImg:img+'/saveFiles/images/博士帽.png',
+    graduateImg:img+'/saveFiles/images/字典管理.png',
+    doctorImg:img+'/saveFiles/images/书.png'
   },
   // 事件处理函数
   bindViewTap() {
@@ -87,7 +59,8 @@ Page({
     }
     this.getSwiper();
     this.getFriend();
-    this.getcooperation()
+    this.getcooperation();
+    this.getActivity()
   },
   getSwiper(){
     const that = this
@@ -98,7 +71,7 @@ Page({
       credentials: 'omit',
       success(res) {
         console.log(res.data)
-        that.setData({swiperList:res.data})
+        that.setData({swiperList:res.data.slice(0,3)})
       }
     })
   },
@@ -115,6 +88,19 @@ Page({
       success(res) {
         console.log(res.data)
         // that.setData({swiperList:res.data})
+      }
+    })
+  },
+
+  getActivity(){
+    const that = this
+    wx.request({
+      url: domainName+'/activity/getAllActivitys',
+      method: 'GET',
+      header: {},
+      credentials: 'omit',
+      success(res) {
+        that.setData({activityList:res.data.slice(0,3)})
       }
     })
   },
@@ -198,7 +184,7 @@ Page({
       credentials: 'omit',
       success(res) {
         console.log(res.data)
-        that.setData({corporationList:res.data.slice(0,2)})
+        that.setData({corporationList:res.data.slice(0,3)})
       }
     })
   },
@@ -211,13 +197,20 @@ Page({
     })
    },
 
+   toActivityDetail(e){
+     console.log(e);
+     wx.navigateTo({
+       url: './activityDetail/index?id=' + e.currentTarget.dataset.item.activityId,
+     })
+   },
+
    handleFriend(e){
     console.log(e)
     const {schoolmateId} = e.currentTarget.dataset.item;
     wx.navigateTo({
       url: `./detailExpress/index?id=${schoolmateId}&key=${"schoolmateId"}`,
     })
-   }
+    }
 })
 
 

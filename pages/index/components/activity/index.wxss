@@ -1,0 +1,49 @@
+page{
+  width:95%;
+  margin: auto;
+}
+.activity{
+  height: 200rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: #005478;
+  box-shadow:  3rpx 9rpx 9rpx gray;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+}
+
+.activity .actImgWrap{
+  height: 200rpx;
+  width: 292rpx;
+ 
+  /* background-color: #cccccc; */
+  /* margin: 20rpx; */
+}
+.activity .actImgWrap .actImg{
+  position: relative;
+  top: 0;
+  height: 200rpx;
+  width: 215rpx;
+  border-radius: 10rpx 0 0 10rpx;
+  /* margin: 15rpx; */
+  /* border: 2rpx white solid; */
+}
+.activity .txtWrap{
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+  width: 100%;
+  position: relative;
+  color: white;
+}
+.activity .txtWrap .title{
+  /* font-weight: 600; */
+  font-size: 28rpx;
+  /* margin-bottom: 15rpx; */
+}
+.activity .txtWrap .time{
+  font-size: 20rpx;
+  font-weight: lighter;
+  position: absolute;
+  bottom: 20rpx;
+}
+

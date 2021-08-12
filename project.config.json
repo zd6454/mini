@@ -39,7 +39,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.17.0",
-  "appid": "wx1083a62b9eeec0ef",
+  "appid": "wx2bee8de96f3462d6",
   "projectname": "minicode",
   "debugOptions": {
     "hidedInDevtools": []
@@ -91,6 +91,18 @@
         {
           "name": "学校简介",
           "pathName": "pages/school/components/introduction/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "活动咨询",
+          "pathName": "pages/index/components/activity/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "学部介绍",
+          "pathName": "pages/school/deprtments/index",
           "scene": null
         }
       ]

@@ -47,16 +47,21 @@ page{
 .text2{
   line-height: 110%;
   text-indent: 2em;
-  margin-top: 30rpx;
 }
+
 .school{
+  margin: auto;
+  width: 95%;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.school .text{
   font-size: 40rpx;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 3rpx;
-  margin-top: 10rpx;
+  margin-bottom: 5rpx;
 }
-.line{
+.school .line{
   width: 25%;
   height: 7rpx;
   background-color: #a68c63;

@@ -1,33 +1,40 @@
-// pages/my/dopublishforum/index.js
+// pages/index/components/activity/index.js
 const app = getApp();
 const domainName = app.globalData.domainName;
-const openid = wx.getStorageSync('openid');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    data:[],
+    activityList:[]
   },
-  
-  getMyPublish(){
-    const that=this;
-  wx.request({
-    url: domainName+'/forum/getUserForums',
-    method:"GET",
-    data:{userId:openid?openid:wx.getStorageSync('openid')},
-    success(res){
-    console.log(res)
-     that.setData({data:res.data})
-    },
-  })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   this.getMyPublish();
+    this.getActivity();
+  },
+  getActivity(){
+    const that = this
+    wx.request({
+      url: domainName+'/activity/getAllActivitys',
+      method: 'GET',
+      header: {},
+      credentials: 'omit',
+      success(res) {
+        that.setData({activityList:res.data})
+      }
+    })
+  },
+
+  handleNar(e){
+    console.log(e)
+    const {activityId} = e.currentTarget.dataset.item;
+    wx.navigateTo({
+      url: `../../activityDetail/index?id=${activityId}`,
+    })
   },
 
   /**

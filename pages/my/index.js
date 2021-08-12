@@ -31,13 +31,24 @@ Page({
   },
 
   todetail(e){
-  console.log(e)
+    if(!wx.getStorageSync('login')){
+      wx.showModal({
+        title: '请先登录',
+      })
+      return;
+    }
   const {url} = e.currentTarget.dataset.set;
   wx.navigateTo({
     url: url,
   })
   },
   switchto(e){
+    if(!wx.getStorageSync('login')){
+      wx.showModal({
+        title: '请先登录',
+      })
+      return;
+    }
    const{url}=e.currentTarget.dataset.item;
    wx.navigateTo({
      url: url,
@@ -77,12 +88,13 @@ Page({
     const that=this;
     const date=util.formatTime(new Date());
     const data={
-      "userId":openid?openid:this.data.openid,
+      "userId":openid?openid:wx.getStorageSync('openid'),
       "username":userInfo.nickName,
       "imgUrl":userInfo.avatarUrl,
       "gender":Number(userInfo.gender),
       "address":userInfo.province,
       "school":"",
+      "nickname":userInfo.nickName,
       "institute":"",
       "clazz":"",
       "registerTime":date,
@@ -95,7 +107,7 @@ Page({
      data,
       success(res){
         console.log(res.data)
-        if(res.data!=="登陆成功！"){
+        if(res.data==="注册成功！"){
            wx.navigateTo({
           url: './addinfo/index',
         })
@@ -133,6 +145,7 @@ Page({
         if(res.data.userId){
           that.setData({userInfo:res.data,register:true,login:true})
           that.getMessageNum();
+          wx.setStorageSync('login', true);
         }
       }
     })

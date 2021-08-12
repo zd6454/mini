@@ -1,6 +1,7 @@
 // pages/school/index.js
 const app = getApp();
 const domainName = app.globalData.domainName;
+const img = app.globalData.imgDomain;
 Page({
 
   /**
@@ -10,25 +11,25 @@ Page({
     schoolList:[
       {
         text:'教学实力',
-        image:domainName+'/saveFiles/images/微信图片_20210512113244.png',
+        image:img+'/saveFiles/images/微信图片_20210512113244.png',
         path:'detail/index',
         id:"1"
       },
       {
         text:'学部简介',
-        image:domainName+'/saveFiles/images/微信图片_20210512113554.jpg',
-        path:'detail/index',
+        image:img+'/saveFiles/images/微信图片_20210512113554.jpg',
+        path:'deprtments/index',
         id:"2"
       },
       {
         text:'学习体验',
-        image:domainName+'/saveFiles/images/R6a4a35499754f599e5ab10fff057d020.jpg',
+        image:img+'/saveFiles/images/R6a4a35499754f599e5ab10fff057d020.jpg',
         path:'detail/index',
         id:"3"
       },
       {
         text:'课程介绍',
-        image:domainName+'/saveFiles/images/微信图片_20210511163947.jpg',
+        image:img+'/saveFiles/images/微信图片_20210511163947.jpg',
         path:'detail/index',
         id:"4"
       }

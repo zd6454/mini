@@ -1,2 +1,11 @@
 <!--pages/index/components/swiper/index.wxml-->
-<rich-text class="text" nodes="{{bannerDetail.content}}"></rich-text>
+
+<view class="page">
+<view class="body" bindtap="reSet">
+  <view class="title">{{activity.title}}</view>
+  <view wx:if="{{bannerDetail.content}}">
+  <rich-text nodes="{{bannerDetail.content}}"></rich-text>
+  </view>
+  <view class="null" wx:else>请等待管理员发布。</view>
+  </view>
+  </view>

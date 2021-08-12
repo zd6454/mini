@@ -47,13 +47,19 @@ Page({
   },
 
   formSubmit: function (e) {
+    if(!wx.getStorageSync('login')){
+      wx.showModal({
+        title: '请先登录',
+      })
+      return;
+    }
     var that = this;
     const date=util.formatTime(new Date());
     const {forumId,content,replyId}=this.data;
      const data={
       commentId:0,
       isUse:0,
-      userId:openid,
+      userId:wx.getStorageSync('openid'),
       forumId:Number(forumId),
       replyId:replyId,
       content,

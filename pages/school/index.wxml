@@ -6,8 +6,10 @@
     <view class="boxTxt">{{item.text}}</view>
   </view>
 </view>
-<view class="school">学校概况</view>
-<view class="line"></view>
+<view class="school">
+  <view class="text">学校概况</view>
+  <view class="line"></view>
+</view>
 <block>
   <view class="data" wx:if="{{htmlData}}">
   <rich-text class="text text2" nodes="{{htmlData}}"></rich-text>

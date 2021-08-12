@@ -1,1 +1,7 @@
 /* pages/my/unpublishforum/index.wxss */
+.nullset{
+  margin-top: 200rpx;
+  text-align: center;
+  font-size: 45rpx;
+  color: grey;
+}

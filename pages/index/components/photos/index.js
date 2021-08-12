@@ -106,7 +106,17 @@ Page({
       credentials: 'omit',
       success(res) {
         console.log(res.data)
-        that.setData({photoList:res.data})
+        let photos=[],pl=[];
+        res.data.map((item,index)=>{
+          pl.push(item.imgUrl)
+          if(index%6==5){
+            photos.push(pl)
+            pl=[]
+          }else if(index%6<5 && index==res.data.length-1){
+            photos.push(pl)
+          }
+        })
+        that.setData({photoList:photos})
       }
     })
   },
