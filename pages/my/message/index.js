@@ -23,7 +23,7 @@ Page({
     wx.request({
       url: domainName+'/forum/getUserForumsComments',
       method:'GET',
-      data:{userId:openid},
+      data:{userId:openid?openid:wx.getStorageSync('openid')},
        success(res){
         console.log(res.data)
         that.setData({list:res.data})

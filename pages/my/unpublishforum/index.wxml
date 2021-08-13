@@ -1,5 +1,5 @@
 <!--pages/my/unpublishforum/index.wxml-->
-<view wx:if="{{data.length>1}}">
+<view wx:if="{{data.length>0}}">
   <forumList data="{{data}}" type="undone"></forumList>
 </view>
 <view wx:else class="nullset">
