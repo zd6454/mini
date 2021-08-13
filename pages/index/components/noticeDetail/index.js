@@ -1,6 +1,7 @@
 // pages/index/components/noticeDetail/index.js
 const app = getApp();
 const domainName = app.globalData.domainName;
+var WxParse = require('../../../../wxParse/wxParse.js');
 Page({
 
   /**
@@ -9,7 +10,8 @@ Page({
   data: {
       noticeList:{
         content:""
-      }
+      },
+      htmlData:""
   },
 
   /**
@@ -34,6 +36,8 @@ Page({
       success(res) {
         console.log(res.data)
         that.setData({noticeList:res.data})
+        var temp = res.data.content;
+        WxParse.wxParse('htmlData', 'html', temp, that);
       }
     })
   },

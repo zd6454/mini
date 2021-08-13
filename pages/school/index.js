@@ -2,6 +2,7 @@
 const app = getApp();
 const domainName = app.globalData.domainName;
 const img = app.globalData.imgDomain;
+var WxParse = require('../../wxParse/wxParse.js');
 Page({
 
   /**
@@ -111,8 +112,8 @@ Page({
       header: {},
       credentials: 'omit',
       success(res) {
-        console.log(res.data);
-        that.setData({htmlData:res.data});
+        var temp = res.data;
+        WxParse.wxParse('htmlData', 'html', temp, that);
       }
     })
   },

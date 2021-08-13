@@ -1,13 +1,15 @@
 // pages/index/components/swiper/index.js
 const app = getApp();
 const domainName = app.globalData.domainName;
+var WxParse = require('../../../../wxParse/wxParse.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      bannerDetail:[]
+      bannerDetail:[],
+      htmlData:""
   },
 
   /**
@@ -80,6 +82,8 @@ Page({
       success(res) {
         console.log(res.data)
         that.setData({bannerDetail:res.data})
+        var temp = res.data;
+        WxParse.wxParse('htmlData', 'html', temp.content, that);
       }
     })
   }
