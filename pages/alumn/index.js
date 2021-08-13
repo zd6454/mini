@@ -91,7 +91,6 @@ Page({
         header: {},
         credentials: 'omit',
         success(res) {
-          console.log(res.data)
           var temp = res.data;
           WxParse.wxParse('htmlData1', 'html', temp, that);
         }
@@ -106,7 +105,6 @@ Page({
         header: {},
         credentials: 'omit',
         success(res) {
-          console.log(res.data)
           var temp = res.data;
           WxParse.wxParse('htmlData2', 'html', temp, that);
         }
@@ -121,7 +119,6 @@ Page({
         header: {},
         credentials: 'omit',
         success(res) {
-          console.log(res.data)
           var temp = res.data;
           WxParse.wxParse('htmlData3', 'html', temp, that);
         }

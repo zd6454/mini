@@ -1,6 +1,7 @@
 // pages/alumn/alumnDetail/index.js
 const app = getApp();
 const domainName = app.globalData.domainName;
+var WxParse = require('../../../wxParse/wxParse.js');
 Page({
 
   /**
@@ -9,6 +10,7 @@ Page({
   data: {
     schoolmateId:0,
     data:"",
+    htmlData:""
   },
 
   /**
@@ -29,6 +31,8 @@ Page({
         success(res) {
           console.log(res.data)
           that.setData({data:res.data})
+          var temp = res.data.content;
+          WxParse.wxParse('htmlData', 'html', temp, that);
         }
       })
   },
