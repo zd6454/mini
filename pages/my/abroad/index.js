@@ -14,7 +14,7 @@ Page({
          tip3:["入学申请表","护照","有条件offer","雅思/内部语言测试成绩单","学费/押金银行缴纳回执","指定机构肺结核检测证明"]
        },
        process:[
-         {type:'STEP1',content:'入学申请表',file:'Excel文件',isUpload:false,fileName:'入学申请表.excel',url:'',upUrl:'application'},
+         {type:'STEP1',content:'入学申请表',file:'Excel文件',isUpload:false,fileName:'入学申请表.xlxs',url:'',upUrl:'application'},
          {type:'STEP2',content:'护照（正面）',file:'图片',isUpload:false,fileName:'',url:'',url2:'',upUrl:'passport_front'},
          {type:'STEP2',content:'护照（反面）',file:'图片',isUpload:false,fileName:'',url:'',url2:'',upUrl:'passport_back'},
          {type:'STEP3',content:'有条件offer',file:'pdf',isUpload:false,fileName:'offer.pdf',url:'',upUrl:'offer'},
@@ -50,7 +50,7 @@ Page({
      const type = item.type==="STEP1"?'excel':'pdf';
     wx.chooseMessageFile({
       count: 1,
-      type: 'all',
+      type: 'file',
       success (res) {
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFileName = res.tempFiles[0];

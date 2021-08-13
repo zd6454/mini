@@ -94,7 +94,7 @@ uploadSuccess(e) {
    })
   },
 
-  uploadImg(forumId,uploadUrl){
+  uploadForumImg(forumId,uploadUrl){
       const{files}=this.data;
       wx.uploadFile({
         filePath: files[0].url,
@@ -108,7 +108,7 @@ uploadSuccess(e) {
            console.log(err,'33')
         },
         complete(res){
-          console.log(23,'res')
+          console.log(23,res)
         }
       })
   },
@@ -140,15 +140,16 @@ uploadSuccess(e) {
     try {
         const forumIdDemo=type==="undone"?Number(forumId):res.data.forumId ;
         that.setData({forumId:res.data.forumId})
-        that.uploadImg(forumIdDemo,uploadUrl.demo);
+        that.uploadForumImg(forumIdDemo,uploadUrl.demo);
         wx.showModal({
           title: "草稿保存成功",
+          content:"是否返回",
           success(res){
             if (res.confirm) {
                 that.omitto();
               } else if (res.cancel) {
                 console.log('用户点击取消')
-                that.omitto();
+                // that.omitto();
               }
           }
         })
@@ -184,17 +185,18 @@ uploadSuccess(e) {
         sort:0,
         isUse:0,
         time:date,
-        imgUrl:files[0].url,
+        imgUrl:'',
         title,
         content,
      },
      success(res){
      console.log(res);
-    //  that.setData({forumId:res.data.forumId})
-     that.uploadImg(res.data.forumId,uploadUrl.publish);
+     const{forumId}=res.data;
+    try {
+      that.uploadForumImg(forumId,uploadUrl.publish);
      if(type=='undone'){
           that.deleteItems()
-     }
+       }
      wx.showModal({
       title: '发布成功',
       success(res){
@@ -206,11 +208,20 @@ uploadSuccess(e) {
           }
       }
     })
+    } catch (error) {
+      wx.showModal({
+        title: '发布失败',
+        success(res){
+        }
+      })
+    }
+     
      },
    })
   },
+
   deleteItems(){
-  const{forumId}=this.data;
+    const {forumId}=this.data;
   const forums=[Number(forumId)];
   wx.request({
     url: domainName+'/forumDemo/deleteForums',
