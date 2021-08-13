@@ -45,7 +45,6 @@ page{
   margin-top: 20rpx;
 }
 .text2{
-  line-height: 110%;
   text-indent: 2em;
 }
 
