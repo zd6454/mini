@@ -191,14 +191,12 @@ uploadSuccess(e) {
      },
      success(res){
      console.log(res);
-     that.setData({forumId:res.data.forumId})
+     const{forumId}=res.data;
     try {
-      that.uploadForumImg(res.data.forumId,uploadUrl.publish);
+      that.uploadForumImg(forumId,uploadUrl.publish);
      if(type=='undone'){
-       setTimeout(()=>{
           that.deleteItems()
-       },600)
-     }
+       }
      wx.showModal({
       title: '发布成功',
       success(res){
@@ -223,7 +221,7 @@ uploadSuccess(e) {
   },
 
   deleteItems(){
-  const{forumId}=this.data;
+    const {forumId}=this.data;
   const forums=[Number(forumId)];
   wx.request({
     url: domainName+'/forumDemo/deleteForums',
