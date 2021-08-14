@@ -6,7 +6,7 @@
   <view class="detail">
    <view class="name">{{data.name}}</view>
    <view class="content">
-   <template is="wxParse" data="{{wxParseData:htmlData.nodes}}"/>
+     {{data.intro}}
    </view>
   </view>
    </view>

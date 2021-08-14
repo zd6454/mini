@@ -2,7 +2,9 @@
 .page{
   margin:20rpx;
   background-color:rgb(2, 68, 99);
-  height: 780rpx;
+  height: 100%;
+  padding: 20rpx;
+  border-radius: 10rpx;
 }
 .head{
  clear: both;
@@ -26,7 +28,6 @@
   color: white;
 }
 .content{
-  line-height: 100%;
   color:white;
   font-weight: lighter;
   margin-top: 70rpx;
