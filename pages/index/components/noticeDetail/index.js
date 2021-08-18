@@ -18,10 +18,11 @@ Page({
   onLoad: function (options) {
     const that = this
     const noticeId = options.noticeId
-    this.getNotice(noticeId)
+    const isRead = options.isRead
+    this.getNotice(noticeId,isRead)
   },
 
-  getNotice(noticeId){
+  getNotice(noticeId,isRead){
     const that = this
     wx.request({
       url: domainName+'/notice/getNotice',
@@ -34,8 +35,27 @@ Page({
       success(res) {
         console.log(res.data)
         that.setData({noticeList:res.data})
+        if(isRead === "0"){
+          that.setRead(noticeId)
+        }
       }
     })
+  },
+
+  setRead(noticeId){
+    wx.request({
+      url: domainName+'/notice/readNotice',
+      method: 'POST',
+      header: {},
+      data:{
+        noticeId,
+        userId:wx.getStorageSync('openid'),
+      },
+      credentials: 'omit',
+      success(res) {
+      }
+    })
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
