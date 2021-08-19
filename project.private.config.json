@@ -41,6 +41,12 @@
           "pathName": "pages/my/forumDetail/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/my/abroadFlow/index",
+          "pathName": "pages/my/abroadFlow/index",
+          "query": "",
+          "scene": null
         }
       ]
     }
