@@ -32,7 +32,6 @@ Page({
   },
 
   todetail(e){
-    console.log('kkkkkkkkkkkk',e.currentTarget.dataset)
     wx.navigateTo({
       url: '../detail/index?id=5&departmentId='+e.currentTarget.dataset.item.departmentId,
     })
