@@ -1,8 +1,8 @@
 <!--pages/my/forum/index.wxml-->
-<view wx:if="{{list.length>1}}">
+<view wx:if="{{list.length>0}}">
   <list  list='{{list}}' type='system'></list>
 </view>
 <view wx:else class="nullset">
-   您还没有存留草稿！
+   您暂时无消息！
 </view>
 

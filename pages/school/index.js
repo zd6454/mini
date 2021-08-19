@@ -2,6 +2,7 @@
 const app = getApp();
 const domainName = app.globalData.domainName;
 const img = app.globalData.imgDomain;
+var WxParse = require('../../wxParse/wxParse.js');
 Page({
 
   /**
@@ -18,7 +19,7 @@ Page({
       {
         text:'学部简介',
         image:img+'/saveFiles/images/微信图片_20210512113554.jpg',
-        path:'detail/index',
+        path:'deprtments/index',
         id:"2"
       },
       {
@@ -111,8 +112,8 @@ Page({
       header: {},
       credentials: 'omit',
       success(res) {
-        console.log(res.data);
-        that.setData({htmlData:res.data});
+        var temp = res.data;
+        WxParse.wxParse('htmlData', 'html', temp, that);
       }
     })
   },

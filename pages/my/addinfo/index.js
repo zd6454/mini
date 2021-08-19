@@ -48,7 +48,7 @@ Page({
    userInfo.phone=value.phone?value.phone:userInfo.phone;
    userInfo.school=value.school?value.school:userInfo.school;
    userInfo.institute=value.institute?value.institute:userInfo.institute;
-   userInfo.clazz=value.calzz?value.clazz:userInfo.clazz;
+   userInfo.clazz=value.clazz?value.clazz:userInfo.clazz;
    wx.request({
      url: domainName+'/user/updateUser',
      method:'POST',

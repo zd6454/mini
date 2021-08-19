@@ -1,6 +1,46 @@
+<!-- <import src="../../../wxParse/wxParse.wxml"/>  
 <block>
   <view wx:if="{{htmlData}}">
-  <rich-text class="text" nodes="{{htmlData}}"></rich-text>
+  <template is="wxParse" data="{{wxParseData:htmlData.nodes}}"/>
 </view>
 <view class="null" wx:else>请等待管理员发布。</view>
-</block>
+</block> -->
+
+<view class="page">
+<view class="box">
+  <view class="title">
+    <view class="title1">{{content.title1}}</view>
+    <view class="title2">{{content.title2}}</view>
+    </view>
+    <view class="body">
+      <view  wx:for="{{content.flow}}" wx:key="item"   data-index="{{index}}" wx:for-item="item">
+         <view class="step">
+            <view class="setting">
+              <view class="type">{{item.time}}</view>
+              <view class="action">
+                 <view class="quan"></view>
+                 <view class="line"></view>
+              </view>
+              <view class="innerset">
+                <view class="flow">
+                  <view class="aboat">相关流程:</view>
+                   <text class="mimi">{{item['相关流程']}}</text>
+                   </view>
+                <view class="flow">
+                  <view class="aboat">准备事项:</view>
+                   <text class="mimi">{{item['准备事项']}}</text>
+                </view>
+              </view>
+            </view>
+         </view>
+      </view>
+       <button class="comfirm" type="primary" hover-class="comfirm2" bindtap="comfirm">点击上传我的留学材料</button>
+    </view>
+    <view class="foot">
+      <view class="mark">备注</view>
+      <view class="markset">
+        <text class="markcontent">{{content.mark}}</text>
+      </view>
+    </view>
+</view>
+</view>

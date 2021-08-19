@@ -208,7 +208,7 @@ Page({
     console.log(e)
     const {schoolmateId} = e.currentTarget.dataset.item;
     wx.navigateTo({
-      url: `./detailExpress/index?id=${schoolmateId}&key=${"schoolmateId"}`,
+      url: `../alumn/alumnDetail/index?id=${schoolmateId}&key=${"schoolmateId"}`,
     })
     }
 })

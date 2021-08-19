@@ -2,6 +2,7 @@ var app = getApp();
 const domainName = app.globalData.domainName;
 const openid = wx.getStorageSync('openid');
 var util=require('../../../utils/util.js')
+var WxParse = require('../../../wxParse/wxParse.js');
 Page({
 
   /**
@@ -14,6 +15,7 @@ Page({
     height:0,
     replyId:0,
     replyWho:"评论",
+    htmlData:""
   },
 
   /**
@@ -33,6 +35,8 @@ Page({
       success(res){
        if(res.data.title){
          that.setData({forum:res.data})
+         var temp = res.data.content?res.data.content:"请等待管理员发布";
+         WxParse.wxParse('htmlData', 'html', temp, that);
        }
       },
     })

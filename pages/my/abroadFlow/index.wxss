@@ -1,1 +1,138 @@
 /* pages/my/abroadFlow/index.wxss */
+.page{
+  background: #ecf1f1;
+  width: 100vw;
+}
+.box{
+  margin:30rpx
+}
+.title{
+  font-size: 40rpx;
+  font-weight: bold;
+  text-align: center;
+}
+
+.body{
+  background-color: rgb(192, 195, 201);
+  border-radius: 14rpx;
+  padding: 10rpx;
+}
+.step{
+  display: flex;
+  justify-content: space-between;
+}
+.type{
+  font-weight: bold;
+  width: 140rpx;
+  font-size: 30rpx;
+}
+.setting{
+  display: flex;
+  margin:0;
+  padding: 0;
+}
+.action{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+.quan{
+  width: 20rpx;
+  height: 20rpx;
+  border: 8rpx solid #024463;
+  border-radius:50% ;
+}
+.line{
+  margin-right: 16rpx;
+  height:100%;
+  border-right:8rpx solid #024463;
+}
+
+.content{
+  font-size: 30rpx;
+  font-weight: bold;
+  display: flex;
+}
+.modal{
+  margin-left: 20rpx;
+  background-color:#024463 ;
+  border-radius: 12rpx;
+  color: white;
+  font-size: 28rpx;
+  margin-bottom: 7rpx;
+  padding: 0rpx 20rpx;
+}
+.upload{
+  background:#024463 ;
+  color:white;
+  height:50rpx;
+  width: 120rpx;
+  text-align: center;
+  margin-top: 60rpx;
+  font-size: 30rpx;
+  border-radius: 15rpx;
+}
+.putIn{
+ display: flex;
+  font-size: 30rpx;
+  color:#A08B70;
+  height:100rpx;
+  width:250rpx;
+  border: 5rpx dashed gray;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fileName{
+  font-size: 30rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width:300rpx;
+}
+.iamgeSize{
+  height:100rpx;
+  width:250rpx;
+}
+view{
+  overflow: hidden;
+}
+.innerset{
+  width: 500rpx;
+}
+.flow{
+  display: flex;
+}
+.aboat{
+  font-size: 24rpx;
+  font-weight: bold;
+  width:250rpx;
+}
+.mimi{
+  font-size: 24rpx;
+  color:gray;
+  width:825rpx;
+}
+.comfirm{
+  color: #fff !important;
+  background-color: rgb(10, 90, 128)!important;
+  padding: 0 !important;
+}
+.comfirm2{
+  background-color: rgb(70, 110, 129) !important;
+  color: #fff !important;
+}
+
+.foot{
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}
+.mark{
+  margin-left: 40rpx;
+  font-weight: bold;
+}
+.markset{
+  margin:0 80rpx;
+}
+.markcontent{
+  color: gray;
+}

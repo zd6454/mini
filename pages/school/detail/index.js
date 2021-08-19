@@ -1,6 +1,7 @@
 // pages/school/components/detail/index.js
 const app = getApp();
 const domainName = app.globalData.domainName;
+var WxParse = require('../../../wxParse/wxParse.js');
 Page({
 
   /**
@@ -91,8 +92,8 @@ Page({
       header: {},
       credentials: 'omit',
       success(res) {
-        console.log(res.data)
-        that.setData({htmlData:res.data})
+        var temp = res.data;
+        WxParse.wxParse('htmlData', 'html', temp, that);
       }
     })
   },
@@ -105,8 +106,8 @@ Page({
         header: {},
         credentials: 'omit',
         success(res) {
-          console.log(res.data)
-          that.setData({htmlData:res.data})
+          var temp = res.data;
+        WxParse.wxParse('htmlData', 'html', temp, that);
         }
       })
   },
@@ -119,8 +120,8 @@ Page({
       header: {},
       credentials: 'omit',
       success(res) {
-        console.log(res.data)
-        that.setData({htmlData:res.data})
+        var temp = res.data;
+        WxParse.wxParse('htmlData', 'html', temp, that);
       }
     })
   },
@@ -133,8 +134,8 @@ Page({
       header: {},
       credentials: 'omit',
       success(res) {
-        console.log(res.data)
-        that.setData({htmlData:res.data.content})
+        var temp = res.data;
+        WxParse.wxParse('htmlData', 'html', temp, that);
       }
     })
   },

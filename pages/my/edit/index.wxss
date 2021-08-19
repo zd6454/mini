@@ -26,8 +26,9 @@
 }
 .comfirm{
   color: #fff !important;
+  background-color: rgb(10, 90, 128)!important;
 }
 .comfirm2{
-  background-color: rgb(102, 231, 152) !important;
+  background-color: rgb(70, 110, 129) !important;
   color: #fff !important;
 }

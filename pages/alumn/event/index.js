@@ -1,6 +1,7 @@
 // pages/alumn/event/index.js
 const app = getApp();
 const domainName = app.globalData.domainName;
+var WxParse = require('../../../wxParse/wxParse.js');
 Page({
 
   /**
@@ -75,7 +76,8 @@ Page({
         credentials: 'omit',
         success(res) {
           console.log(res.data)
-          that.setData({htmlData:res.data})
+          var temp = res.data;
+          WxParse.wxParse('htmlData', 'html', temp, that);
         }
       })
   }

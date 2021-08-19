@@ -1,3 +1,4 @@
+<import src="../../wxParse/wxParse.wxml"/>  
 <video src="{{videoSrc}}" loop vslide-gesture show-mute-btn enable-play-gesture object-fit="contain" class="video" autoplay></video>
 <view class="boxWrap" >
   <view class="wrap" wx:for="{{schoolList}}" bindtap="todetail" data-path="{{item.path}}" 
@@ -12,7 +13,7 @@
 </view>
 <block>
   <view class="data" wx:if="{{htmlData}}">
-  <rich-text class="text text2" nodes="{{htmlData}}"></rich-text>
+  <template is="wxParse" data="{{wxParseData:htmlData.nodes}}"/>
 </view>
 <view class="null" wx:else>请等待管理员发布。</view>
 </block>

@@ -1,13 +1,15 @@
 // pages/index/activityDetail/index.js
 const app = getApp();
 const domainName = app.globalData.domainName;
+var WxParse = require('../../../wxParse/wxParse.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      activity: []
+      activity: "",
+      htmlData:""
   },
 
   /**
@@ -81,6 +83,8 @@ Page({
       success(res) {
         console.log(res.data)
         that.setData({activity:res.data})
+        var temp = res.data.content;
+        WxParse.wxParse('htmlData', 'html', temp, that);
       }
     })
   }
