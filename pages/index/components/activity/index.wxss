@@ -39,6 +39,10 @@ page{
   /* font-weight: 600; */
   font-size: 28rpx;
   /* margin-bottom: 15rpx; */
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  margin-right: 10rpx;
 }
 .activity .txtWrap .time{
   font-size: 20rpx;

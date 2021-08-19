@@ -3,6 +3,7 @@
   background: #ecf1f1;
   width: 100vw;
   height:100vh;
+  padding-top: 15rpx;
 }
 .body{
   width: 95%;

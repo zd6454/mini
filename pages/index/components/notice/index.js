@@ -22,6 +22,9 @@ Page({
     wx.request({
       url: domainName+'/notice/getAllUseNotices',
       method: 'GET',
+      data:{
+        userId:wx.getStorageSync('openid'),
+      },
       header: {},
       credentials: 'omit',
       success(res) {
@@ -33,9 +36,10 @@ Page({
 
   handleNavTo(e){
     const that = this
-    const  noticeId = e.currentTarget.dataset.noticeid
+    const  noticeId = e.currentTarget.dataset.item.noticeId
+    const isRead = e.currentTarget.dataset.item.isRead
     wx.navigateTo({
-      url: '../noticeDetail/index?noticeId='+noticeId,
+      url: '../noticeDetail/index?noticeId='+noticeId+'&isRead='+isRead,
     })
   },
 
@@ -52,7 +56,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getNotice()
   },
 
   /**

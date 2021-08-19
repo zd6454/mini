@@ -1,8 +1,8 @@
 <!--pages/index/components/notice/index.wxml-->
 <!-- <text>pages/index/components/notice/index.wxml</text> -->
 <view wx:for="{{noticeList}}" class="notice">
- <view class="noticeWrap" bindtap="handleNavTo" data-noticeId="{{item.noticeId}}">
-   <view class="dot" wx:if="{{item.isUsed != 1}}"></view>
+ <view class="noticeWrap" bindtap="handleNavTo" data-item="{{item}}">
+   <view class="dot" wx:if="{{item.isRead == 0}}"></view>
    <image src="{{item.imgUrl}}" class="notImg"></image>
    <view class="titleWrap">
      <view class="title">{{item.title}}</view>

@@ -39,6 +39,10 @@
 }
 .notice .noticeWrap .titleWrap .title{
   font-size: 33rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  margin-right: 10rpx;
 }
 .notice .noticeWrap .titleWrap .time{
   font-size: 25rpx;

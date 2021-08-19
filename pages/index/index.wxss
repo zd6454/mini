@@ -247,6 +247,10 @@ page{
   /* font-weight: 600; */
   font-size: 28rpx;
   /* margin-bottom: 15rpx; */
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  margin-right: 10rpx;
 }
 .school .activity .txtWrap .time{
   font-size: 20rpx;
@@ -259,7 +263,6 @@ page{
   font-weight: 600;
   font-size: 35rpx;
   display: inline;
-
 }
 .school .more0{
   display: inline;
@@ -298,6 +301,10 @@ page{
 .school .friend .friTitle{
   text-align: left;
   justify-content: center;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  margin-right: 10rpx;
 }
 
 
