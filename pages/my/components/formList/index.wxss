@@ -14,7 +14,7 @@ page{
   display: flex;
   flex-direction: row;
   background-color: rgb(15, 91, 153);
-  margin: 15rpx 0rpx;
+  margin: 10rpx 0rpx;
   box-shadow:  9rpx 6rpx 3rpx gray;
 }
 
@@ -31,7 +31,7 @@ page{
   height: 179rpx;
   width: 176rpx;
   /* margin: 15rpx; */
-  border: 2rpx white solid;
+  /* border: 2rpx white solid; */
 }
 .exc .activity .txtWrap{
   margin-left: 20rpx;
@@ -49,4 +49,15 @@ page{
   font-weight: 400;
   position: absolute;
   bottom: 10rpx;
+}
+
+view {
+  overflow: initial;
+}
+.delete{
+  margin: 10rpx;
+}
+.icon{
+ width:45rpx;
+ height:45rpx;
 }

@@ -1,5 +1,8 @@
 // pages/my/components/formList/index.js
  let url;
+const app = getApp();
+const domainName = app.globalData.domainName;
+const openid = wx.getStorageSync('openid');
 Component({
   /**
    * 组件的属性列表
@@ -59,6 +62,55 @@ Component({
         fail(err){
           console.log(err)
         }
+      })
+      },
+      delete(e){
+       const{forumId} = e.currentTarget.dataset.item;
+      const{type}=this.data;
+      const that=this;
+      const forums=[forumId]
+       let url='';
+       if(type==="done"){
+        url=`/forum/deleteForums`
+      }else{
+        url=`/forumDemo/deleteForums`
+      }
+       wx.request({
+         url:domainName+url,
+         method:"POST",
+         data:{forums},
+         success(res){
+         if(!res.data){
+           wx.showToast({
+             title: '删除成功',
+           })
+           that.refresh()
+         }else{
+           wx.showModal({
+             title: '删除失败',
+             content:"请检查网络"
+           })
+         }
+         }
+       })
+      },
+      refresh(){
+        const that=this;
+        const{type}=this.data;
+       let url='';
+       if(type==="done"){
+        url=`/forum/getUserForums`
+      }else{
+        url=`/forumDemo/getUserForums`
+      }
+      wx.request({
+        url: domainName+url,
+        method:"GET",
+        data:{userId:openid?openid:wx.getStorageSync('openid')},
+        success(res){
+        console.log(res)
+         that.setData({activityList:res.data})
+        },
       })
       },
   }

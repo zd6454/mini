@@ -134,7 +134,7 @@ Page({
       header: {},
       credentials: 'omit',
       success(res) {
-        var temp = res.data;
+        var temp = res.data.content;
         WxParse.wxParse('htmlData', 'html', temp, that);
       }
     })
