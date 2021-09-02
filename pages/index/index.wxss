@@ -64,7 +64,7 @@ page{
 }
 
 .school .boxWrap .box{
-  width: 47.5%;
+  width: 47%;
   height: 170rpx;
   background-color: #005478;
   margin: 8rpx;
