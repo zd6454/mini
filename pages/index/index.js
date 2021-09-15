@@ -3,6 +3,7 @@
 const app = getApp();
 const domainName = app.globalData.domainName;
 const img = app.globalData.imgDomain;
+const pageNum = 4;
 Page({
   data: {
     motto: 'Hello World',
@@ -12,6 +13,8 @@ Page({
     canIUseGetUserProfile: false,
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'), // 如需尝试获取用户信息可改为false
     swiperList:[],
+    friendPage:1,
+    friendTotalPage:1,
     schoolList:[
       {
         text:'置顶通知',
@@ -57,10 +60,11 @@ Page({
         canIUseGetUserProfile: true
       })
     }
+    this.getAllFriend();
     this.getSwiper();
     this.getFriend();
     this.getcooperation();
-    this.getActivity()
+    this.getActivity();
   },
   getSwiper(){
     const that = this
@@ -81,9 +85,9 @@ Page({
       url: domainName+'notice/overheadNotice',
       method: 'GET',
       header: {},
-      data:{
-        noticeId:12
-      },
+      // data:{
+      //   noticeId:11
+      // },
       credentials: 'omit',
       success(res) {
         console.log(res.data)
@@ -105,21 +109,37 @@ Page({
     })
   },
 
-  getFriend(){
+  getAllFriend(){
     const that = this
+    const {friendPage} = that.data;
     wx.request({
-      url: domainName+'/schoolmate/getAllUseSchoolmates',
+      url: domainName+'/schoolmate/getAllSchoolmates',
       method: 'GET',
       header: {},
-      data:{
-        noticeId:12
-      },
       credentials: 'omit',
       success(res) {
-        console.log(res.data)
-        that.setData({friendList:res.data})
+        that.setData({friendTotalPage:Math.ceil(res.data.length/pageNum)})
       }
     })
+  },
+
+  getFriend(){
+    const that = this
+    const {friendPage,friendList} = that.data;
+      wx.request({
+        url: domainName+'/schoolmate/getPageSchoolmates',
+        method: 'GET',
+        header: {},
+        data:{
+          page:friendPage,
+          num:pageNum,
+        },
+        credentials: 'omit',
+        success(res) {
+          console.log(res.data)
+          that.setData({friendList:[...friendList,...res.data]})
+        }
+      })
   },
 
   getUserProfile(e) {
@@ -136,7 +156,6 @@ Page({
     })
   },
   getUserInfo(e) {
-    // 不推荐使用getUserInfo获取用户信息，预计自2021年4月13日起，getUserInfo将不再弹出弹窗，并直接返回匿名的用户个人信息
     console.log(e)
     this.setData({
       userInfo: e.detail.userInfo,
@@ -204,13 +223,30 @@ Page({
      })
    },
 
-   handleFriend(e){
+  handleFriend(e){
     console.log(e)
     const {schoolmateId} = e.currentTarget.dataset.item;
     wx.navigateTo({
       url: `../alumn/alumnDetail/index?id=${schoolmateId}&key=${"schoolmateId"}`,
     })
+  },
+
+
+ // 滚动条触底事件
+  onReachBottom(){
+    const that = this
+    const {friendPage,friendTotalPage} = that.data;
+    that.setData({friendPage:friendPage+1})
+    if(friendPage<friendTotalPage){
+      that.getFriend()
+    }else{
+      // 没有下一页数据
+      wx.showToast({
+        title: '没有下一页数据',
+        icon:'none'
+      })
     }
+  },
 })
 
 
