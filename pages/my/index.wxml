@@ -8,9 +8,9 @@
       <view class="name"> {{userInfo.username}}</view>
       <view class="base">
         <view class="gender">{{userInfo.gender?'男':'女'}}</view>
-        <view class="level">{{userInfo.institute+userInfo.clazz}}</view>
+        <view class="level">{{userInfo.school}}</view>
       </view>
-      <view class="school">{{userInfo.school}}</view>
+      <view class="school">{{userInfo.institute+userInfo.clazz}}</view>
     </view>
     <view wx:else class="login">
       <view class="logintip">您好！请登录</view>
