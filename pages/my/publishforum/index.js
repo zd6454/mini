@@ -190,10 +190,13 @@ uploadSuccess(e) {
         content,
      },
      success(res){
-     console.log(res);
      const{forumId}=res.data;
     try {
-      that.uploadForumImg(forumId,uploadUrl.publish);
+      if(type==='undone'){
+        that.undoenUploadfile(forumId,uploadUrl.publish)
+      }else{
+        that.uploadForumImg(forumId,uploadUrl.publish);
+      }
      if(type=='undone'){
           that.deleteItems()
        }
@@ -219,7 +222,23 @@ uploadSuccess(e) {
      },
    })
   },
-
+  undoenUploadfile(forumId,uploadUrl){
+    const{files}=this.data;
+    wx.downloadFile({
+      url: files[0].url,
+      success(res){
+      wx.uploadFile({
+        filePath: res.tempFilePath,
+        name: 'uploadfile',
+        formData:{forumId},
+        url: domainName+uploadUrl,
+        success(oad){
+         console.log(oad,'success')
+        }
+      })
+      }
+    })
+  },
   deleteItems(){
     const {forumId}=this.data;
   const forums=[Number(forumId)];

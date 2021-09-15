@@ -1,13 +1,18 @@
 <!--pages/my/components/formList/index.wxml-->
 <view class="page">
 <view class="exc">
-  <div class="activity" wx:for="{{activityList}}" wx:key="item" data-item="{{item}}" wx:for-item="item" wx:for-index="index" bindtap="todetail">
-    <view class="actImgWrap">
-      <image src="{{item.imgUrl}}" class="actImg"></image>
-    </view>
-    <view class="txtWrap">
-      <view class="title">{{item.title}}</view>
-      <view class="time">{{item.time}}</view>
+  <div  wx:for="{{activityList}}" wx:key="item"  wx:for-item="item" wx:for-index="index" >
+    <view class="activity" >
+        <view class="actImgWrap" bindtap="todetail" data-item="{{item}}">
+          <image src="{{item.imgUrl}}" class="actImg"></image>
+        </view>
+        <view class="txtWrap" bindtap="todetail" data-item="{{item}}">
+          <view class="title">{{item.title}}</view>
+          <view class="time">{{item.time}}</view>
+        </view>
+        <view class="delete" bindtap="delete"  data-item="{{item}}" >
+         <image class="icon" src="../../../../icons/delete.png"></image>
+        </view>
     </view>
   </div>
 </view>

@@ -1,6 +1,6 @@
 // app.js
-const domainName = "http://aitmaker.cn:8000";
-const imgDomain = "http://aitmaker.cn:9000";
+const domainName = "https://aitmaker.cn";
+const imgDomain = "https://aitmaker.cn";
 const appid = "wx2bee8de96f3462d6";   //wx.getAccountInfoSync().miniProgram.appId;
 const secret = "8967de4bc48b2e1631c4b6ad49ea3f53";
 let openid;
