@@ -95,7 +95,7 @@
   <view class="friend">
     <view class="friendWrap" wx:for="{{friendList}}">
     <!-- <view class="imageWrap"> -->
-      <image src="{{item.imgUrl}}" class="friImg" data-item="{{item}}" bindtap="handleFriend"></image>
+      <image src="{{item.imgUrl}}" mode="aspectFill"class="friImg" data-item="{{item}}" bindtap="handleFriend"></image>
     <!-- </view> -->
     <view class="friTitle">{{item.name}}</view>
     </view>
