@@ -29,16 +29,16 @@ page{
   position: relative;
   top: 0;
   height: 179rpx;
-  width: 176rpx;
+  width: 180rpx;
   /* margin: 15rpx; */
-  border: 2rpx white solid;
+  /* border: 2rpx white solid; */
 }
 .exc .activity .txtWrap{
   margin-left: 20rpx;
   margin-top: 10rpx;
-  width:73%;
+  /* width:73%;
   position: relative;
-  color: rgb(230, 227, 227);
+  color: rgb(230, 227, 227); */
 }
 .exc .activity .txtWrap .title{
   font-weight: 500;
@@ -76,21 +76,8 @@ page{
   background-color: #cccccc;
   margin: 0rpx;
 }
-.exc .activity .actImgWrap .actImg{
-  position: relative;
-  top: 0;
-  height: 179rpx;
-  width: 176rpx;
-  /* margin: 15rpx; */
-  border: 2rpx white solid;
-}
-.exc .activity .txtWrap{
-  margin-left: 30rpx;
-  margin-top: 15rpx;
-  width: 65%;
-  position: relative;
-  color: rgb(230, 227, 227);
-}
+
+
 .exc .activity .txtWrap .title{
   font-weight:500;
   font-size: 28rpx;

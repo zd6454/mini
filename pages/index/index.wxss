@@ -247,6 +247,7 @@ page{
   /* font-weight: 600; */
   font-size: 28rpx;
   /* margin-bottom: 15rpx; */
+  width:65%;
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
@@ -304,7 +305,7 @@ page{
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
-  margin-right: 10rpx;
+  margin:-7rpx 10rpx 0rpx 10rpx;
 }
 
 

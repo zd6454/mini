@@ -18,13 +18,13 @@ Page({
       },
       {
         text:'学部简介',
-        image:img+'/saveFiles/images/微信图片_20210512113554.jpg',
+        image:img+'/saveFiles/images/xuebu.jpg',
         path:'deprtments/index',
         id:"2"
       },
       {
         text:'学习体验',
-        image:img+'/saveFiles/images/R6a4a35499754f599e5ab10fff057d020.jpg',
+        image:img+'/saveFiles/images/xuexitiyan.jpg',
         path:'detail/index',
         id:"3"
       },

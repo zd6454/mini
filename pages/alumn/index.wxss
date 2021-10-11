@@ -30,6 +30,7 @@
 .structTitle{
   /*margin-left:25%;*/
   font-size: 36rpx;
+  font-weight: bold;
   width:185rpx;
   border-bottom: 8rpx solid #a88b61;
   margin-bottom: 3%;
@@ -37,6 +38,7 @@
 .activityTitle{
   /*margin-left:25%;*/
   font-size: 36rpx;
+  font-weight: bold;
   width:185rpx;
   border-bottom: 8rpx solid #a88b61;
   margin-bottom: 3%;
@@ -44,12 +46,16 @@
 .rewardTitle{
   margin-left:3%;
   font-size: 36rpx;
+  font-weight: bold;
   width:240rpx;
 }
 .mateTitle{
-  margin-left:40%;
+  /* margin-left:40%; */
   font-size: 36rpx;
+  font-weight: bold;
+  text-align: center;
   width:185rpx;
+  margin:0 auto;
 }
 .line{
   width: 185rpx;
@@ -58,9 +64,9 @@
   margin-bottom: 3%;
 }
 .line1{
-  margin-left: 37%;
-  width: 185rpx;
   height: 8rpx;
   background-color: #a68c63;
   margin-bottom: 3%;
+  width:170rpx;
+  margin:0 auto;
 }

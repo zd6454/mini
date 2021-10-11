@@ -10,13 +10,11 @@
  clear: both;
 }
 .avatar{
-  display: flex;
+  /* display: flex; */
 }
 .img{
-  margin-top: 10rpx;
-  margin-left: 10rpx;
-  height:230rpx;
-  width:170rpx;
+  width:99.9%;
+  
 }
 .detail{
   padding-left: 30rpx;
@@ -30,7 +28,7 @@
 .content{
   color:white;
   font-weight: lighter;
-  margin-top: 70rpx;
+
   font-size: 25rpx;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -41,5 +39,6 @@
   margin-top: 20rpx;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 100%;
+  line-height: 120%;
+  font-size: medium;
 }
