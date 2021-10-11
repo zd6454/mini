@@ -11,17 +11,17 @@ Page({
    */
   data: {
     tabs:[
-      {name:'留学流程',icon:'../../icons/public.png',url:'./abroadFlow/index'},
-      {name:'我的留学',icon:'../../icons/abroad.png',url:'./abroad/index'},
-      {name:'论坛发布',icon:'../../icons/list.png',url:'./publishforum/index'},
-      {name:'系统消息',icon:'../../icons/message.png',url:'./forum/index'},
+      {name:'留学流程',color:'#1297db',icon:'../../icons/public.png',url:'./abroadFlow/index'},
+      {name:'我的留学',color:'#818bcf',icon:'../../icons/abroad.png',url:'./abroad/index'},
+      {name:'论坛发布',color:'#1ec7c3',icon:'../../icons/list.png',url:'./publishforum/index'},
+      {name:'系统消息',color:'#004099',icon:'../../icons/message.png',url:'./forum/index'},
     ],
      setting:[
-       {name:'个人信息',url:'./info/index'},
-       {name:'论坛消息',url:'./message/index'},
-       {name:'我的发布',url:'./dopublishforum/index'},
-       {name:'论坛草稿',url:'./unpublishforum/index'},
-       {name:'联系我们',url:'./contactUs/index'}
+       {name:'个人信息',icon:'../../icons/01.png',url:'./info/index'},
+       {name:'论坛消息',icon:'../../icons/02.png',url:'./message/index'},
+       {name:'我的发布',icon:'../../icons/03.png',url:'./dopublishforum/index'},
+       {name:'论坛草稿',icon:'../../icons/04.png',url:'./unpublishforum/index'},
+       {name:'联系我们',icon:'../../icons/05.png',url:'./contactUs/index'}
      ],
      login:false,
      userInfo:{},
@@ -85,6 +85,7 @@ Page({
   },
   
   loginInfo(userInfo){
+    console.log('ssssssssssssssssss',userInfo)
     const that=this;
     const date=util.formatTime(new Date());
     const data={

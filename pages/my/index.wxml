@@ -26,14 +26,15 @@
               <mp-badge class="dot" ext-class="blue" content="{{messageNum}}"/>
             </view>
         </view>
-        <view class="function">{{item.name}}</view>
+        <view class="function" style="color:{{item.color}}">{{item.name}}</view>
       </view>
     </view>
   </view>
   <view class="foot" >
     <view class="setting"  wx:for="{{setting}}" wx:key="item" data-set="{{item}}" wx:for-item="item" wx:for-index="index"  bindtap="todetail">
+      <image class="footIcon" src="{{item.icon}}"></image>
       <view class="detail">{{item.name}}</view>
-      <view class="link">></view>
+      <view class="link" >></view>
     </view> 
   </view>
   <view wx:if="{{login}}" class="loginOut" bindtap="loginout">

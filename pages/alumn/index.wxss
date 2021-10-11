@@ -1,9 +1,14 @@
 /* pages/alumn/index.wxss */
+page{
+  width:92%;
+  margin: auto;
+  background-color:#f0f2f5 ;
+}
 .box{
-  width:95%;
+  width:90%;
   height:500rpx;
   background-color:rgb(2, 68, 99) ;
-  margin: 10rpx 0rpx;
+  margin: auto;
 }
 .img{
  width:100%;
