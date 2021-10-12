@@ -36,9 +36,9 @@ page{
 .exc .activity .txtWrap{
   margin-left: 20rpx;
   margin-top: 10rpx;
-  /* width:73%;
+  width:73%;
   position: relative;
-  color: rgb(230, 227, 227); */
+  color: rgb(230, 227, 227);
 }
 .exc .activity .txtWrap .title{
   font-weight: 500;
@@ -82,9 +82,9 @@ page{
   font-weight:500;
   font-size: 28rpx;
 }
-.exc .activity .txtWrap .time{
+/* .exc .activity .txtWrap .time{
   font-size: 20rpx;
   font-weight: lighter;
   position: absolute;
   bottom: 10rpx;
-}
+} */
